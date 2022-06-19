@@ -1,0 +1,84 @@
+.containerFluid {
+    padding: 0px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.19);
+    height: 60px;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    transition:height .3s ease-in-out;
+    overflow:hidden;
+    
+}
+.header{
+    height:60px;
+    background:#121212;
+    color:white;
+}
+.expand{
+    height:300px;
+    background:white;
+    transition:height .3s ease-in-out;
+}
+.toggleHolder{
+    display:flex;
+    align-items:flex-start;
+}
+.toggleHolder section{
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-left:10px;
+}
+.toggleButton{
+   width:200px;
+   height:45px;
+   padding:10px;
+   background:transparent;
+   border:transparent;
+   color:white;
+   cursor:pointer;
+   display:flex;
+   align-items:center;
+   box-shadow:0px 0px 4px 0px rgba(0, 0, 0, 0.19)
+}
+.toggleButton span{
+   width:20px;
+   height:20px;
+   background-color:red;
+   border-radius:20px;
+   padding:5px;
+   margin-right:-7px;
+   margin-top:-5px;
+   z-index:1;
+}
+.toggleButton small{
+    margin-left:5px;
+    font-size:16px;
+}
+.actionHolder{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    padding-right:2rem;
+    padding:10px;
+}
+.button{
+    min-width:200px;
+    height:40px;
+    padding:5px;
+    background:white;
+    border:transparent;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.button small{
+    font-size:16px;
+    margin-right:4px;
+}
+.itemSlider{
+    background: red;
+    height:240px;
+}
