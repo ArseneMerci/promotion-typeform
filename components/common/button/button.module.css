@@ -1,0 +1,18 @@
+.button{
+    min-width:100px;
+    height:40px;
+    padding:5px;
+    background:white;
+    border:transparent;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.button small{
+    font-size:16px;
+    margin-right:4px;
+}
+.back{
+    margin-right:10px;
+}

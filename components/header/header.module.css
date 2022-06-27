@@ -6,11 +6,14 @@
     left: 0;
 }
 .logoContainer {
-    padding: 0px;
+    padding: 5px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.logoContainer h2{
+    margin-left:20px;
 }
 .stepsHolder {
     display: flex;
