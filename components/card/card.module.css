@@ -9,10 +9,12 @@
 .image{
     width:100%;
     height:100px;
-    box-sizing:border-box;
-    background-position:center center;
-    background-size:contain;
-    background-repeat:no-repeat;
+    height:auto;
+   display:flex;
+   justify-content:center;
+}
+.image img{
+    height:100px;
 }
 .caption{
     height:40px;
@@ -24,9 +26,18 @@
 .caption p{
     font-weight:bold;
 }
+.actionHolder{
+    height:70px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    padding: 10px;
+}
 .styleContainer{
     width:80%;
-    height:200px;
+    min-height:200px;
     box-shadow:0px 0px 2px 0px rgba(0,0,0,0.19);
     background:white;
     margin:5px;
@@ -46,6 +57,28 @@
 }
 .styleCardRight{
     width:60%;
-    height:200px;
+    min-height:200px;
+    height:auto;
     padding:10px;
+}
+
+
+/* measure card */
+
+.measureCard{
+  width:100%;
+  min-height:120px;
+  box-shadow:0px 0px;
+  box-shadow:0px 0px 2px 0px rgba(0,0,0,0.19);
+  background:white;
+}
+.measureHeader{
+    height: 50px;
+    padding:10px;
+    font-weight:bold;
+}
+.measureInputs{
+    display:flex;
+    padding: 5px;
+    justify-content:space-around;
 }

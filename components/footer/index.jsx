@@ -1,13 +1,18 @@
 import styles from "./footer.module.css";
 import classNames from "classnames";
 import { useState } from "react";
-import { BsFillBagFill, BsArrowRight } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { next } from "../../state/slices/steps.slice";
-
+import { BsFillBagFill } from "react-icons/bs";
+import NextOrPrevButton from "../common/button";
+import { useSelector, useDispatch } from "react-redux";
+import Card from "../card";
+import { deleteProduct } from "../../state/slices/steps.slice";
 const Footer = () => {
-    const [toggle, setToggle] = useState(false);
     const dispatch = useDispatch();
+    const [toggle, setToggle] = useState(false);
+    const { products } = useSelector((state) => state.steps);
+    const handleDelete = (item) => {
+        dispatch(deleteProduct(item));
+    };
     return (
         <div
             className={classNames(
@@ -24,27 +29,27 @@ const Footer = () => {
                             type="button"
                             className={classNames(styles.toggleButton)}
                         >
-                            <span>7</span>
+                            <span>{products.length}</span>
                             <BsFillBagFill size={25} />
                             <small>Selected Items</small>
                         </button>
                     </section>
                 </div>
                 <div className={classNames("col-lg-7", styles.actionHolder)}>
-                    <button
-                        className={classNames(styles.button)}
-                        onClick={() => dispatch(next())}
-                    >
-                        <small>Next</small>
-                        <BsArrowRight size={15} />
-                    </button>
+                    <NextOrPrevButton />
                 </div>
             </section>
             <section className={classNames("row", styles.row)}>
-                <div className={classNames("col-lg-9", styles.itemSlider)}>
-                    <h2>Footer</h2>
+                <div className={classNames("col-lg-12", styles.itemSlider)}>
+                    {products.map((item, index) => (
+                        <div
+                            className="col-lg-4 col-md-4 flex-center"
+                            key={index}
+                        >
+                            <Card item={item} handleDelete={handleDelete} />
+                        </div>
+                    ))}
                 </div>
-                <div className={classNames("col-lg-2")}>footer</div>
             </section>
         </div>
     );
