@@ -2,14 +2,7 @@ import ImageUploading from "react-images-uploading";
 import Button from "@mui/material/Button";
 import ImagePreview from ".";
 import { useState } from "react";
-const ImageUploads = () => {
-    const [images, setImages] = useState([]);
-    const maxNumber = 10;
-    const onChange = (imageList, addUpdateIndex) => {
-        // data for submit
-        console.log(imageList, addUpdateIndex);
-        setImages(imageList);
-    };
+const ImageUploads = ({ onChange, maxNumber,images}) => {
     return (
         <div>
             <ImageUploading

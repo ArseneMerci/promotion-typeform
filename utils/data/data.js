@@ -1,36 +1,132 @@
 export const products=[
     {
         id:"1",
-        name:"Salon",
+        name:"bathroom",
         image:"/assets/17.png"
     },
     {
         id:"2",
-        name:"Salon one",
+        name:"dining",
         image:"/assets/17.png"
     },
     {
         id:"3",
-        name:"Salon Two",
+        name:"home office",
         image:"/assets/17.png"
     },
     {
         id:"4",
-        name:"Salon Three",
+        name:"kids bedroom",
+        image:"/assets/17.png"
+    },
+    {
+        id:"5",
+        name:"kitchen",
+        image:"/assets/17.png"
+    },
+    {
+        id:"6",
+        name:"living room",
+        image:"/assets/17.png"
+    },
+    {
+        id:"7",
+        name:"master bedroom",
         image:"/assets/17.png"
     }
+    
+    
 ]
 export const designs=[
     {
-        id:"1",
-        name:"Salon",
-        description:"component accepts a number of additional properties beyo those whic",
-        image:"/assets/contemorary.jpg"
+        name:"bathroom",
+        data:[
+            {
+                name:"bohemian",
+                image:"/assets/styles/bathroom/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/bathroom/contemporary.jpg"
+            }
+        ]
     },
     {
-        id:"2",
-        name:"Salon one",
-        description:"component accepts a number of additional properties beyo those whic",
-        image:"/assets/contemorary.jpg"
+        name:"dining",
+        data:[
+            {
+                name:"bohemian",
+                image:"/assets/styles/diningroom/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/diningroom/contemporary.jpg"
+            }
+        ]
+    },
+    {
+        name:"home office",
+        data:[
+            {
+                name:"bohemian",
+                image:"/assets/styles/homeoffice/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/homeoffice/contemporary.jpeg"
+            }
+        ]
+    },
+    {
+        name:"kids bedroom",
+        data:[
+            {
+                name:"bohemian",
+                image:"/assets/styles/kidsbedroom/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/kidsbedroom/contemporary.jpg"
+            }
+        ]
+    },
+    {
+        name:"kitchen",
+        data:[
+            {
+                name:"bohemian",
+                image:"/assets/styles/kitchen/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/kitchen/contemporary.jpg"
+            }
+        ]
+    },
+    {
+        name:"living room",
+        data:[
+            {
+                name:"livingroom",
+                image:"/assets/styles/livingroom/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/livingroom/contemporary.jpg"
+            }
+        ]
+    },
+    {
+        name:"master bedroom",
+        data:[
+            {
+                name:"livingroom",
+                image:"/assets/styles/masterbedroom/bohemian.jpg"
+            },
+            {
+                name:"contemporary",
+                image:"/assets/styles/masterbedroom/contemporary.jpg"
+            }
+        ]
     },
 ]

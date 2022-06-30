@@ -2,8 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     activeStep: 0,
-    products:[],
-    styles:{}
+    products:{},
+    styles:{},
+    improvements:"",
+    modification:"",
+    furnatureToKeep:"",
+    pictures:[],
+    plan:"string",
+    request:false
 };
 const stepSlice = createSlice({
     name: "steps",
@@ -20,24 +26,31 @@ const stepSlice = createSlice({
             }
         },
         addProduct(state,{payload}){
-          let checkIfExists=state.products.filter(item=>item.id==payload.id);
-          if(!checkIfExists.length)
-          {
-            let newData=state.products.concat(payload);
-            let reversed=newData.slice().reverse();
-            state.products=reversed;
-          }
+          state.products=payload;
+           state.activeStep+=1;
         },
+        addStageThree(state,{payload}){
+           state.improvements=payload.improvements
+           state.modification=payload.modification
+           state.furnatureToKeep=payload.furnatureToKeep
+           state.activeStep+=1;
+        },
+        addStageFour(state,{payload}){
+            state.pictures=payload.pictures,
+            state.plan=payload.plan,
+            state.request=payload.request,
+            state.activeStep+=1;
+         },
         deleteProduct(state,{payload}){
             const data=state.products.filter(item=>item.id!=payload.id);
             state.products=data;
         },
-            addStyle(state,{payload}){
-                  state.designs=payload;
-    
+        addStyle(state,{payload}){
+          state.styles=payload;
+          state.activeStep+=1;
         },
     },
 
 });
-export const { next,prev,addProduct,addStyle,deleteProduct} = stepSlice.actions;
+export const { next,prev,addProduct,addStyle,addStageThree,addStageFour,deleteProduct} = stepSlice.actions;
 export default stepSlice.reducer;
