@@ -1,17 +1,71 @@
-import MeasureCard from "../card/measures.card";
-import { useSelector } from "react-redux";
-import Alert from '@mui/material/Alert';
+import { useState } from "react";
+import ImageUploads from "../imagePreview/image_uploading";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import { addStageFour } from "../../state/slices/steps.slice";
+import { Button } from "@mui/material";
+import { useDispatch } from "react-redux";
+
 const StepFour = () => {
-    const { products } = useSelector((state) => state.steps);
+    const dispatch = useDispatch();
+    const [picturesList, setPictures] = useState([]);
+    const [planImage, setPlan] = useState([]);
+    const [request, setRequest] = useState(true);
+    const onChange = (pictures) => {
+        setPictures(pictures);
+    };
+    const onPlan = (plan) => {
+        setPlan(plan);
+    };
+    const addToList = () => {
+        const style = { pictures: picturesList, plan: planImage, request: request };
+        dispatch(addStageFour(style));
+    };
     return (
         <div className="container step-container">
             <div className="row">
-                {products.map((item, index) => (
-                    <div className="col-lg-4 col-md-4 flex-center" key={index}>
-                        <MeasureCard item={item} />
-                    </div>
-                ))}
-                {!products.length && <Alert severity="warning" className="flex-center">No selected Item — check it out!</Alert>}
+                <div className="col-lg-6 col-md-12 flex-columns">
+                    <h5>Upload Images</h5>
+                    <br />
+                    <ImageUploads
+                        className="mt-12"
+                        onChange={onChange}
+                        maxNumber={5}
+                        images={picturesList}
+                    />
+                </div>
+                <div className="col-lg-6 col-md-12 flex-columns">
+                    <h5>Upload Plan</h5>
+                    <br />
+                    <ImageUploads
+                        className="mt-12"
+                        onChange={onPlan}
+                        maxNumber={5}
+                        images={planImage}
+                    />
+                </div>
+                <div className="col-lg-7 col-md-12 flex-center">
+                    <FormGroup>
+                        <FormControlLabel
+                            onChange={() => setRequest(!request)}
+                            control={<Checkbox defaultChecked />}
+                            label="Request a professional data collection (10.000 Rwf)"
+                        />
+                    </FormGroup>
+                </div>
+                <div className="col-lg-12 flex-center">
+                    {picturesList.length > 0 ||
+                        planImage.length > 0 ||
+                        (request && (
+                            <Button
+                                onClick={() => addToList()}
+                                className="mt-12"
+                            >
+                                Next
+                            </Button>
+                        ))}
+                </div>
             </div>
         </div>
     );

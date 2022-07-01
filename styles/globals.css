@@ -93,3 +93,13 @@ h1,h2,h4,h5,h5,p{
     align-items:center;
     margin-top:1rem;
 }
+.active{
+  border:4px solid black;
+}
+.mt-12{
+  margin-top:5rem;
+}
+.stepTwoColors{
+  width:25%;
+  margin-top:10px;
+}

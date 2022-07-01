@@ -43,9 +43,10 @@
     margin:5px;
     cursor:pointer;
     display:flex;
+    position:relative;
 }
 .styleCardLeft{
-    width:40%;
+    width:100%;
     height:200px;
     display:flex;
 }
@@ -56,10 +57,11 @@
 
 }
 .styleCardRight{
-    width:60%;
-    min-height:200px;
-    height:auto;
     padding:10px;
+    position:absolute;
+    color:white;
+    bottom:0;
+    background:black;
 }
 
 

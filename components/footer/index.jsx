@@ -41,14 +41,7 @@ const Footer = () => {
             </section>
             <section className={classNames("row", styles.row)}>
                 <div className={classNames("col-lg-12", styles.itemSlider)}>
-                    {products.map((item, index) => (
-                        <div
-                            className="col-lg-4 col-md-4 flex-center"
-                            key={index}
-                        >
-                            <Card item={item} handleDelete={handleDelete} />
-                        </div>
-                    ))}
+                    {/* item goes here */}
                 </div>
             </section>
         </div>
