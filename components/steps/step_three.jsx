@@ -12,19 +12,26 @@ import { addStageThree } from "../../state/slices/steps.slice";
 import { getItem, setItem } from "../../utils/persist";
 const StepThree = () => {
     const dispatch = useDispatch();
-    const [option, setOption] = useState("");
+    const [option, setOption] = useState([]);
     const [furnature, setFurnature] = useState("");
     const [flooring, setFlooring] = useState("");
     useEffect(() => {
         const s_styles = getItem("stageThree");
         if (s_styles) {
-            setOption(s_styles.improvements);
+            setOption(
+                typeof s_styles.improvements === "string"
+                    ? s_styles.improvements.split(",")
+                    : s_styles.improvements
+            );
             setFurnature(s_styles.furnatureToKeep);
             setFlooring(s_styles.modification);
         }
     }, []);
     const handleChange = (event) => {
-        setOption(event.target.value);
+        const {
+            target: { value },
+        } = event;
+        setOption(typeof value === "string" ? value.split(",") : value);
     };
     const addToList = () => {
         const data = {
@@ -51,6 +58,7 @@ const StepThree = () => {
                             labelId="demo-simple-select-standard-label"
                             id="demo-simple-select-standard"
                             value={option}
+                            multiple
                             onChange={handleChange}
                             label=""
                         >
