@@ -10,6 +10,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
+import { getItem, setItem } from "../../utils/persist";
 const StepTwo = () => {
     const dispatch = useDispatch();
     const [step, setStep] = useState(0);
@@ -32,8 +33,16 @@ const StepTwo = () => {
             }
         });
     }, []);
+    useEffect(() => {
+        const s_styles = getItem("styles");
+        if (s_styles) {
+            setSelectedStyle(s_styles.styles);
+            setImages(s_styles.images);
+            setColors(s_styles.colors);
+        }
+    }, []);
 
-    const onChange = (imageList, addUpdateIndex) => {
+    const onChange = (imageList) => {
         setImages(imageList);
     };
     const addSelectedStyle = (item) => {
@@ -45,6 +54,7 @@ const StepTwo = () => {
     };
     const addToList = () => {
         const style = { styles: selectedStyle, images: images, colors: colors };
+        setItem("styles", style);
         dispatch(addStyle(style));
     };
     return (
@@ -53,7 +63,6 @@ const StepTwo = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <p>o Choose the style that suits you the most</p>
-                        {JSON.stringify(selectedStyle)}
                     </div>
                     {styles.map((item, index) => (
                         <div
@@ -61,6 +70,7 @@ const StepTwo = () => {
                             key={index}
                         >
                             <StyleCard
+                                selected={selectedStyle}
                                 item={item}
                                 handleClick={addSelectedStyle}
                             />
@@ -124,7 +134,7 @@ const StepTwo = () => {
                             <h5>o On colours you are more ??</h5>
                             <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue=""
+                                defaultValue={colors.status}
                                 onChange={(e) =>
                                     setColors({
                                         ...colors,
@@ -167,6 +177,7 @@ const StepTwo = () => {
                             id="standard-basic"
                             label="Enter color"
                             variant="standard"
+                            defaultValue={colors.like}
                         />
                     </div>
                     <div className="col-lg-12 flex-columns">
@@ -185,6 +196,7 @@ const StepTwo = () => {
                             id="standard-basic"
                             label="Enter color if any"
                             variant="standard"
+                            defaultValue={colors.not}
                         />
                     </div>
                     <div className="col-lg-12 flex-center">

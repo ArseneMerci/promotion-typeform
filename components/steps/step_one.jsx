@@ -9,17 +9,27 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { getItem, setItem } from "../../utils/persist";
+import { useEffect } from "react";
 const StepOne = () => {
     const dispatch = useDispatch();
     const [step, setStep] = useState(0);
     const [space, setSpace] = useState("");
     const [price, setPrice] = useState();
-
+    useEffect(() => {
+        const items = getItem("space");
+        if (items) {
+            setSpace(items.space);
+            setPrice(items.price);
+        }
+    }, []);
     const addSpace = (item) => {
         setSpace(item.name);
     };
     const addToList = () => {
-        dispatch(addProduct({ space: space, price: price }));
+        const data = { space: space, price: price };
+        setItem("space", data);
+        dispatch(addProduct(data));
     };
     return (
         <div className="container step-container">
@@ -48,11 +58,11 @@ const StepOne = () => {
                     <div className={`col-lg-12 col-md-4 flex-center`}>
                         <FormControl>
                             <FormLabel id="demo-radio-buttons-group-label">
-                                o	Which room do you want to decorate/arrange??
+                                o Which room do you want to decorate/arrange??
                             </FormLabel>
                             <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue=""
+                                defaultValue={price}
                                 onChange={(e) => setPrice(e.target.value)}
                                 name="radio-buttons-group"
                             >

@@ -1,12 +1,17 @@
 import styles from "./card.module.css";
 import classNames from "classnames";
-const StyleCard = ({ item, handleClick }) => {
+const StyleCard = ({ selected, item, handleClick }) => {
     return (
         <div
             className={classNames(styles.styleContainer)}
             onClick={() => handleClick(item)}
         >
-            <section className={classNames(styles.styleCardLeft)}>
+            <section
+                className={classNames(
+                    styles.styleCardLeft,
+                    selected.includes(item?.name) ? "active" : ""
+                )}
+            >
                 <img src={item.image} />
             </section>
             <section className={classNames(styles.styleCardRight)}>
