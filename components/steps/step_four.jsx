@@ -49,22 +49,20 @@ const StepFour = () => {
                     <FormGroup>
                         <FormControlLabel
                             onChange={() => setRequest(!request)}
-                            control={<Checkbox defaultChecked />}
+                            control={<Checkbox  />}
                             label="Request a professional data collection (10.000 Rwf)"
                         />
                     </FormGroup>
                 </div>
                 <div className="col-lg-12 flex-center">
-                    {picturesList.length > 0 ||
-                        planImage.length > 0 ||
-                        (request && (
+                    
                             <Button
                                 onClick={() => addToList()}
                                 className="mt-12"
                             >
                                 Next
                             </Button>
-                        ))}
+                        
                 </div>
             </div>
         </div>
