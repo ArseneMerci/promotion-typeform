@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Table from "../../../components/admin/table";
+import Table from "../../../components/admin/Table";
 import DashNavBar from "../../../components/admin/DashNavBar";
 import SideBar from "../../../components/admin/DashBoardSideBar";
 import styles from '../../../styles/dashboard.module.css'

@@ -24,8 +24,8 @@ export default function DashboardSideBar() {
           </div>
           <div className={styles.items} >
             <FaPlus className={styles.sideBarCardsImage} />
-            <Link href="/admin/allOrders">
-              <a className={ router.pathname == "/admin/allOrders" ? "text-success" : "" }>All Orders</a>
+            <Link href="/admin/AllOrders">
+              <a className={ router.pathname == "/admin/AllOrders" ? "text-success" : "" }>All Orders</a>
             </Link>
           </div>
           <div className={styles.items} >
