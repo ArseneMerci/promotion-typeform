@@ -16,10 +16,20 @@ const Header = () => {
     return (
         <div className={classNames("container-fluid", styles.containerFluid)}>
             <div className={classNames("row", styles.row)}>
-                <div className={classNames("col-lg-1 ", styles.logoContainer)}>
+                <div
+                    className={classNames(
+                        "col-lg-1 col-md-12",
+                        styles.logoContainer
+                    )}
+                >
                     <h2>MOIZAKA</h2>
                 </div>
-                <div className={classNames("col-lg-10", styles.stepsHolder)}>
+                <div
+                    className={classNames(
+                        "col-lg-10 col-md-12",
+                        styles.stepsHolder
+                    )}
+                >
                     <Stepper
                         activeStep={selector.activeStep}
                         connector={<CustomConnector />}

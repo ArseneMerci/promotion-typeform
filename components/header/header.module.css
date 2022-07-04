@@ -1,9 +1,10 @@
 .containerFluid {
     padding: 0px;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.19);
-    height: 60px;
+    min-height: 60px;
     position: fixed;
     left: 0;
+    z-index:10;
 }
 .logoContainer {
     padding: 5px;
@@ -24,5 +25,10 @@
 .line{
     padding:5px;
     width:200px;
+}
+@media (max-width:500px) {
+    .stepsHolder{
+        background:var(--main-color);
+    }
 }
 

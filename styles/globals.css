@@ -24,14 +24,17 @@ h1,h2,h4,h5,h5,p{
   color:white;
 }
 .main{
-  background:#f5f1ec;
  position:fixed;
  min-width:100%;
  left:0;
  top:62px;
- min-height:650px;
+ height:100%;
  overflow-y:auto;
  padding:10px;
+}
+.main-add-space
+{
+  height:200px;
 }
 .step-container{
   width:80%;
