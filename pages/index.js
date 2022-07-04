@@ -22,11 +22,12 @@ export default function Home() {
             </Head>
             <Header />
             <main className="main">
-              {selector.activeStep===0 && <StepOne/>}
-              {selector.activeStep===1 && <StepTwo/>}
-              {selector.activeStep===2 && <StepThree/>}
-              {selector.activeStep===3 && <StepFour/>}
-              {selector.activeStep===4 && <StepFive/>}
+                {selector.activeStep === 0 && <StepOne />}
+                {selector.activeStep === 1 && <StepTwo />}
+                {selector.activeStep === 2 && <StepThree />}
+                {selector.activeStep === 3 && <StepFour />}
+                {selector.activeStep === 4 && <StepFive />}
+                <div className="main-add-space"></div>
             </main>
             <Footer />
         </div>
