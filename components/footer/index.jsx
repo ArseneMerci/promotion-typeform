@@ -4,7 +4,6 @@ import { useState } from "react";
 import { BsFillBagFill } from "react-icons/bs";
 import NextOrPrevButton from "../common/button";
 import { useSelector, useDispatch } from "react-redux";
-import Card from "../card";
 import { deleteProduct } from "../../state/slices/steps.slice";
 const Footer = () => {
     const dispatch = useDispatch();
@@ -24,7 +23,7 @@ const Footer = () => {
             <section className={classNames("row", styles.header)}>
                 <div className={classNames("col-lg-3", styles.toggleHolder)}>
                     <section>
-                        <button
+                        {/* <button
                             onClick={() => setToggle(!toggle)}
                             type="button"
                             className={classNames(styles.toggleButton)}
@@ -32,7 +31,7 @@ const Footer = () => {
                             <span>{products.length}</span>
                             <BsFillBagFill size={25} />
                             <small>Selected Items</small>
-                        </button>
+                        </button> */}
                     </section>
                 </div>
                 <div className={classNames("col-lg-7", styles.actionHolder)}>

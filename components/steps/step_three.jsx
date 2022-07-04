@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -9,23 +9,38 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addStageThree } from "../../state/slices/steps.slice";
+import { getItem, setItem } from "../../utils/persist";
 const StepThree = () => {
     const dispatch = useDispatch();
-    const [option, setOption] = useState("");
+    const [option, setOption] = useState([]);
     const [furnature, setFurnature] = useState("");
     const [flooring, setFlooring] = useState("");
-
+    useEffect(() => {
+        const s_styles = getItem("stageThree");
+        if (s_styles) {
+            setOption(
+                typeof s_styles.improvements === "string"
+                    ? s_styles.improvements.split(",")
+                    : s_styles.improvements
+            );
+            setFurnature(s_styles.furnatureToKeep);
+            setFlooring(s_styles.modification);
+        }
+    }, []);
     const handleChange = (event) => {
-        setOption(event.target.value);
+        const {
+            target: { value },
+        } = event;
+        setOption(typeof value === "string" ? value.split(",") : value);
     };
     const addToList = () => {
-        dispatch(
-            addStageThree({
-                improvements: option,
-                furnatureToKeep: furnature,
-                modification: flooring,
-            })
-        );
+        const data = {
+            improvements: option,
+            furnatureToKeep: furnature,
+            modification: flooring,
+        };
+        setItem("stageThree", data);
+        dispatch(addStageThree(data));
     };
     return (
         <div className="container step-container">
@@ -43,6 +58,7 @@ const StepThree = () => {
                             labelId="demo-simple-select-standard-label"
                             id="demo-simple-select-standard"
                             value={option}
+                            multiple
                             onChange={handleChange}
                             label=""
                         >
@@ -73,14 +89,14 @@ const StepThree = () => {
                     <FormControl>
                         <RadioGroup
                             aria-labelledby="demo-radio-buttons-group-label"
-                            defaultValue=""
+                            value={flooring}
                             onChange={(e) => setFlooring(e.target.value)}
                             name="radio-buttons-group"
                         >
                             <FormControlLabel
                                 value="I want to keep my current flooring"
                                 control={<Radio />}
-                                label="I want to keep my current flooring"
+                                label="I want to keep my current flooring"
                             />
                             <FormControlLabel
                                 value="I am open to new proposals"
@@ -99,6 +115,7 @@ const StepThree = () => {
                         required
                         id="standard-basic"
                         label="Enter if any"
+                        value={furnature}
                         variant="standard"
                     />
                 </div>

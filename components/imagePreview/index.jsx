@@ -4,7 +4,6 @@ import CardMedia from "@mui/material/CardMedia";
 import { Button, CardActions } from "@mui/material";
 
 const ImagePreview = ({ image, remove, update }) => {
-    console.log(image);
     return (
         <Card sx={{ maxWidth: 300 }} style={{ margin: "5px" }}>
             <CardMedia
