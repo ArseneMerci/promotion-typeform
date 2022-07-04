@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRouter } from "next/router";
 
 export default function Table({ orders }) {
@@ -5,6 +6,21 @@ const router = useRouter()
 const handleDetails = (e,id)=>{
     e.preventDefault()
     router.push(`/admin/order/${id}`)
+}
+
+const handleComplete = async(e,id)=>{
+    e.preventDefault()
+    const response = confirm('Do you want to Mark it as completed?')
+    if(!response) return
+    const config = {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    };
+    const url = `https://promotion-typeform-api.herokuapp.com/api/order/${id}?status=true`
+    await axios.put(url,null,config)
+        .then(()=>{
+            router.push('/admin/AllOrders')
+        })
+        .catch((err)=>alert('An error occured! try Again'))
 }
   return (
         <table className="table mt-3">
@@ -30,7 +46,7 @@ const handleDetails = (e,id)=>{
                         <td><button className="btn btn-primary" onClick={(e)=>handleDetails(e,order._id)}>Details</button></td>
                         {order.status
                             ?<td><p className="text-success">Completed</p></td>
-                            :<td><button className="btn btn-primary">Complete</button></td>
+                            :<td><button className="btn btn-primary"  onClick={(e)=>handleComplete(e,order._id)}>Complete</button></td>
                         }
                         </tr>
                         )

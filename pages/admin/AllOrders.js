@@ -5,10 +5,12 @@ import styles from '../../styles/dashboard.module.css'
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function PaidOrders() {
 
 const [data, setData] = useState([])
+const router = useRouter()
 
   useEffect(() => {
     if(!localStorage.getItem('token')) router.push('/admin/login')
@@ -23,6 +25,7 @@ const [data, setData] = useState([])
             .catch((err)=>console.log('error'))
     }
     fetchData()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[data]);
 
 
@@ -31,7 +34,7 @@ const [data, setData] = useState([])
         <div className={styles.dashboardContainer}>
           <SideBar />
           <div className={styles.main}>
-            <DashNavBar title={'All Paid Orders'} />
+            <DashNavBar title={'All Orders'} />
             {data?
             <Table  orders={data} />:
             null
