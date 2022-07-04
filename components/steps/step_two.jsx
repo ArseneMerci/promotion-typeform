@@ -24,7 +24,7 @@ const StepTwo = () => {
         not: "",
     });
     const { products } = selector;
-    const maxNumber = 5;
+    const maxNumber = 2;
 
     useEffect(() => {
         designs.filter((item) => {
@@ -163,7 +163,7 @@ const StepTwo = () => {
                     </div>
                     <div className="col-lg-12 flex-columns">
                         <h5 className="stepTwoColors">
-                            o are there any colours you like?
+                            o Are there any colours you like?
                         </h5>
                         <TextField
                             className="stepTwoColors"
@@ -182,7 +182,7 @@ const StepTwo = () => {
                     </div>
                     <div className="col-lg-12 flex-columns">
                         <h5 className="stepTwoColors">
-                            o are there any colours you do not like?
+                            o Are there any colours you do not like?
                         </h5>
                         <TextField
                             className="stepTwoColors"

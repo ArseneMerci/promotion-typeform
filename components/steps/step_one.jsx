@@ -36,7 +36,7 @@ const StepOne = () => {
             {step == 0 && (
                 <div className="row">
                     <div className="col-lg-12">
-                        <p>o Choose the style that suits you the most</p>
+                        <p>o Which room do you want to decorate/arrange?</p>
                     </div>
                     {products.map((item, index) => (
                         <div
@@ -58,7 +58,7 @@ const StepOne = () => {
                     <div className={`col-lg-12 col-md-4 flex-center`}>
                         <FormControl>
                             <FormLabel id="demo-radio-buttons-group-label">
-                                o Which room do you want to decorate/arrange??
+                                o Have you planned a budget that you want to devote to it?
                             </FormLabel>
                             <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
