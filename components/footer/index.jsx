@@ -21,7 +21,7 @@ const Footer = () => {
             )}
         >
             <section className={classNames("row", styles.header)}>
-                <div className={classNames("col-lg-3", styles.toggleHolder)}>
+                <div className={classNames("col-lg-3 col-md-12", styles.toggleHolder)}>
                     <section>
                         {/* <button
                             onClick={() => setToggle(!toggle)}
@@ -34,12 +34,12 @@ const Footer = () => {
                         </button> */}
                     </section>
                 </div>
-                <div className={classNames("col-lg-7", styles.actionHolder)}>
+                <div className={classNames("col-lg-7 col-md-12", styles.actionHolder)}>
                     <NextOrPrevButton />
                 </div>
             </section>
             <section className={classNames("row", styles.row)}>
-                <div className={classNames("col-lg-12", styles.itemSlider)}>
+                <div className={classNames("col-lg-12 col-md-12", styles.itemSlider)}>
                     {/* item goes here */}
                 </div>
             </section>

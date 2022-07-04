@@ -28,7 +28,15 @@
 }
 @media (max-width:500px) {
     .stepsHolder{
-        background:var(--main-color);
+        background:black;
+        color:white;
+        overflow-x: auto;
+        display:flex;
+        justify-content:center;
+        padding-left:1rem;
+    }
+    .line{
+        width:5px;
     }
 }
 

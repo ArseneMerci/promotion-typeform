@@ -66,7 +66,7 @@ const StepThree = () => {
                                 <em>Select 2 most important </em>
                             </MenuItem>
                             <MenuItem value="Bring more light">
-                                Bring more light{" "}
+                                Bring more light
                             </MenuItem>
                             <MenuItem value="Optimize storage">
                                 Optimize storage
@@ -75,7 +75,7 @@ const StepThree = () => {
                                 Review furniture layout
                             </MenuItem>
                             <MenuItem value="Review my decoration">
-                                Review my decoration{" "}
+                                Review my decoration
                             </MenuItem>
                         </Select>
                     </FormControl>

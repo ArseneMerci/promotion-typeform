@@ -22,6 +22,7 @@ export default function Home() {
             </Head>
             <Header />
             <main className="main">
+                 <div className="main-above-space"></div>
                 {selector.activeStep === 0 && <StepOne />}
                 {selector.activeStep === 1 && <StepTwo />}
                 {selector.activeStep === 2 && <StepThree />}
