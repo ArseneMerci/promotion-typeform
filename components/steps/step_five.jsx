@@ -28,7 +28,7 @@ const StepFive = () => {
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
-        formdata.append("styles", styles.styles);
+        formdata.append("style", styles.styles);
         formdata.append("inspirationalPics", styles.styles.images);
         formdata.append("colorStyle", styles.colors.status);
         formdata.append("colorLiked", styles.colors.like);
