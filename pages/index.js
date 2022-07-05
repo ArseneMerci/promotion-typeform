@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>MOAZAKA</title>
+                <title>MOZAIK</title>
                 <meta
                     name="description"
                     content=""
