@@ -20,16 +20,17 @@ const StepFour = () => {
             setRequest(data.request);
         }
     }, []);
-    const onChange = (pictures) => {
-        setPictures(pictures);
+    const onChange = (e) => {
+        console.log(e.target.files[0])
+        setPictures(e.target.files);
     };
     const onPlan = (plan) => {
         setPlan(plan);
     };
     const addToList = () => {
         const data = {
-            pictures: picturesList,
-            plan: planImage,
+            pictures: [picturesList],
+            plan: [],
             request: request,
         };
         setItem("stageFour", data);
@@ -41,12 +42,13 @@ const StepFour = () => {
                 <div className="col-lg-6 col-md-12 flex-columns">
                     <h5>Upload Images</h5>
                     <br />
-                    <ImageUploads
+                    <input type="file" name="pictures" onChange={onChange} />
+                    {/* <ImageUploads
                         className="mt-12"
                         onChange={onChange}
                         maxNumber={5}
                         images={picturesList}
-                    />
+                    /> */}
                 </div>
                 <div className="col-lg-6 col-md-12 flex-columns">
                     <h5>Upload Plan</h5>
@@ -68,7 +70,7 @@ const StepFour = () => {
                         />
                     </FormGroup>
                 </div>
-                <div className="col-lg-12 flex-center">
+                <div className="col-lg-12 button-holder">
                     <Button onClick={() => addToList()} className="mt-12">
                         Next
                     </Button>

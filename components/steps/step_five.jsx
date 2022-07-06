@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
+import { getItem } from "../../utils/persist";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
     const router = useRouter();
+    const [file,setFile]=useState([]);
     const [info, setInfo] = useState({
         fname: "",
         email: "",
@@ -23,20 +25,27 @@ const StepFive = () => {
     const successFull = () => {
         router.push("/result");
     };
+    const handleChange=(e)=>{
+        const files=Object.values(e.target.files);
+        setFile(files);
+        files.map(item=>console.log(item))
+    }
+
     const handleSubmit = () => {
         const { products, styles } = selector;
+        console.log(file)
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
-        formdata.append("styles", styles.styles);
-        formdata.append("inspirationalPics", styles.styles.images);
+        formdata.append("style", styles.styles);
+        formdata.append("inspirationalPics",file);
         formdata.append("colorStyle", styles.colors.status);
         formdata.append("colorLiked", styles.colors.like);
         formdata.append("colorNotLiked", styles.colors.not);
         formdata.append("improvements", selector.improvements);
         formdata.append("modification", selector.modification);
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
-        formdata.append("pictures", selector.pictures);
+        formdata.append("pictures", file);
         formdata.append("plan", selector.plan);
         formdata.append("fname", info.fname);
         formdata.append("address", info.city + " ," + info.village);
@@ -53,12 +62,14 @@ const StepFive = () => {
                             <h2>Information</h2>
                         </div>
                         <div className="form-contents">
+                        <input type="file" multiple name="pictures" onChange={handleChange} />
                             <TextField
                                 id="standard-basic"
                                 name="fname"
                                 label="Enter Full Names"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-b asic"
@@ -66,6 +77,7 @@ const StepFive = () => {
                                 label="Enter E-mail"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-basic"
