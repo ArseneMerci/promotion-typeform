@@ -50,7 +50,16 @@ const StepOne = () => {
                             />
                         </div>
                     ))}
-                    {space && <Button onClick={() => setStep(1)}>next</Button>}
+                    {space && (
+                        <div className="button-holder">
+                        <button
+                            onClick={() => setStep(1)}
+                            variant="contained"
+                        >
+                            next
+                        </button>
+                        </div>
+                    )}
                 </div>
             )}
             {step == 1 && (
@@ -58,7 +67,8 @@ const StepOne = () => {
                     <div className={`col-lg-12 col-md-4 flex-center`}>
                         <FormControl>
                             <FormLabel id="demo-radio-buttons-group-label">
-                                o Have you planned a budget that you want to devote to it?
+                                o Have you planned a budget that you want to
+                                devote to it?
                             </FormLabel>
                             <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
@@ -89,10 +99,17 @@ const StepOne = () => {
                             </RadioGroup>
                         </FormControl>
                     </div>
-                    <div className="flex-center">
-                        <Button onClick={() => setStep(0)}>back</Button>
+                    <div className="flex-center button-holder">
+                        <Button onClick={() => setStep(0)} variant="outlined">
+                            back
+                        </Button>
                         {price && (
-                            <Button onClick={() => addToList()}>next</Button>
+                            <Button
+                                onClick={() => addToList()}
+                                variant="outlined"
+                            >
+                                next
+                            </Button>
                         )}
                     </div>
                 </div>

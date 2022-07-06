@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
+import { dataURItoBlob, getItem } from "../../utils/persist";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
@@ -25,19 +26,21 @@ const StepFive = () => {
     };
     const handleSubmit = () => {
         const { products, styles } = selector;
+        const image=dataURItoBlob(selector.pictures[0].data_url);
+        console.log(image);
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
-        formdata.append("styles", styles.styles);
-        formdata.append("inspirationalPics", styles.styles.images);
+        formdata.append("style", image);
+        formdata.append("inspirationalPics",[]);
         formdata.append("colorStyle", styles.colors.status);
         formdata.append("colorLiked", styles.colors.like);
         formdata.append("colorNotLiked", styles.colors.not);
         formdata.append("improvements", selector.improvements);
         formdata.append("modification", selector.modification);
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
-        formdata.append("pictures", selector.pictures);
-        formdata.append("plan", selector.plan);
+        formdata.append("pictures", []);
+        formdata.append("plan", "");
         formdata.append("fname", info.fname);
         formdata.append("address", info.city + " ," + info.village);
         formdata.append("email", info.email);
@@ -59,6 +62,7 @@ const StepFive = () => {
                                 label="Enter Full Names"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-b asic"
@@ -66,6 +70,7 @@ const StepFive = () => {
                                 label="Enter E-mail"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-basic"

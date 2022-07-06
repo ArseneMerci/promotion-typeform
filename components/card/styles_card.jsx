@@ -14,11 +14,11 @@ const StyleCard = ({ selected, item, handleClick }) => {
             >
                 <img src={item.image} />
             </section>
-            <section className={classNames(styles.styleCardRight)}>
+            {/* <section className={classNames(styles.styleCardRight)}>
                 <h4>{item.name}</h4>
                 <small>{item.description}</small>
                 <small>{item.description}</small>
-            </section>
+            </section> */}
         </div>
     );
 };
