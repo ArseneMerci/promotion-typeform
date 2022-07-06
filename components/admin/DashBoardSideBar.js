@@ -2,7 +2,7 @@ import styles from '../../styles/sidebar.module.css';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { AiFillHome } from 'react-icons/ai';
-import { FaPlus, FaRegListAlt, FaSearch } from 'react-icons/fa';
+import { FaRegListAlt } from 'react-icons/fa';
 
 
 
@@ -23,7 +23,7 @@ export default function DashboardSideBar() {
             </Link>
           </div>
           <div className={styles.items} >
-            <FaPlus className={styles.sideBarCardsImage} />
+          <FaRegListAlt className={styles.sideBarCardsImage} />
             <Link href="/admin/AllOrders">
               <a className={ router.pathname == "/admin/AllOrders" ? "text-success" : "" }>All Orders</a>
             </Link>
@@ -35,7 +35,7 @@ export default function DashboardSideBar() {
             </Link>
           </div>
           <div className={styles.items} >
-            <FaSearch className={styles.sideBarCardsImage} />
+          <FaRegListAlt className={styles.sideBarCardsImage} />
             <Link href="/admin/inCompleteOrders">
               <a className={ router.pathname == "/admin/inCompleteOrders" ? "text-success" : "" }>Incomplete Orders</a>
             </Link>
