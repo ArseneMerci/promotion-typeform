@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css'
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import { Provider } from 'react-redux';

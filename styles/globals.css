@@ -122,32 +122,33 @@ h1,h2,h4,h5,h5,p{
   width:300px;
   height:200px;
 }
+.button-holder{
+  min-height:50px;
+  width:100%;;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.button-holder button{
+  min-width:200px;
+  padding:10px;
+  background:rgba(0, 0, 0, 1);
+  color:white;
+  text-transform: capitalize;
+  border:1px solid transparent;
+  cursor:pointer;
+  margin-left:10px;
+}
+.button-holder button:hover{
+  background:#fff;
+  outline:none;
+  color:black;
+  box-shadow:0px 0px 5px 0px rgba(0,0,0,0.19);
+  border:none;
+}
 @media (max-width: 600px) {
   .main-above-space{
     height:70px;
   }
 
-}
-
-.LoginPage{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.styleList ul{
-  list-style-type: square;
-}
-.styleList p{
-  font-weight: bolder;
-}
-
-.imageLinks{
-  margin-right: 10px;
-  margin-left: 10px;
-  color:blue
-}
-.imageLinks:hover{
-  color: green
 }

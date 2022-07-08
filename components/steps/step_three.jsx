@@ -119,7 +119,7 @@ const StepThree = () => {
                         variant="standard"
                     />
                 </div>
-                <div className="flex-center">
+                <div className="button-holder">
                     {option && flooring && (
                         <Button onClick={() => addToList()} className="mt-12">
                             next

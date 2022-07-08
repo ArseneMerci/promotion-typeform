@@ -48,8 +48,14 @@ const StepTwo = () => {
     const addSelectedStyle = (item) => {
         let check = selectedStyle.includes(item.name);
         if (!check) {
-            const newStyle = selectedStyle.concat(item.name);
+            const newStyle =selectedStyle.concat(item.name);
             setSelectedStyle(newStyle);
+        }
+        if (check) {
+            const result = selectedStyle.filter(
+                (selected) => selected != item.name
+            );
+            setSelectedStyle(result);
         }
     };
     const addToList = () => {
@@ -87,7 +93,7 @@ const StepTwo = () => {
                         }
                     </div>
                     {selectedStyle.length > 0 && (
-                        <div className="col-lg-12 flex-center">
+                        <div className="col-lg-12 flex-center button-holder">
                             <Button
                                 onClick={() => setStep(2)}
                                 className="mt-12"
@@ -112,17 +118,16 @@ const StepTwo = () => {
                             />
                         </div>
                     </div>
-                    <div className=" col-lg-12 flex-center">
-                        <Button onClick={() => setStep(0)} className="mt-12">
-                            Back
-                        </Button>
+                    <div className="button-holder">
                         {images.length > 0 && (
-                            <Button
-                                onClick={() => setStep(2)}
-                                className="mt-12"
-                            >
-                                Next
-                            </Button>
+                            <div className="button-holder">
+                                <Button
+                                    onClick={() => setStep(2)}
+                                    className="mt-12"
+                                >
+                                    Next
+                                </Button>
+                            </div>
                         )}
                     </div>
                 </div>
@@ -199,17 +204,17 @@ const StepTwo = () => {
                             defaultValue={colors.not}
                         />
                     </div>
-                    <div className="col-lg-12 flex-center">
-                        <Button onClick={() => setStep(0)} className="mt-12">
+                    <div className="col-lg-12 button-holder">
+                        <button onClick={() => setStep(0)} className="mt-12">
                             Back
-                        </Button>
+                        </button>
                         {colors.status && (
-                            <Button
+                            <button
                                 onClick={() => addToList()}
                                 className="mt-12"
                             >
                                 Next
-                            </Button>
+                            </button>
                         )}
                     </div>
                 </div>
