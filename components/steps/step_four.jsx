@@ -10,7 +10,7 @@ import { getItem, setItem } from "../../utils/persist";
 const StepFour = () => {
     const dispatch = useDispatch();
     const [picturesList, setPictures] = useState([]);
-    const [planImage, setPlan] = useState("");
+    const [planImage, setPlan] = useState([]);
     const [request, setRequest] = useState(true);
     useEffect(() => {
         const data = getItem("stageFour");
@@ -22,6 +22,7 @@ const StepFour = () => {
     }, []);
     const onChange = (pictures) => {
         setPictures(pictures);
+        console.log(pictures);
     };
     const onPlan = (plan) => {
         setPlan(plan);
@@ -68,7 +69,7 @@ const StepFour = () => {
                         />
                     </FormGroup>
                 </div>
-                <div className="col-lg-12 flex-center">
+                <div className="col-lg-12 button-holder">
                     <Button onClick={() => addToList()} className="mt-12">
                         Next
                     </Button>

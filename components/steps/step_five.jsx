@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
+import { clearAll } from "../../utils/persist";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
     const router = useRouter();
+    const [file,setFile]=useState([]);
     const [info, setInfo] = useState({
         fname: "",
         email: "",
@@ -21,23 +23,27 @@ const StepFive = () => {
         setInfo(value);
     };
     const successFull = () => {
+        clearAll();
         router.push("/result");
     };
+    console.log(selector.plan)
     const handleSubmit = () => {
         const { products, styles } = selector;
+        // const image=dataURItoBlob(selector.pictures[0].files);
+        // console.log(image);
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
         formdata.append("style", styles.styles);
-        formdata.append("inspirationalPics", styles.styles.images);
+        formdata.append("inspirationalPics",JSON.stringify(styles.images));
         formdata.append("colorStyle", styles.colors.status);
         formdata.append("colorLiked", styles.colors.like);
         formdata.append("colorNotLiked", styles.colors.not);
         formdata.append("improvements", selector.improvements);
         formdata.append("modification", selector.modification);
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
-        formdata.append("pictures", selector.pictures);
-        formdata.append("plan", selector.plan);
+        formdata.append("pictures", JSON.stringify(selector.pictures));
+        formdata.append("plan", selector.plan[0].data_url);
         formdata.append("fname", info.fname);
         formdata.append("address", info.city + " ," + info.village);
         formdata.append("email", info.email);
@@ -59,6 +65,7 @@ const StepFive = () => {
                                 label="Enter Full Names"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-b asic"
@@ -66,6 +73,7 @@ const StepFive = () => {
                                 label="Enter E-mail"
                                 onChange={handleInfo}
                                 variant="standard"
+                                required
                             />
                             <TextField
                                 id="standard-basic"
