@@ -4,8 +4,5 @@ const Store = configureStore({
    reducer: {
       steps: stepsSlice
    },
-   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      serializableCheck: false,
-   }),
 })
 export default Store;

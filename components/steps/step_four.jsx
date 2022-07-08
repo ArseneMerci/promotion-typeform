@@ -10,7 +10,7 @@ import { getItem, setItem } from "../../utils/persist";
 const StepFour = () => {
     const dispatch = useDispatch();
     const [picturesList, setPictures] = useState([]);
-    const [planImage, setPlan] = useState("");
+    const [planImage, setPlan] = useState([]);
     const [request, setRequest] = useState(true);
     useEffect(() => {
         const data = getItem("stageFour");
@@ -20,17 +20,17 @@ const StepFour = () => {
             setRequest(data.request);
         }
     }, []);
-    const onChange = (e) => {
-        console.log(e.target.files[0])
-        setPictures(e.target.files);
+    const onChange = (pictures) => {
+        setPictures(pictures);
+        console.log(pictures);
     };
     const onPlan = (plan) => {
         setPlan(plan);
     };
     const addToList = () => {
         const data = {
-            pictures: [picturesList],
-            plan: [],
+            pictures: picturesList,
+            plan: planImage,
             request: request,
         };
         setItem("stageFour", data);
@@ -42,13 +42,12 @@ const StepFour = () => {
                 <div className="col-lg-6 col-md-12 flex-columns">
                     <h5>Upload Images</h5>
                     <br />
-                    <input type="file" name="pictures" onChange={onChange} />
-                    {/* <ImageUploads
+                    <ImageUploads
                         className="mt-12"
                         onChange={onChange}
                         maxNumber={5}
                         images={picturesList}
-                    /> */}
+                    />
                 </div>
                 <div className="col-lg-6 col-md-12 flex-columns">
                     <h5>Upload Plan</h5>

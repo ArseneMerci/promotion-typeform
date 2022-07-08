@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CircularProgress from "@mui/material/CircularProgress";
 import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
-import { getItem } from "../../utils/persist";
+import { dataURItoBlob, getItem } from "../../utils/persist";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
@@ -25,28 +25,24 @@ const StepFive = () => {
     const successFull = () => {
         router.push("/result");
     };
-    const handleChange=(e)=>{
-        const files=Object.values(e.target.files);
-        setFile(files);
-        files.map(item=>console.log(item))
-    }
-
+    console.log(selector.plan)
     const handleSubmit = () => {
         const { products, styles } = selector;
-        console.log(file)
+        // const image=dataURItoBlob(selector.pictures[0].files);
+        // console.log(image);
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
         formdata.append("style", styles.styles);
-        formdata.append("inspirationalPics",file);
+        formdata.append("inspirationalPics",JSON.stringify(styles.images));
         formdata.append("colorStyle", styles.colors.status);
         formdata.append("colorLiked", styles.colors.like);
         formdata.append("colorNotLiked", styles.colors.not);
         formdata.append("improvements", selector.improvements);
         formdata.append("modification", selector.modification);
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
-        formdata.append("pictures", file);
-        formdata.append("plan", selector.plan);
+        formdata.append("pictures", JSON.stringify(selector.pictures));
+        formdata.append("plan", selector.plan[0].data_url);
         formdata.append("fname", info.fname);
         formdata.append("address", info.city + " ," + info.village);
         formdata.append("email", info.email);
@@ -62,7 +58,6 @@ const StepFive = () => {
                             <h2>Information</h2>
                         </div>
                         <div className="form-contents">
-                        <input type="file" multiple name="pictures" onChange={handleChange} />
                             <TextField
                                 id="standard-basic"
                                 name="fname"
