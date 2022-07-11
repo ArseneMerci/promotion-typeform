@@ -48,6 +48,7 @@ const StepTwo = () => {
     const addSelectedStyle = (item) => {
         let check = selectedStyle.includes(item.name);
         if (!check) {
+            if(selectedStyle.length >= 2) return
             const newStyle =selectedStyle.concat(item.name);
             setSelectedStyle(newStyle);
         }
@@ -151,17 +152,17 @@ const StepTwo = () => {
                                 <FormControlLabel
                                     value="Neutral vibe "
                                     control={<Radio />}
-                                    label="• Neutral vibe"
+                                    label="Neutral vibe"
                                 />
                                 <FormControlLabel
                                     value="Neutral ambience with pops of colour"
                                     control={<Radio />}
-                                    label="• Neutral ambience with pops of colour"
+                                    label="Neutral ambience with pops of colour"
                                 />
                                 <FormControlLabel
                                     value="Colourful ambiance "
                                     control={<Radio />}
-                                    label="• Colourful ambiance "
+                                    label="Colourful ambiance "
                                 />
                             </RadioGroup>
                         </FormControl>

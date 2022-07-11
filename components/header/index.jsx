@@ -22,7 +22,7 @@ const Header = () => {
                         styles.logoContainer
                     )}
                 >
-                    <h2>MOIZAKA</h2>
+                    <h2>MOZAIK</h2>
                 </div>
                 <div
                     className={classNames(
@@ -35,19 +35,19 @@ const Header = () => {
                         connector={<CustomConnector />}
                     >
                         <Step key="step 1">
-                            <StepLabel>labe 1</StepLabel>
+                            <StepLabel>My Project</StepLabel>
                         </Step>
                         <Step key="step 2">
-                            <StepLabel>labe 2</StepLabel>
+                            <StepLabel>My Decoration</StepLabel>
                         </Step>
                         <Step key="step 3">
-                            <StepLabel>labe 3</StepLabel>
+                            <StepLabel>My request</StepLabel>
                         </Step>
                         <Step key="step 4">
-                            <StepLabel>labe 4</StepLabel>
+                            <StepLabel>Space Images</StepLabel>
                         </Step>
                         <Step key="step 5">
-                            <StepLabel>labe 5</StepLabel>
+                            <StepLabel>Information</StepLabel>
                         </Step>
                     </Stepper>
                 </div>
