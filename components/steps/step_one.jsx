@@ -79,22 +79,22 @@ const StepOne = () => {
                                 <FormControlLabel
                                     value="300K to 500K"
                                     control={<Radio />}
-                                    label="• 300K to 500K"
+                                    label="300K to 500K"
                                 />
                                 <FormControlLabel
                                     value="500K to 1000K"
                                     control={<Radio />}
-                                    label="• 500K to 1000K"
+                                    label="500K to 1000K"
                                 />
                                 <FormControlLabel
-                                    value="• 1000K to 3000K"
+                                    value="1000K to 3000K"
                                     control={<Radio />}
-                                    label="• 1000K to 3000K"
+                                    label="1000K to 3000K"
                                 />
                                 <FormControlLabel
-                                    value="• >3000K"
+                                    value=">3000K"
                                     control={<Radio />}
-                                    label="• >3000K"
+                                    label=">3000K"
                                 />
                             </RadioGroup>
                         </FormControl>

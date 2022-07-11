@@ -2,37 +2,37 @@ export const products = [
     {
         id: "1",
         name: "bathroom",
-        image: "/assets/17.png"
+        image: "/assets/bathroom.png",
     },
     {
         id: "2",
         name: "dining",
-        image: "/assets/17.png"
+        image: "/assets/dining.png",
     },
     {
         id: "3",
         name: "home office",
-        image: "/assets/17.png"
+        image: "/assets/office.png",
     },
     {
         id: "4",
         name: "kids bedroom",
-        image: "/assets/17.png"
+        image: "/assets/kids.png",
     },
     {
         id: "5",
         name: "kitchen",
-        image: "/assets/17.png"
+        image: "/assets/kitchen.png",
     },
     {
         id: "6",
         name: "living room",
-        image: "/assets/17.png"
+        image: "/assets/saloon.png",
     },
     {
         id: "7",
         name: "master bedroom",
-        image: "/assets/17.png"
+        image: "/assets/master.png",
     }
 
 

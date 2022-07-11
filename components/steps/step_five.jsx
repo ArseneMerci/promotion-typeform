@@ -15,7 +15,6 @@ const StepFive = () => {
         email: "",
         phone: "",
         city: "",
-        village: "",
     });
     const handleInfo = (e) => {
         const name = e.target.name;
@@ -45,7 +44,7 @@ const StepFive = () => {
         formdata.append("pictures", JSON.stringify(selector.pictures));
         formdata.append("plan", selector.plan[0].data_url);
         formdata.append("fname", info.fname);
-        formdata.append("address", info.city + " ," + info.village);
+        formdata.append("address", info.city);
         formdata.append("email", info.email);
         formdata.append("phoneNumber", info.phone);
         dispatch(saveOrderAsync({ data: formdata, success: successFull }));
@@ -86,13 +85,6 @@ const StepFive = () => {
                                 id="standard-basic"
                                 label="Enter City"
                                 name="city"
-                                onChange={handleInfo}
-                                variant="standard"
-                            />
-                            <TextField
-                                id="standard-basic"
-                                label="Enter Village"
-                                name="village"
                                 onChange={handleInfo}
                                 variant="standard"
                             />
