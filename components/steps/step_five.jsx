@@ -42,7 +42,7 @@ const StepFive = () => {
         formdata.append("modification", selector.modification);
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
         formdata.append("pictures", JSON.stringify(selector.pictures));
-        formdata.append("plan", selector.plan[0].data_url);
+        formdata.append("plan", selector.plan[0]?.data_url);
         formdata.append("fname", info.fname);
         formdata.append("address", info.city);
         formdata.append("email", info.email);

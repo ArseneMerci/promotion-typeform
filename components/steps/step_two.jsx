@@ -48,7 +48,11 @@ const StepTwo = () => {
     const addSelectedStyle = (item) => {
         let check = selectedStyle.includes(item.name);
         if (!check) {
-            if(selectedStyle.length >= 2) return
+            console.log(selectedStyle.length)
+            if(selectedStyle.length >= 2)
+            {
+                return;
+            }
             const newStyle =selectedStyle.concat(item.name);
             setSelectedStyle(newStyle);
         }

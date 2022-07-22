@@ -18,38 +18,42 @@ const Header = () => {
             <div className={classNames("row", styles.row)}>
                 <div
                     className={classNames(
-                        "col-lg-1 col-md-12",
+                        "col-lg-1 col-sm-4",
                         styles.logoContainer
                     )}
                 >
-                    <h2>MOZAIK</h2>
+                    <h2>MOIZAKA</h2>
                 </div>
                 <div
                     className={classNames(
-                        "col-lg-10 col-md-12",
+                        "col-lg-10 col-md-7 col-sm-",
                         styles.stepsHolder
                     )}
                 >
                     <Stepper
+                        className={styles.stepsForLg}
                         activeStep={selector.activeStep}
                         connector={<CustomConnector />}
                     >
                         <Step key="step 1">
-                            <StepLabel>My Project</StepLabel>
+                            <StepLabel>labe 1</StepLabel>
                         </Step>
                         <Step key="step 2">
-                            <StepLabel>My Decoration</StepLabel>
+                            <StepLabel>labe 2</StepLabel>
                         </Step>
                         <Step key="step 3">
-                            <StepLabel>My request</StepLabel>
+                            <StepLabel>labe 3</StepLabel>
                         </Step>
                         <Step key="step 4">
-                            <StepLabel>Space Images</StepLabel>
+                            <StepLabel>labe 4</StepLabel>
                         </Step>
                         <Step key="step 5">
-                            <StepLabel>Information</StepLabel>
+                            <StepLabel>labe 5</StepLabel>
                         </Step>
                     </Stepper>
+                    <div className={styles.stepForSm}>
+                        <span className={styles.stepSmNumber}>{selector.activeStep + 1}</span>
+                    </div>
                 </div>
             </div>
         </div>

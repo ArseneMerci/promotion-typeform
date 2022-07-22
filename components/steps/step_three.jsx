@@ -45,14 +45,15 @@ const StepThree = () => {
     return (
         <div className="container step-container">
             <div className="row">
-                <div className="col-lg-12 col-md-12 flex-columns">
+                <div className="col-lg-12 col-md-12 flex-columns step3-container">
                     <h5 className="">
                         o By rethinking your interior, what would you like to
                         improve?
                     </h5>
                     <FormControl
+                    className="form-step3"
                         variant="standard"
-                        sx={{ m: 1, minWidth: 370 }}
+                        sx={{ m: 1}}
                     >
                         <Select
                             labelId="demo-simple-select-standard-label"
@@ -81,10 +82,10 @@ const StepThree = () => {
                     </FormControl>
                 </div>
                 <div className="col-lg-12 col-md-12 flex-columns mt-12">
-                    <h5>
-                        o Our decoration proposal may involve a modification of
-                        your
-                        <br /> floor covering, what do you want to do?
+                <h5 className="text-h5">
+                        o Our decoration proposal may involve a modification 
+                        <br/>of your
+                        floor covering, what do you want to do?
                     </h5>
                     <FormControl>
                         <RadioGroup

@@ -69,3 +69,10 @@
     display:flex;
     overflow-x: auto;
 }
+@media (max-width:500px) {
+    .actionHolder{
+        align-items:flex-start;
+        justify-content:center;
+        height:100px;
+    }
+}
