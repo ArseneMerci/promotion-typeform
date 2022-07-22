@@ -22,7 +22,7 @@ const Header = () => {
                         styles.logoContainer
                     )}
                 >
-                    <h2>MOIZAKA</h2>
+                    <h2>MOZAIK</h2>
                 </div>
                 <div
                     className={classNames(
