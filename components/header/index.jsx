@@ -18,7 +18,7 @@ const Header = () => {
             <div className={classNames("row", styles.row)}>
                 <div
                     className={classNames(
-                        "col-lg-1 col-md-12",
+                        "col-lg-1 col-sm-4",
                         styles.logoContainer
                     )}
                 >
@@ -26,11 +26,12 @@ const Header = () => {
                 </div>
                 <div
                     className={classNames(
-                        "col-lg-10 col-md-12",
+                        "col-lg-10 col-md-7 col-sm-",
                         styles.stepsHolder
                     )}
                 >
                     <Stepper
+                        className={styles.stepsForLg}
                         activeStep={selector.activeStep}
                         connector={<CustomConnector />}
                     >
@@ -50,6 +51,9 @@ const Header = () => {
                             <StepLabel>labe 5</StepLabel>
                         </Step>
                     </Stepper>
+                    <div className={styles.stepForSm}>
+                        <span>{selector.activeStep+1}</span>
+                    </div>
                 </div>
             </div>
         </div>

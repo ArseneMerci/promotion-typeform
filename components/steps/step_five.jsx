@@ -57,6 +57,7 @@ const StepFive = () => {
                         </div>
                         <div className="form-contents">
                             <TextField
+                              className="textField"
                                 id="standard-basic"
                                 name="fname"
                                 label="Enter Full Names"

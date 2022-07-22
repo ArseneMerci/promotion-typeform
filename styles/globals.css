@@ -97,7 +97,15 @@ h1,h2,h4,h5,h5,p{
     margin-top:1rem;
 }
 .active{
-  border:4px solid black;
+  box-sizing: border-box;
+}
+.active::after{
+  background:black;
+  position:absolute;
+  content:'';
+  width:100%;
+  height:100%;
+  opacity:0.6;
 }
 .mt-12{
   margin-top:5rem;
@@ -150,5 +158,29 @@ h1,h2,h4,h5,h5,p{
   .main-above-space{
     height:70px;
   }
-
+  .button-holder{
+    flex-direction: column;
+    padding:10px;
+  }
+  .button-holder button:nth-child(2)
+  {
+    margin-top:10px;
+  }
+  .stepTwoColors{
+    width:100%;
+  }
+  .textField{
+    width:100%;
+  }
+  .form-container{
+    width:100%;
+  }
+  .text-h5{
+    width:100%;
+    padding:10px;
+    box-sizing: content-box;
+    display:flex;
+    height:auto;
+    text-align: start;
+  }
 }
