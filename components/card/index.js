@@ -4,7 +4,7 @@ import { AiFillDelete } from "react-icons/ai";
 const Card = ({ item, handleClick,handleDelete,active}) => {
   return (
     <div
-      className={classNames(styles.container,active==item?.name?'active':'')}
+      className={classNames(styles.container,active==item?.name?'activecard':'')}
       onClick={handleClick?() => handleClick(item):()=>{}}
     >
       <section className={classNames(styles.image)}>
