@@ -32,15 +32,10 @@ const Header = () => {
                     )}
                 >
                     <Stepper
-                        className="stepsForLg"
-                        activeStep={selector.activeStep}
-                        connector={<CustomConnector />}
-                    >
-                    {/* <Stepper
                         className={styles.stepsForLg}
                         activeStep={selector.activeStep}
                         connector={<CustomConnector />}
-                    > */}
+                    >
                         <Step key="step 1">
                             <StepLabel>My Project</StepLabel>
                         </Step>
@@ -57,14 +52,10 @@ const Header = () => {
                             <StepLabel>Information</StepLabel>
                         </Step>
                     </Stepper>
-                    <div className="stepForSm">
-                        <p>{printStepName(selector.activeStep + 1)}</p>
-                        <span className="stepSmNumber">{selector.activeStep + 1}</span>
-                    </div>
-                    {/* <div className={styles.stepForSm}>
+                    <div className={styles.stepForSm}>
                         <p>{printStepName(selector.activeStep + 1)}</p>
                         <span className={styles.stepSmNumber}>{selector.activeStep + 1}</span>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
