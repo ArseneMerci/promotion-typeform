@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { clearAll } from "../../utils/persist";
 
 export const saveOrderAsync = createAsyncThunk(
     "create-order",
@@ -8,6 +9,7 @@ export const saveOrderAsync = createAsyncThunk(
         return axios
             .post("https://promotion-typeform-api.herokuapp.com/api/order/new", data)
             .then((resp) => {
+                clearAll();
                 success();
             })
             .catch((error) => {
