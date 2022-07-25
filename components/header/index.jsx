@@ -4,6 +4,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { useSelector } from "react-redux";
+import printStepName from "../../utils/printStepName";
 export const CustomConnector = () => {
     return (
         <section className={classNames(styles.line)}>
@@ -36,22 +37,23 @@ const Header = () => {
                         connector={<CustomConnector />}
                     >
                         <Step key="step 1">
-                            <StepLabel>labe 1</StepLabel>
+                            <StepLabel>My Project</StepLabel>
                         </Step>
                         <Step key="step 2">
-                            <StepLabel>labe 2</StepLabel>
+                            <StepLabel>My Decoration</StepLabel>
                         </Step>
                         <Step key="step 3">
-                            <StepLabel>labe 3</StepLabel>
+                            <StepLabel>My Request</StepLabel>
                         </Step>
                         <Step key="step 4">
-                            <StepLabel>labe 4</StepLabel>
+                            <StepLabel>Image Uploads</StepLabel>
                         </Step>
                         <Step key="step 5">
-                            <StepLabel>labe 5</StepLabel>
+                            <StepLabel>Information</StepLabel>
                         </Step>
                     </Stepper>
                     <div className={styles.stepForSm}>
+                        <p>{printStepName(selector.activeStep + 1)}</p>
                         <span className={styles.stepSmNumber}>{selector.activeStep + 1}</span>
                     </div>
                 </div>
