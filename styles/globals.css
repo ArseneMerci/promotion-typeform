@@ -220,7 +220,7 @@ h1,h2,h4,h5,h5,p{
     width:5px;
 }
 .stepsForLg{
-    display:none !important;
+    display:none;
 }
 .stepForSm{
     color:white;
@@ -247,7 +247,7 @@ h1,h2,h4,h5,h5,p{
 }
 @media (max-width:1500px ) AND (min-width:750px) {
   .stepsForLg{
-      display:none !important;
+      display:none;
   }
   .stepForSm{
       color:white;
