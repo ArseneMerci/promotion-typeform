@@ -21,13 +21,15 @@
     height: 60px;
     align-items: center;
     justify-content:flex-end;
+    color:black;
 }
 .line{
     padding:5px;
     width:200px;
 }
 .stepForSm{
-    display:none;
+    display:block;
+    font-weight: bold;
 }
 @media (max-width:750px) {
     .stepsHolder{

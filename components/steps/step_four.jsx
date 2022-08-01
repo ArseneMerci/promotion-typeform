@@ -11,7 +11,7 @@ const StepFour = () => {
     const dispatch = useDispatch();
     const [picturesList, setPictures] = useState([]);
     const [planImage, setPlan] = useState([]);
-    const [request, setRequest] = useState(true);
+    const [request, setRequest] = useState(false);
     useEffect(() => {
         const data = getItem("stageFour");
         if (data) {
@@ -22,12 +22,6 @@ const StepFour = () => {
     }, []);
     const onChange = (pictures) => {
         setPictures(pictures);
-        console.log(pictures);
-    };
-    const onPlan = (plan) => {
-        setPlan(plan);
-    };
-    const addToList = () => {
         const data = {
             pictures: picturesList,
             plan: planImage,
@@ -36,10 +30,23 @@ const StepFour = () => {
         setItem("stageFour", data);
         dispatch(addStageFour(data));
     };
+    const onPlan = (plan) => {
+        setPlan(plan);
+        const data = {
+            pictures: picturesList,
+            plan: plan,
+            request: request,
+        };
+        setItem("stageFour", data);
+        dispatch(addStageFour(data));
+    };
     return (
         <div className="container step-container">
             <div className="row">
-                <div className="col-lg-6 col-md-12 flex-columns">
+                <div
+                    className="col-lg-6 col-md-12 flex-columns"
+                    style={{ alignItems: "flex-start" }}
+                >
                     <h5>Upload Images</h5>
                     <br />
                     <ImageUploads
@@ -49,7 +56,10 @@ const StepFour = () => {
                         images={picturesList}
                     />
                 </div>
-                <div className="col-lg-6 col-md-12 flex-columns">
+                <div
+                    className="col-lg-6 col-md-12 flex-columns"
+                    style={{ alignItems: "flex-start" }}
+                >
                     <h5>Upload Plan</h5>
                     <br />
                     <ImageUploads
@@ -59,7 +69,10 @@ const StepFour = () => {
                         images={planImage}
                     />
                 </div>
-                <div className="col-lg-7 col-md-12 flex-center">
+                <div
+                    className="col-lg-7 col-md-12 flex-columns"
+                    style={{ alignItems: "flex-start" }}
+                >
                     <FormGroup>
                         <FormControlLabel
                             value={request}
@@ -68,11 +81,6 @@ const StepFour = () => {
                             label="Request a professional data collection (10.000 Rwf)"
                         />
                     </FormGroup>
-                </div>
-                <div className="col-lg-12 button-holder">
-                    <Button onClick={() => addToList()} className="mt-12">
-                        Next
-                    </Button>
                 </div>
             </div>
         </div>

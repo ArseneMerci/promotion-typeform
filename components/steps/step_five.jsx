@@ -52,7 +52,7 @@ const StepFive = () => {
     return (
         <div className="container step-container">
             <div className="row">
-                <div className="col-lg-12 flex-center">
+                <div className="col-lg-12 flex-columns" style={{alignItems:"flex-start"}}>
                     <div className="form-container">
                         <div className="form-header">
                             <h2>Information</h2>

@@ -21,7 +21,7 @@ const Footer = () => {
             )}
         >
             <section className={classNames("row", styles.header)}>
-                <div className={classNames("col-lg-11 col-md-12", styles.actionHolder)}>
+                <div className={classNames("col-lg-12 col-md-12", styles.actionHolder)}>
                     <NextOrPrevButton />
                 </div>
             </section>

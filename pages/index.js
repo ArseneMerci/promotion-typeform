@@ -8,6 +8,8 @@ import StepThree from "../components/steps/step_three";
 import { useSelector } from "react-redux";
 import StepFour from "../components/steps/step_four";
 import StepFive from "../components/steps/step_five";
+import StepPrice from "../components/steps/step_price";
+import StepTwoColors from "../components/steps/step_two_colors";
 export default function Home() {
     const selector = useSelector((state) => state.steps);
     return (
@@ -22,13 +24,13 @@ export default function Home() {
             </Head>
             <Header />
             <main className="main">
-                 <div className="main-above-space"></div>
                 {selector.activeStep === 0 && <StepOne />}
-                {selector.activeStep === 1 && <StepTwo />}
-                {selector.activeStep === 2 && <StepThree />}
-                {selector.activeStep === 3 && <StepFour />}
-                {selector.activeStep === 4 && <StepFive />}
-                <div className="main-add-space"></div>
+                {selector.activeStep === 1 && <StepPrice />}
+                {selector.activeStep === 2 && <StepTwo />}
+                {selector.activeStep === 3 && <StepTwoColors />}
+                {selector.activeStep === 4 && <StepThree />}
+                {selector.activeStep === 5 && <StepFour />}
+                {selector.activeStep === 6 && <StepFive />}
             </main>
             <Footer />
         </div>

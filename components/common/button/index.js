@@ -18,13 +18,16 @@ const NextOrPrevButton = () => {
 					<small>Back</small>
 				</button>
 			}
-			{/* <button
+			{activeStep==0 &&
+				<span></span>
+			}
+			<button
 				className={classNames(styles.button)}
 				onClick={() => dispatch(next())}
 			>
 				<small>Next</small>
 				<BsArrowRight size={15} />
-			</button> */}
+			</button>
 		</>
 	);
 };
