@@ -1,42 +1,37 @@
 import { useDispatch } from "react-redux";
 import Card from "../card";
 import { products } from "../../utils/data/data.js";
-import { addProduct } from "../../state/slices/steps.slice";
-import { Button } from "@mui/material";
+import { addSpace } from "../../state/slices/steps.slice";
 import { useState } from "react";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import { getItem, setItem } from "../../utils/persist";
 import { useEffect } from "react";
+import ContentWrapper from "../contentWrapper";
 const StepOne = () => {
     const dispatch = useDispatch();
-    const [step, setStep] = useState(0);
     const [space, setSpace] = useState("");
-    const [price, setPrice] = useState();
+    const [price, setPrice] = useState("");
     useEffect(() => {
         const items = getItem("space");
         if (items) {
             setSpace(items.space);
             setPrice(items.price);
+            dispatch(addSpace({ space: items.space, price: items.price}));
         }
     }, []);
-    const addSpace = (item) => {
+    const handleAddSpace = (item) => {
+        const data = { space: item.name, price: price };
         setSpace(item.name);
-    };
-    const addToList = () => {
-        const data = { space: space, price: price };
         setItem("space", data);
-        dispatch(addProduct(data));
+        dispatch(addSpace(data));
     };
     return (
-        <div className="container step-container">
-            {step == 0 && (
+        <ContentWrapper>
+            <div className="container step-container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <p>o Which room do you want to decorate/arrange?</p>
+                        <p className="text-title">
+                            o Which room do you want to decorate/arrange?
+                        </p>
                     </div>
                     {products.map((item, index) => (
                         <div
@@ -45,76 +40,14 @@ const StepOne = () => {
                         >
                             <Card
                                 item={item}
-                                handleClick={addSpace}
+                                handleClick={handleAddSpace}
                                 active={space}
                             />
                         </div>
                     ))}
-                    {space && (
-                        <div className="button-holder">
-                        <button
-                            onClick={() => setStep(1)}
-                            variant="contained"
-                        >
-                            next
-                        </button>
-                        </div>
-                    )}
                 </div>
-            )}
-            {step == 1 && (
-                <div className="row">
-                    <div className={`col-lg-12 col-md-4 flex-center`}>
-                        <FormControl>
-                            <FormLabel id="demo-radio-buttons-group-label">
-                                o Have you planned a budget that you want to
-                                devote to it?
-                            </FormLabel>
-                            <RadioGroup
-                                aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue={price}
-                                onChange={(e) => setPrice(e.target.value)}
-                                name="radio-buttons-group"
-                            >
-                                <FormControlLabel
-                                    value="300K to 500K"
-                                    control={<Radio />}
-                                    label="300K to 500K"
-                                />
-                                <FormControlLabel
-                                    value="500K to 1000K"
-                                    control={<Radio />}
-                                    label="500K to 1000K"
-                                />
-                                <FormControlLabel
-                                    value="1000K to 3000K"
-                                    control={<Radio />}
-                                    label="1000K to 3000K"
-                                />
-                                <FormControlLabel
-                                    value=">3000K"
-                                    control={<Radio />}
-                                    label=">3000K"
-                                />
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
-                    <div className="flex-center button-holder">
-                        <Button onClick={() => setStep(0)} variant="outlined">
-                            back
-                        </Button>
-                        {price && (
-                            <Button
-                                onClick={() => addToList()}
-                                variant="outlined"
-                            >
-                                next
-                            </Button>
-                        )}
-                    </div>
-                </div>
-            )}
-        </div>
+            </div>
+        </ContentWrapper>
     );
 };
 export default StepOne;

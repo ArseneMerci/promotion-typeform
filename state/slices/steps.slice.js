@@ -37,7 +37,7 @@ const stepSlice = createSlice({
     initialState,
     reducers: {
         next(state) {
-            if (state.activeStep < 4) {
+            if (state.activeStep < 6) {
                 state.activeStep += 1;
             }
         },
@@ -46,21 +46,19 @@ const stepSlice = createSlice({
                 state.activeStep -= 1;
             }
         },
-        addProduct(state, { payload }) {
+        addSpace(state, { payload }) {
             state.products = payload;
-            state.activeStep += 1;
         },
         addStageThree(state, { payload }) {
             state.improvements = payload.improvements;
             state.modification = payload.modification;
             state.furnatureToKeep = payload.furnatureToKeep;
-            state.activeStep += 1;
         },
         addStageFour(state, { payload }) {
             (state.pictures = payload.pictures),
                 (state.plan = payload.plan),
-                (state.request = payload.request),
-                (state.activeStep += 1);
+                (state.request = payload.request)
+                
         },
         deleteProduct(state, { payload }) {
             const data = state.products.filter((item) => item.id != payload.id);
@@ -68,7 +66,7 @@ const stepSlice = createSlice({
         },
         addStyle(state, { payload }) {
             state.styles = payload;
-            state.activeStep += 1;
+            // state.activeStep += 1;
         },
     },
     extraReducers: (builder) => {
@@ -87,7 +85,7 @@ const stepSlice = createSlice({
 export const {
     next,
     prev,
-    addProduct,
+    addSpace,
     addStyle,
     addStageThree,
     addStageFour,

@@ -1,5 +1,8 @@
-import styles from "./header.module.css";
+import styles from "./wrapper.module.css";
+import classNames from "classnames";
 const ContentWrapper = (props) => {
-    return <div className={classNames(styles.container)}></div>;
+    return <div className={classNames(styles.container)}>
+        {props.children}
+    </div>;
 };
 export default ContentWrapper;

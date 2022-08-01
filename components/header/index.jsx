@@ -31,30 +31,9 @@ const Header = () => {
                         styles.stepsHolder
                     )}
                 >
-                    <Stepper
-                        className={styles.stepsForLg}
-                        activeStep={selector.activeStep}
-                        connector={<CustomConnector />}
-                    >
-                        <Step key="step 1">
-                            <StepLabel>My Project</StepLabel>
-                        </Step>
-                        <Step key="step 2">
-                            <StepLabel>My Decoration</StepLabel>
-                        </Step>
-                        <Step key="step 3">
-                            <StepLabel>My Request</StepLabel>
-                        </Step>
-                        <Step key="step 4">
-                            <StepLabel>Image Uploads</StepLabel>
-                        </Step>
-                        <Step key="step 5">
-                            <StepLabel>Information</StepLabel>
-                        </Step>
-                    </Stepper>
                     <div className={styles.stepForSm}>
-                        <p>{printStepName(selector.activeStep + 1)}</p>
-                        <span className={styles.stepSmNumber}>{selector.activeStep + 1}</span>
+                        <p>{printStepName(selector.activeStep)}</p>
+                     
                     </div>
                 </div>
             </div>

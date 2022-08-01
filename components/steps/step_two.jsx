@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import StyleCard from "../card/styles_card";
 import { designs } from "../../utils/data/data.js";
 import { useDispatch, useSelector } from "react-redux";
-import { addStyle } from "../../state/slices/steps.slice";
+import { addStyle, next } from "../../state/slices/steps.slice";
 import { Button } from "@mui/material";
 import ImageUploads from "../imagePreview/image_uploading";
 import Radio from "@mui/material/Radio";
@@ -35,45 +35,53 @@ const StepTwo = () => {
     }, []);
     useEffect(() => {
         const s_styles = getItem("styles");
+        console.log(s_styles);
         if (s_styles) {
             setSelectedStyle(s_styles.styles);
             setImages(s_styles.images);
             setColors(s_styles.colors);
+
         }
     }, []);
-
+    console.log("calling", selectedStyle);
     const onChange = (imageList) => {
         setImages(imageList);
+        const style = { styles: selectedStyle, images: imageList, colors: colors };
+        setItem("styles", style);
+        dispatch(addStyle(style));
     };
     const addSelectedStyle = (item) => {
         let check = selectedStyle.includes(item.name);
         if (!check) {
-            console.log(selectedStyle.length)
-            if(selectedStyle.length >= 2)
-            {
+            console.log(selectedStyle.length);
+            if (selectedStyle.length >= 2) {
                 return;
             }
-            const newStyle =selectedStyle.concat(item.name);
+            const newStyle = selectedStyle.concat(item.name);
             setSelectedStyle(newStyle);
+            const style = { styles: newStyle, images: images, colors: colors };
+            setItem("styles", style);
+            dispatch(addStyle(style));
         }
         if (check) {
             const result = selectedStyle.filter(
                 (selected) => selected != item.name
             );
             setSelectedStyle(result);
+            const style = { styles: result, images: images, colors: colors };
+            setItem("styles", style);
+            dispatch(addStyle(style));
         }
-    };
-    const addToList = () => {
-        const style = { styles: selectedStyle, images: images, colors: colors };
-        setItem("styles", style);
-        dispatch(addStyle(style));
+
     };
     return (
         <div className="container step-container">
             {step == 0 && (
                 <div className="row">
                     <div className="col-lg-12">
-                        <p>o Choose the style that suits you the most</p>
+                        <p className="text-title">
+                            o Choose the style that suits you the most
+                        </p>
                     </div>
                     {styles.map((item, index) => (
                         <div
@@ -97,25 +105,15 @@ const StepTwo = () => {
                             </Button>
                         }
                     </div>
-                    {selectedStyle.length > 0 && (
-                        <div className="col-lg-12 flex-center button-holder">
-                            <Button
-                                onClick={() => setStep(2)}
-                                className="mt-12"
-                            >
-                                Next
-                            </Button>
-                        </div>
-                    )}
                 </div>
             )}
             {step == 1 && (
                 <div className="row">
-                    <div className="col-lg-12 flex-center">
-                        <p>Add your inspiration pictures </p>
+                    <div className="col-lg-12 flex-columns" style={{ alignItems: "flex-start" }}>
+                        <p className="text-title">Add your inspiration pictures </p>
                     </div>
-                    <div className="col-lg-12 flex-center">
-                        <div className="col-lg-6 col-md-12 flex-center mt-12">
+                    <div className="col-lg-12 flex-columns" style={{ alignItems: "flex-start" }}>
+                        <div className="col-lg-6 col-md-12 mt-12">
                             <ImageUploads
                                 onChange={onChange}
                                 maxNumber={maxNumber}
@@ -123,107 +121,24 @@ const StepTwo = () => {
                             />
                         </div>
                     </div>
-                    <div className="button-holder">
-                        {images.length > 0 && (
+                    <div className="col-lg-3 mt-5 flex-columns" style={{ alignItems: "flex-start" }}>
+                        <div className="button-holder" style={{ marginLeft: '-4rem' }} >
                             <div className="button-holder">
                                 <Button
-                                    onClick={() => setStep(2)}
+                                    onClick={() => setStep(0)}
                                     className="mt-12"
                                 >
-                                    Next
+                                    Back
                                 </Button>
                             </div>
-                        )}
+
+                        </div>
                     </div>
                 </div>
             )}
-            {step == 2 && (
-                <div className="row">
-                    <div className="col-lg-12 flex-center">
-                        <FormControl>
-                            <h5>o On colours you are more ??</h5>
-                            <RadioGroup
-                                aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue={colors.status}
-                                onChange={(e) =>
-                                    setColors({
-                                        ...colors,
-                                        ["status"]: e.target.value,
-                                    })
-                                }
-                                name="radio-buttons-group"
-                            >
-                                <FormControlLabel
-                                    value="Neutral vibe "
-                                    control={<Radio />}
-                                    label="Neutral vibe"
-                                />
-                                <FormControlLabel
-                                    value="Neutral ambience with pops of colour"
-                                    control={<Radio />}
-                                    label="Neutral ambience with pops of colour"
-                                />
-                                <FormControlLabel
-                                    value="Colourful ambiance "
-                                    control={<Radio />}
-                                    label="Colourful ambiance "
-                                />
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
-                    <div className="col-lg-12 flex-columns">
-                        <h5 className="stepTwoColors">
-                            o Are there any colours you like?
-                        </h5>
-                        <TextField
-                            className="stepTwoColors"
-                            onChange={(e) =>
-                                setColors({
-                                    ...colors,
-                                    ["like"]: e.target.value,
-                                })
-                            }
-                            required
-                            id="standard-basic"
-                            label="Enter color"
-                            variant="standard"
-                            defaultValue={colors.like}
-                        />
-                    </div>
-                    <div className="col-lg-12 flex-columns">
-                        <h5 className="stepTwoColors">
-                            o Are there any colours you do not like?
-                        </h5>
-                        <TextField
-                            className="stepTwoColors"
-                            onChange={(e) =>
-                                setColors({
-                                    ...colors,
-                                    ["not"]: e.target.value,
-                                })
-                            }
-                            required
-                            id="standard-basic"
-                            label="Enter color if any"
-                            variant="standard"
-                            defaultValue={colors.not}
-                        />
-                    </div>
-                    <div className="col-lg-12 button-holder">
-                        <button onClick={() => setStep(0)} className="mt-12">
-                            Back
-                        </button>
-                        {colors.status && (
-                            <button
-                                onClick={() => addToList()}
-                                className="mt-12"
-                            >
-                                Next
-                            </button>
-                        )}
-                    </div>
-                </div>
-            )}
+            <div className="row" style={{ height: '200px' }}>
+
+            </div>
         </div>
     );
 };
