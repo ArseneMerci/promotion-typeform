@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { clearAll } from "../../utils/persist";
+import validaData from "../../utils/validateData";
 
 export const saveOrderAsync = createAsyncThunk(
     "create-order",
@@ -38,13 +39,19 @@ const stepSlice = createSlice({
     reducers: {
         next(state) {
             if (state.activeStep < 6) {
-                state.activeStep += 1;
+                const currentStep = state.activeStep;
+                const {result, error} = validaData(currentStep);
+                if(result) state.activeStep += 1
+                else state.error = error
             }
         },
         prev(state) {
             if (state.activeStep > 0) {
                 state.activeStep -= 1;
             }
+        },
+        clearError(state){
+            state.error = ''
         },
         addSpace(state, { payload }) {
             state.products = payload;
@@ -90,5 +97,6 @@ export const {
     addStageThree,
     addStageFour,
     deleteProduct,
+    clearError,
 } = stepSlice.actions;
 export default stepSlice.reducer;

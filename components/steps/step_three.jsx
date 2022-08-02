@@ -12,7 +12,7 @@ import { addStageThree } from "../../state/slices/steps.slice";
 import { getItem, setItem } from "../../utils/persist";
 const StepThree = () => {
     const dispatch = useDispatch();
-    const [option, setOption] = useState([""]);
+    const [option, setOption] = useState([]);
     const [furnature, setFurniture] = useState("");
     const [flooring, setFlooring] = useState("");
     useEffect(() => {

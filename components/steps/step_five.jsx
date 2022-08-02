@@ -5,6 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
 import { clearAll } from "../../utils/persist";
+import { toast } from "react-toastify";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
@@ -25,8 +26,8 @@ const StepFive = () => {
         clearAll();
         router.push("/result");
     };
-    console.log(selector.plan)
     const handleSubmit = () => {
+        if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
         const { products, styles } = selector;
         // const image=dataURItoBlob(selector.pictures[0].files);
         // console.log(image);

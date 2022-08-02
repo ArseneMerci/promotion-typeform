@@ -5,6 +5,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { useSelector } from "react-redux";
 import printStepName from "../../utils/printStepName";
+
 export const CustomConnector = () => {
     return (
         <section className={classNames(styles.line)}>
@@ -12,7 +13,9 @@ export const CustomConnector = () => {
         </section>
     );
 };
+
 const Header = () => {
+
     const selector = useSelector((state) => state.steps);
     return (
         <div className={classNames("container-fluid", styles.containerFluid)}>
@@ -33,7 +36,7 @@ const Header = () => {
                 >
                     <div className={styles.stepForSm}>
                         <p>{printStepName(selector.activeStep)}</p>
-                     
+
                     </div>
                 </div>
             </div>

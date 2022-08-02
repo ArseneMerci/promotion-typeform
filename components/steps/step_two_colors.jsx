@@ -21,6 +21,11 @@ const StepTwoColors = () => {
         like: "",
         not: "",
     });
+    const [cacheColors, setCacheColors] = useState({
+        status: "",
+        like: "",
+        not: "",
+    });
     const { products } = selector;
     const maxNumber = 2;
 
@@ -37,7 +42,7 @@ const StepTwoColors = () => {
         if (s_styles) {
             setSelectedStyle(s_styles.styles);
             setImages(s_styles.images);
-            setColors(s_styles.colors);
+            setCacheColors(s_styles.colors);
             console.log(s_styles);
         }
     }, []);
@@ -79,11 +84,11 @@ const StepTwoColors = () => {
                         <p className="text-title">
                             1. On colours you are more ??
                         </p>
-                        {colors.status && (
+                        {cacheColors.status && (
                             <RadioGroup
                                 style={{ marginLeft: "1rem" }}
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue={colors.status}
+                                defaultValue={cacheColors.status}
                                 onChange={handleOnColors}
                                 name="radio-buttons-group"
                             >
@@ -104,7 +109,7 @@ const StepTwoColors = () => {
                                 />
                             </RadioGroup>
                         )}
-                        {colors.status == "" && (
+                        {cacheColors.status == "" && (
                             <RadioGroup
                                 style={{ marginLeft: "1rem" }}
                                 aria-labelledby="demo-radio-buttons-group-label"
@@ -137,7 +142,7 @@ const StepTwoColors = () => {
                     <p className="stepTwoColors text-title">
                         2. Are there any colours you like?
                     </p>
-                    {colors.like && (
+                    {cacheColors.like && (
                         <TextField
                             className="stepTwoColors"
                             onChange={handleLikeColor}
@@ -145,10 +150,10 @@ const StepTwoColors = () => {
                             id="standard-basic"
                             label="Enter color"
                             variant="standard"
-                            defaultValue={colors.like}
+                            defaultValue={cacheColors.like}
                         />
                     )}
-                    {colors.like == "" && (
+                    {cacheColors.like == "" && (
                         <TextField
                             className="stepTwoColors"
                             onChange={handleLikeColor}
@@ -166,7 +171,7 @@ const StepTwoColors = () => {
                     <p className="stepTwoColors text-title">
                         3. Are there any colours you do not like?
                     </p>
-                    {colors.not && (
+                    {cacheColors.not && (
                         <TextField
                             className="stepTwoColors"
                             onChange={handleNotLikeColor}
@@ -174,10 +179,10 @@ const StepTwoColors = () => {
                             id="standard-basic"
                             label="Enter color if any"
                             variant="standard"
-                            defaultValue={colors.not}
+                            defaultValue={cacheColors.not}
                         />
                     )}
-                    {colors.not == "" && (
+                    {cacheColors.not == "" && (
                         <TextField
                             className="stepTwoColors"
                             onChange={handleNotLikeColor}
