@@ -1,7 +1,9 @@
 import styles from '../styles/HomePage.module.css'
 import Stepper from 'react-stepper-horizontal'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+    const router = useRouter()
   return (
     <div className={styles.container}>
         <div className={styles.imageBackground}>
@@ -11,7 +13,7 @@ export default function Home() {
                     {/* <div className={styles.overlay}></div> */}
                 </div>
                 <div className={styles.contact}>
-                    <button onClick={()=>{window.location.href='https://www.mozaikconcepts.com/Contact'}} className={styles.contactButton}>Contact</button>
+                    <button onClick={()=>{router.push('https://www.mozaikconcepts.com/Contact')}} className={styles.contactButton}>Contact</button>
                 </div>
             </div>
             <div className={styles.backgroundContent}>
@@ -30,7 +32,7 @@ export default function Home() {
             <Stepper steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
             </div>
             <center>
-                <button onClick={()=>{window.location.href='/order'}} className={styles.startButton}>Start Now</button>
+                <button onClick={()=>{router.push('/order')}} className={styles.startButton}>Start Now</button>
             </center>
             {/* <StepsTry /> */}
         </div>

@@ -51,7 +51,6 @@ const validaData = (currentStep) => {
     if(currentStep === 5) {
         if(localStorage.getItem('stageFour')){
             const stageFour  = getItem('stageFour');
-            console.log(stageFour)
             if((stageFour.pictures.length !==0 && stageFour.plan.length !==0) || stageFour.request) result = true;
             else error = "Please upload both images and plan or check the request box";  
         }
