@@ -1,51 +1,40 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import StepOne from "../components/steps/step_one";
-import StepTwo from "../components/steps/step_two";
-import StepThree from "../components/steps/step_three";
-import { useSelector, useDispatch } from "react-redux";
-import StepFour from "../components/steps/step_four";
-import StepFive from "../components/steps/step_five";
-import StepPrice from "../components/steps/step_price";
-import StepTwoColors from "../components/steps/step_two_colors";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
-import { useEffect } from "react";
-import { clearError } from "../state/slices/steps.slice";
+import styles from '../styles/HomePage.module.css'
+import Stepper from 'react-stepper-horizontal'
+
 export default function Home() {
-  const dispatch = useDispatch();
-  const selector = useSelector((state) => state.steps);
-  const error = useSelector((state) => state.steps.error);
-  useEffect(() => {
-    if (error) {
-      toast.error(error);
-      setTimeout(() => {
-        dispatch(clearError());
-      }, 1000);
-    }
-  }, [error]);
   return (
     <div className={styles.container}>
-      <Head>
-        <title>MOZAIK</title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <ToastContainer />
-      <main className="main">
-        {selector.activeStep === 0 && <StepOne />}
-        {selector.activeStep === 1 && <StepPrice />}
-        {selector.activeStep === 2 && <StepTwo />}
-        {selector.activeStep === 3 && <StepTwoColors />}
-        {selector.activeStep === 4 && <StepThree />}
-        {selector.activeStep === 5 && <StepFour />}
-        {selector.activeStep === 6 && <StepFive />}
-      </main>
-      <Footer />
+        <div className={styles.imageBackground}>
+            <div className={styles.navbar}>
+                <div className={styles.logoContainer}>
+                    <img src="/assets/logoLight.png" className={styles.logo} alt="logo" />
+                    {/* <div className={styles.overlay}></div> */}
+                </div>
+                <div className={styles.contact}>
+                    <button onClick={()=>{window.location.href='https://www.mozaikconcepts.com/Contact'}} className={styles.contactButton}>Contact</button>
+                </div>
+            </div>
+            <div className={styles.backgroundContent}>
+                <h1 className={styles.headerTitle}><span>The Interior of Your</span> <span>Home Re-Imagened in 3-D</span></h1>
+                <p className={styles.pdata}>
+                    Whether you are designing your house for the first time or renovating it, we can help you find your style
+                    as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
+                </p>
+            </div>
+        </div>
+        <div className={styles.main}>
+            <center>
+            <h1>HOW IT WORKS</h1>
+            </center>
+            <div className={styles.steps}>
+            <Stepper steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
+            </div>
+            <center>
+                <button onClick={()=>{window.location.href='/order'}} className={styles.startButton}>Start Now</button>
+            </center>
+            {/* <StepsTry /> */}
+        </div>
     </div>
   );
 }
+

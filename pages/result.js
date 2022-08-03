@@ -15,8 +15,8 @@ const ResultPage = () => {
                     className="success-image"
                 />
                 <section>
-                    <p>Your order succesfull sent,</p>
-                    <Button variant="text" onClick={redirect}>
+                    <p>Thank you for filling this form, your request has been received and we will get back to you shortly.</p>
+                    <Button variant="text" className="back-to-home" onClick={redirect}>
                         Back To Home
                     </Button>
                 </section>

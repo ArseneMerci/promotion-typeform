@@ -10,6 +10,8 @@ import { Button, Checkbox, FormGroup } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addStageThree } from "../../state/slices/steps.slice";
 import { getItem, setItem } from "../../utils/persist";
+import ContentWrapper from "../contentWrapper";
+
 const StepThree = () => {
     const dispatch = useDispatch();
     const [option, setOption] = useState([]);
@@ -75,6 +77,7 @@ const StepThree = () => {
     };
 
     return (
+        <ContentWrapper>
         <div className="container step-container">
             <div
                 className="row flex-columns"
@@ -162,6 +165,7 @@ const StepThree = () => {
                 </div>
             </div>
         </div>
+        </ContentWrapper>
     );
 };
 export default StepThree;

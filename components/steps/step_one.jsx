@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getItem, setItem } from "../../utils/persist";
 import { useEffect } from "react";
 import ContentWrapper from "../contentWrapper";
+
 const StepOne = () => {
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");

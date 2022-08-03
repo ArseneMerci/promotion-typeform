@@ -1,7 +1,8 @@
 .container{
     width:90%;
-    height:700px;
+    height:calc(100vh - 120px);
     position:fixed;
+    z-index:2000;
     overflow-y: auto;
 }
 .innerContainer{

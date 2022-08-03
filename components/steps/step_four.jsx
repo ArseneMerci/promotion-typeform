@@ -7,6 +7,8 @@ import { addStageFour } from "../../state/slices/steps.slice";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { getItem, setItem } from "../../utils/persist";
+import ContentWrapper from "../contentWrapper";
+
 const StepFour = () => {
     const dispatch = useDispatch();
     const [picturesList, setPictures] = useState([]);
@@ -40,14 +42,28 @@ const StepFour = () => {
         setItem("stageFour", data);
         dispatch(addStageFour(data));
     };
+    const onRequest = (requestData) => {
+        setRequest(requestData);
+        const data = {
+            pictures: picturesList,
+            plan: planImage,
+            request: requestData,
+        };
+        console.log(request,'request')
+        setItem("stageFour", data);
+        dispatch(addStageFour(data));
+    };
     return (
+        <ContentWrapper>
         <div className="container step-container">
             <div className="row">
                 <div
                     className="col-lg-6 col-md-12 flex-columns"
                     style={{ alignItems: "flex-start" }}
                 >
-                    <h5>Upload Images</h5>
+                    <p className="text-title">Upload Images</p>
+                    <p><small>Here you upload pictures of your current room</small></p>
+                    {/* <p style={{marginTop:"-20px"}}><small>Here you upload pictures of your current room</small></p> */}
                     <br />
                     <ImageUploads
                         className="mt-12"
@@ -60,7 +76,9 @@ const StepFour = () => {
                     className="col-lg-6 col-md-12 flex-columns"
                     style={{ alignItems: "flex-start" }}
                 >
-                    <h5>Upload Plan</h5>
+                    <p className="text-title">Upload Plan</p>
+                    <p><small>Here you upload a picture of your floor plan</small></p>
+                    {/* <p style={{marginTop:"-20px"}}><small>Here you upload a picture of your floor plan</small></p> */}
                     <br />
                     <ImageUploads
                         className="mt-12"
@@ -76,14 +94,16 @@ const StepFour = () => {
                     <FormGroup>
                         <FormControlLabel
                             value={request}
-                            onChange={() => setRequest(!request)}
+                            checked={request}
+                            onChange={() => onRequest(!request)}
                             control={<Checkbox />}
-                            label="Request a professional data collection (10.000 Rwf)"
+                            label="Select if you would like us to send a professional to take picture and measure your floor plan(10.000 Rwf)"
                         />
                     </FormGroup>
                 </div>
             </div>
         </div>
+        </ContentWrapper>
     );
 };
 export default StepFour;
