@@ -9,6 +9,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import { getItem, setItem } from "../../utils/persist";
+import ContentWrapper from "../contentWrapper";
+
 const StepTwoColors = () => {
     const dispatch = useDispatch();
     const [step, setStep] = useState(0);
@@ -74,6 +76,7 @@ const StepTwoColors = () => {
         dispatch(addStyle(style));
     };
     return (
+        <ContentWrapper>
         <div className="container step-container">
             <div className="row">
                 <div
@@ -195,6 +198,7 @@ const StepTwoColors = () => {
                 </div>
             </div>
         </div>
+        </ContentWrapper>
     );
 };
 export default StepTwoColors;

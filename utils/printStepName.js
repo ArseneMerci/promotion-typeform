@@ -3,15 +3,15 @@ export default function printStepName(step) {
         case 0:
             return "My Project";
         case 1:
-            return "Price";
+            return "Budget";
         case 2:
-            return "My Decoration";
+            return "Design Inspiration";
         case 3:
             return "My Request";
         case 4:
-            return "Image Uploads";
+            return "My Request";
         case 5:
-            return "Information";
+            return "Floor Plan";
         case 6:
             return "Information";
         default:

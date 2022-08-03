@@ -34,8 +34,9 @@ const validaData = (currentStep) => {
     if(currentStep === 3) {
         if(localStorage.getItem('styles')){
             const styles  = getItem('styles');
-            if(styles.colors.status && styles.colors.like && styles.colors.not) result = true;
-            else error = "Please select and fill all fields";  
+            if(styles.colors.status) result = true;
+            else result = true
+            // else error = "Please select and fill all fields";  
         }
         else error = "Please select and fill all fields";       
     }
@@ -50,11 +51,11 @@ const validaData = (currentStep) => {
     if(currentStep === 5) {
         if(localStorage.getItem('stageFour')){
             const stageFour  = getItem('stageFour');
-            console.log('length',stageFour );
-            if(stageFour.pictures.length !==0 && stageFour.plan.length !==0) result = true;
-            else error = "Please select and fill all fields";  
+            console.log(stageFour)
+            if((stageFour.pictures.length !==0 && stageFour.plan.length !==0) || stageFour.request) result = true;
+            else error = "Please upload both images and plan or check the request box";  
         }
-        else error = "Please select and fill all fields";       
+        else error = "Please upload both images and plan or check the request box";       
     }
     return {
         result,

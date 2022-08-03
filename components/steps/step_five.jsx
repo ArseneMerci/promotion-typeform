@@ -6,6 +6,8 @@ import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
 import { clearAll } from "../../utils/persist";
 import { toast } from "react-toastify";
+import ContentWrapper from "../contentWrapper";
+
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
@@ -51,6 +53,7 @@ const StepFive = () => {
         dispatch(saveOrderAsync({ data: formdata, success: successFull }));
     };
     return (
+        <ContentWrapper>
         <div className="container step-container">
             <div className="row">
                 <div className="col-lg-12 flex-columns" style={{alignItems:"flex-start"}}>
@@ -108,6 +111,8 @@ const StepFive = () => {
                 </div>
             </div>
         </div>
+        </ContentWrapper>
+
     );
 };
 export default StepFive;
