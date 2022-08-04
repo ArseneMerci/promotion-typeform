@@ -174,7 +174,7 @@ h1,h2,h4,h5,h5,p{
   border:none;
 }
 .text-title{
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
   font-size:22px;
   font-weight: 900;
   margin-bottom: 40px;

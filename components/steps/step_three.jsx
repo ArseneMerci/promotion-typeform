@@ -146,7 +146,7 @@ const StepThree = () => {
                         </RadioGroup>
                     </FormControl>
                 </div>
-                <div className="col-lg-8 col-md-12  mt-12">
+                <div className="col-lg-8 col-md-12">
                     <br />
                     <p className="text-title">
                         Is there any furniture you would like to keep?
