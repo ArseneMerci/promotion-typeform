@@ -6,9 +6,8 @@ import validaData from "../../utils/validateData";
 export const saveOrderAsync = createAsyncThunk(
     "create-order",
     async ({ data, success }, { rejectWithValue }) => {
-        console.log(data)
         return axios
-            .post("https://promotion-typeform-api.herokuapp.com/api/order/new", data)
+            .post("http://promotion-typeform-api.herokuapp.com/api/order/new", data)
             .then((resp) => {
                 clearAll();
                 success();

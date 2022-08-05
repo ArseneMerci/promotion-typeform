@@ -53,7 +53,7 @@ const StepTwoColors = () => {
             ...colors,
             ["not"]: e.target.value,
         });
-        const style = { styles: styles, images: images, colors: colors };
+        const style = { styles: selectedStyle, images: images, colors: colors };
         setItem("styles", style);
         dispatch(addStyle(style));
     };
@@ -62,7 +62,7 @@ const StepTwoColors = () => {
             ...colors,
             ["like"]: e.target.value,
         });
-        const style = { styles: styles, images: images, colors: colors };
+        const style = { styles: selectedStyle, images: images, colors: colors };
         setItem("styles", style);
         dispatch(addStyle(style));
     };
@@ -71,7 +71,7 @@ const StepTwoColors = () => {
             ...colors,
             ["status"]: e.target.value,
         });
-        const style = { styles: styles, images: images, colors: colors };
+        const style = { styles: selectedStyle, images: images, colors: colors };
         setItem("styles", style);
         dispatch(addStyle(style));
     };
