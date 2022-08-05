@@ -30,6 +30,7 @@ const StepFive = () => {
     };
     const handleSubmit = () => {
         if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
+        console.log(selector)
         const { products, styles } = selector;
         // const image=dataURItoBlob(selector.pictures[0].files);
         // console.log(image);
@@ -46,6 +47,7 @@ const StepFive = () => {
         formdata.append("furnitureToKeep", selector.furnitureToKeep);
         formdata.append("pictures", JSON.stringify(selector.pictures));
         formdata.append("plan", selector.plan[0]?.data_url);
+        formdata.append("request", selector.request);
         formdata.append("fname", info.fname);
         formdata.append("address", info.city);
         formdata.append("email", info.email);
