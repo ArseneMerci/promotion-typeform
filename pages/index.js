@@ -17,7 +17,7 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.backgroundContent}>
-                <h1 className={styles.headerTitle}><span>The Interior of Your</span> <span>Home Re-Imagened in 3-D</span></h1>
+                <h1 className={styles.headerTitle}><span>The Interior of Your</span> <span>Home Re-Imagined in 3-D</span></h1>
                 <p className={styles.pdata}>
                     Whether you are designing your house for the first time or renovating it, we can help you find your style
                     as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
