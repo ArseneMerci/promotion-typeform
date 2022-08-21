@@ -23,6 +23,9 @@ export default function Dashboard() {
             config
           )
           .then((res) => {
+            if(res.data.data.length == 0){
+              return setData([{completed:"0",inComplete:"0"}])
+            }
             setData(res.data.data);
           })
           .catch((err) => console.log("error"));

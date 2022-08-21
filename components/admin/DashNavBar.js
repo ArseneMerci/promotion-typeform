@@ -14,7 +14,7 @@ export default function DashNavBar({ title }) {
   return (
     <div className={styles.dashNav} >
       <div>
-        <h3 onClick={() => router.push('/dashboard')} className={styles.dashboardTitle} >{title}</h3>
+        <h3 className={styles.dashboardTitle} >{title}</h3>
       </div>
       <div className={styles.dashNavLinks} >
         <p>
