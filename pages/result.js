@@ -4,7 +4,7 @@ import { clearAll } from "../utils/persist";
 const ResultPage = () => {
     const redirect = () => {
         clearAll();
-        window.location.href = "/";
+        window.location.href = "/order";
     };
     return (
         <div className="main">

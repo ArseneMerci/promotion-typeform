@@ -40,6 +40,12 @@ export default function DashboardSideBar() {
               <a className={ router.pathname == "/admin/inCompleteOrders" ? "text-success" : "" }>Incomplete Orders</a>
             </Link>
           </div>
+          <div className={styles.items} >
+          <FaRegListAlt className={styles.sideBarCardsImage} />
+            <Link href="/admin/assistant-orders">
+              <a className={ router.pathname == "/admin/assistant-orders" ? "text-success" : "" }>Orders Requesting Assistance</a>
+            </Link>
+          </div>
         </div>
       </div>
     </>

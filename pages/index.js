@@ -1,11 +1,17 @@
 import styles from '../styles/HomePage.module.css'
 import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 export default function Home() {
     const router = useRouter()
   return (
     <div className={styles.container}>
+      <Head>
+        <title>MOZAIK CONCEPTS</title>
+        <meta name="description" content="" />
+        <link rel="icon" href="/assets/logo.png" />
+      </Head>
         <div className={styles.imageBackground}>
             <div className={styles.navbar}>
                 <div className={styles.logoContainer}>

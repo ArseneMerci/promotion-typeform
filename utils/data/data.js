@@ -96,7 +96,7 @@ export const designs = [
             },
             {
                 name: "industrial",
-                image: "/assets/styles/diningroom/industrial.jpg"
+                image: "/assets/styles/diningroom/Industrial.jpg"
             },
             {
                 name: "mid century",
@@ -116,7 +116,7 @@ export const designs = [
             },
             {
                 name: "scandinavian",
-                image: "/assets/styles/diningroom/scandinavian.jpg"
+                image: "/assets/styles/diningroom/Scandinavian.jpg"
             },
             {
                 name: "transitional",
@@ -145,7 +145,7 @@ export const designs = [
             },
             {
                 name: "minimalist",
-                image: "/assets/styles/homeoffice/minimalist.jpg"
+                image: "/assets/styles/homeoffice/Minimalist.jpg"
             },
             {
                 name: "modern",
@@ -153,7 +153,7 @@ export const designs = [
             },
             {
                 name: "rustic",
-                image: "/assets/styles/homeoffice/rustic.jpg"
+                image: "/assets/styles/homeoffice/Rustic.jpg"
             },
             {
                 name: "scandinavian",
@@ -161,7 +161,7 @@ export const designs = [
             },
             {
                 name: "transitional",
-                image: "/assets/styles/homeoffice/transitional.jpg"
+                image: "/assets/styles/homeoffice/Transitional.jpg"
             },
             {
                 name: "vintage",
@@ -223,7 +223,7 @@ export const designs = [
             },
             {
                 name: "contemporary",
-                image: "/assets/styles/kitchen/contemporary.jpg"
+                image: "/assets/styles/kitchen/Contemporary.jpg"
             },
             {
                 name: "industrial",
@@ -264,7 +264,7 @@ export const designs = [
         data: [
             {
                 name: "bohemian",
-                image: "/assets/styles/livingroom/bohemian.jpg"
+                image: "/assets/styles/livingroom/Bohemian.jpg"
             },
             {
                 name: "contemporary",

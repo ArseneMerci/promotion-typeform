@@ -12,12 +12,12 @@ function imageContainer({order}) {
                     }):
                     null
             }
-
+            <br></br>
             <p className="d-inline">Plan Image:</p>
                 {
                     order.plan? <a className="imageLinks" href={order.plan} target="_blank" rel='noreferrer'>Image</a>:null
                 }
-
+            <br></br>         
             <p className="d-inline">Inspirational Pictures:</p>
                 {
                     order.inspirationalPics?
