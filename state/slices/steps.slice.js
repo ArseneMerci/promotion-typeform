@@ -7,7 +7,7 @@ export const saveOrderAsync = createAsyncThunk(
     "create-order",
     async ({ data, success }, { rejectWithValue }) => {
         return axios
-            .post("http://promotion-typeform-api.herokuapp.com/api/order/new", data)
+            .post("https://promotion-typeform-api.herokuapp.com/api/order/new", data)
             .then((resp) => {
                 clearAll();
                 success();
