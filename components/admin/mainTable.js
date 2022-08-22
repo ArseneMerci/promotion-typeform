@@ -30,6 +30,7 @@ const handleComplete = async(e,id)=>{
                 <th scope="col">Address</th>
                 <th scope="col">Space</th>
                 <th scope="col">Status</th>
+                <th scope="col">Requesting Assistance</th>
                 <th scope="col">View Details</th>
                 <th scope="col">Mark Completed</th>
                 </tr>
@@ -43,6 +44,7 @@ const handleComplete = async(e,id)=>{
                         <td>{order.client.address}</td>
                         <td>{order.space}</td>
                         <td>{order.status?'Completed':'InCompleted'}</td>
+                        <td>{order.request?<span className="text-success">Yes</span>:'No'}</td>
                         <td><button className="btn btn-primary" onClick={(e)=>handleDetails(e,order._id)}>Details</button></td>
                         {order.status
                             ?<td><p className="text-success">Completed</p></td>

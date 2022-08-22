@@ -31,9 +31,9 @@ function Order() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>MOZAIK</title>
+        <title>MOZAIK CONCEPTS</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/logo.png" />
       </Head>
       <Header />
       <ToastContainer />

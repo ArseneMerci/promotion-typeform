@@ -4,11 +4,13 @@ import SideBar from "../../components/admin/DashBoardSideBar";
 import styles from '../../styles/dashboard.module.css'
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
 
 export default function PaidOrders() {
 
 const [data, setData] = useState([])
+const router = useRouter()
 
   useEffect(() => {
     if(!localStorage.getItem('token')) router.push('/admin/login')
@@ -23,7 +25,7 @@ const [data, setData] = useState([])
             .catch((err)=>console.log('error'))
     }
     fetchData()
-  },[data]);
+  },[]);
 
 
   return (

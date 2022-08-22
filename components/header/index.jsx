@@ -26,7 +26,7 @@ const Header = () => {
                         styles.logoContainer
                     )}
                 >
-                    <h2>MOZAIK</h2>
+                    <h2><a href="https://mozaikconcepts.com">MOZAIK</a></h2>
                 </div>
                 <div
                     className={classNames(
