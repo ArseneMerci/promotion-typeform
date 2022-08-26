@@ -35,7 +35,7 @@ export default function Home() {
             <h1>HOW IT WORKS</h1>
             </center>
             <div className={styles.steps}>
-            <Stepper steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
+            <Stepper defaultColor="#fcc603" activeColor="#fcc603" defaultTitleColor="#000" steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
             </div>
             <center>
                 <button onClick={()=>{router.push('/order')}} className={styles.startButton}>Start Now</button>

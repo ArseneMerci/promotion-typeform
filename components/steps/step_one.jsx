@@ -31,7 +31,7 @@ const StepOne = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <p className="text-title">
-                            o Which room do you want to decorate/arrange?
+                            o Which room do you want to decorate or arrange?
                         </p>
                     </div>
                     {products.map((item, index) => (
