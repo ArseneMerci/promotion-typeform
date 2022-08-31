@@ -16,7 +16,7 @@ const StepTwoColors = () => {
     const [step, setStep] = useState(0);
     const [images, setImages] = useState([]);
     const selector = useSelector((state) => state.steps);
-    const [styles, setStyles] = useState([]);
+    // const [styles, setStyles] = useState([]);
     const [selectedStyle, setSelectedStyle] = useState([]);
     const [colors, setColors] = useState({
         status: "",
@@ -31,13 +31,13 @@ const StepTwoColors = () => {
     const { products } = selector;
     const maxNumber = 2;
 
-    useEffect(() => {
-        designs.filter((item) => {
-            if (item.name == products.space) {
-                return item.data.length > 0 ? setStyles(item.data) : "";
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     designs.filter((item) => {
+    //         if (item.name == products.space) {
+    //             return item.data.length > 0 ? setStyles(item.data) : "";
+    //         }
+    //     });
+    // }, []);
     useEffect(() => {
         const s_styles = getItem("styles");
         console.log(s_styles);
@@ -45,6 +45,7 @@ const StepTwoColors = () => {
             setSelectedStyle(s_styles.styles);
             setImages(s_styles.images);
             setCacheColors(s_styles.colors);
+            setColors(s_styles.colors);
             console.log(s_styles);
         }
     }, []);

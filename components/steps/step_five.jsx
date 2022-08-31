@@ -11,6 +11,7 @@ import ContentWrapper from "../contentWrapper";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
+    const[loading,setLoading]=useState(false);
     const router = useRouter();
     const [file,setFile]=useState([]);
     const [info, setInfo] = useState({
@@ -25,7 +26,7 @@ const StepFive = () => {
         setInfo(value);
     };
     const successFull = () => {
-        clearAll();
+         setLoading(true);
         router.push("/result");
     };
     const handleSubmit = () => {
@@ -96,7 +97,7 @@ const StepFive = () => {
                             />
                         </div>
                         <div className="flex-center">
-                            {selector.loading && (
+                            {selector.loading || loading &&(
                                 <CircularProgress size={20} color="inherit" />
                             )}
                         </div>
@@ -104,6 +105,7 @@ const StepFive = () => {
                             <button
                                 type="button"
                                 className="form-button"
+                                disable={selector.loading || loading}
                                 onClick={handleSubmit}
                             >
                                 <p>Submit</p>
