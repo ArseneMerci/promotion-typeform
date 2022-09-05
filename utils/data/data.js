@@ -182,7 +182,7 @@ export const designs = [
             },
             {
                 name: "industrial",
-                image: "/assets/styles/bathroom/industrial.jpg"
+                image: "/assets/styles/kidsbedroom/industrial.jpg"
             },
             {
                 name: "mid century",
