@@ -13,6 +13,7 @@
   right: 0%;
   width: calc(100% - 240px);
   height: 100%;
+  overflow-y: auto;
 }
 .dashboard {
   height: 100vh;
