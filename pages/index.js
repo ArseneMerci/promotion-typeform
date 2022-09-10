@@ -6,43 +6,69 @@ import Head from 'next/head';
 export default function Home() {
     const router = useRouter()
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>MOZAIK CONCEPTS</title>
         <meta name="description" content="" />
         <link rel="icon" href="/assets/logo.png" />
       </Head>
-        <div className={styles.imageBackground}>
-            <div className={styles.navbar}>
-                <div className={styles.logoContainer}>
-                    <img src="/assets/logoLight.png" className={styles.logo} alt="logo" />
-                    {/* <div className={styles.overlay}></div> */}
+        <div className={`container-fluid ${styles.container}`}>
+            <div className={`row ${styles.navbar}`}>
+                <div className={`col-lg-2 col-sm-6 ${styles.logoContainer}`}>
+                    <h1>MOZAIK</h1>
                 </div>
-                <div className={styles.contact}>
-                    <button onClick={()=>{router.push('https://www.mozaikconcepts.com/Contact')}} className={styles.contactButton}>Contact</button>
+                <div className={`col-lg-10  col-sm-6 ${styles.menuContainer}`}>
+                    <button>Get Started</button>
+                    <span></span>
                 </div>
             </div>
-            <div className={styles.backgroundContent}>
-                <h1 className={styles.headerTitle}><span>The Interior of Your</span> <span>Home Re-Imagined in 3-D</span></h1>
-                <p className={styles.pdata}>
-                    Whether you are designing your house for the first time or renovating it, we can help you find your style
-                    as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
-                </p>
+            <div className={`row ${styles.headerContainer}`}>
+                <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
+                    <h1>Make room for <br/>&nbsp;better living</h1>
+                </div>
+                <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
+                    <h4>Stunning interior design services, now within reach.</h4>
+                </div>
             </div>
         </div>
-        <div className={styles.main}>
-            <center>
-            <h1>HOW IT WORKS</h1>
-            </center>
-            <div className={styles.steps}>
-            <Stepper defaultColor="#fcc603" activeColor="#fcc603" defaultTitleColor="#000" steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
+        <div className="container-fluid">
+            <div className={` row ${styles.spaceContainer}`}>
+                <div className={` col-lg-12 col-sm-12 ${styles.spaceTitle}`}>
+                   <p>LOVE THE SPACE YOU’RE IN</p>
+                </div>
+                <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
+                    <p>
+                       Bring your dream home to life with one-on-<br/>one design help & hand-picked products<br/> tailored to your style, space, and budget.
+                    </p>
+                </div>
             </div>
-            <center>
-                <button onClick={()=>{router.push('/order')}} className={styles.startButton}>Start Now</button>
-            </center>
-            {/* <StepsTry /> */}
         </div>
-    </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer}`}>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
+                    <h4>Reimagine your space.</h4>
+                    <p>Your designer will work with 
+                    you one-on-one to bring your vision to life,
+                    complete with a 3D rendering of your actual space. </p>
+                </div>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`}>
+                </div>
+            </div>
+        </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer } ${styles.mar5}`}>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`} >
+                   
+                </div>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
+                   <h4>Reimagine your space.</h4>
+                    <p>Your designer will work with 
+                    you one-on-one to bring your vision to life,
+                    complete with a 3D rendering of your actual space. </p>
+                </div>
+            </div>
+        </div>
+    </>
   );
 }
 
