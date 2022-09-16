@@ -1,7 +1,9 @@
 .container{
    min-height:760px;
-   background: url("../public/assets/header-img.jpg");
+   background: url("../public/assets/header-intro.jpg");
    background-position:center center;
+   background-size: contain;
+   
 }
 .navbar{
     background:transparent;
@@ -15,6 +17,10 @@
     display:flex;
     align-items:center;
     justify-content:center;
+}
+.logoContainerImg{
+    width: 100px;
+    height: 100px;
 }
 .menuContainer{
     display:flex;

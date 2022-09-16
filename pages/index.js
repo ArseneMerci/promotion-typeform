@@ -15,7 +15,7 @@ export default function Home() {
         <div className={`container-fluid ${styles.container}`}>
             <div className={`row ${styles.navbar}`}>
                 <div className={`col-lg-2 col-sm-6 ${styles.logoContainer}`}>
-                    <h1>MOZAIK</h1>
+                    <img className={styles.logoContainerImg} src="/assets/logo.png" />
                 </div>
                 <div className={`col-lg-10  col-sm-6 ${styles.menuContainer}`}>
                     <button>Get Started</button>
@@ -24,21 +24,20 @@ export default function Home() {
             </div>
             <div className={`row ${styles.headerContainer}`}>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
-                    <h1>Make room for <br/>&nbsp;better living</h1>
+                    <h1>The Interior of Your<br/>&nbsp;Home Re-Imagined in 3-D</h1>
                 </div>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
-                    <h4>Stunning interior design services, now within reach.</h4>
+                    <h4>
+                </h4>
                 </div>
             </div>
         </div>
         <div className="container-fluid">
             <div className={` row ${styles.spaceContainer}`}>
-                <div className={` col-lg-12 col-sm-12 ${styles.spaceTitle}`}>
-                   <p>LOVE THE SPACE YOU’RE IN</p>
-                </div>
                 <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
                     <p>
-                       Bring your dream home to life with one-on-<br/>one design help & hand-picked products<br/> tailored to your style, space, and budget.
+                    Whether you are designing your house for the first time or renovating it, we can help you find your style
+                    as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
                     </p>
                 </div>
             </div>
@@ -46,10 +45,9 @@ export default function Home() {
         <div className="container-fluid">
             <div className={` row ${styles.showStyleContainer}`}>
                 <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
-                    <h4>Reimagine your space.</h4>
-                    <p>Your designer will work with 
-                    you one-on-one to bring your vision to life,
-                    complete with a 3D rendering of your actual space. </p>
+                    <h4>Tell Us What You Want.</h4>
+                    <p>Through different steps, we get to understand your style and how you
+                        want your space to look like. </p>
                 </div>
                 <div className={` col-lg-8  col-md-12 ${styles.styleImage}`}>
                 </div>
@@ -61,10 +59,26 @@ export default function Home() {
                    
                 </div>
                 <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
-                   <h4>Reimagine your space.</h4>
-                    <p>Your designer will work with 
-                    you one-on-one to bring your vision to life,
-                    complete with a 3D rendering of your actual space. </p>
+                   <h4>Your Space Re-Imagined in 3D.</h4>
+                    <p>
+                        Using renowned sofwatres, our designers will come up with 3D concepts 
+                        and moodboards that will help you visualize your desired space. They will also
+                        work hand in hand with you to make sure that they deliver a final product you are satisfied with.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer}`}>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
+                    <h4>Happiness Guarantee.</h4>
+                    <p>
+                        On top of the 3D concepts and moodboards, our team will also provide you with a shopping list 
+                        of every item included in the design to make shopping list of every item included in the design
+                        to make shopping and the whole experience easy for you.
+                    </p>
+                </div>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`}>
                 </div>
             </div>
         </div>
