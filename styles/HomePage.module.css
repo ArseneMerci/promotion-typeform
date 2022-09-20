@@ -99,10 +99,20 @@
 {
     margin-top:5rem;
 }
-.styleImage{
+.styleImage1{
     height:700px;
     background-size: cover;
-    background-image: url("../public/assets/style.jpg");
+    background-image: url("../public/assets/1.jpg");
+}
+.styleImage2{
+    height:700px;
+    background-size: cover;
+    background-image: url("../public/assets/2.jpg");
+}
+.styleImage3{
+    height:700px;
+    background-size: cover;
+    background-image: url("../public/assets/3.jpg");
 }
 .styleContent{
     display:flex;

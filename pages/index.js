@@ -1,4 +1,5 @@
 import styles from '../styles/HomePage.module.css'
+import Image from 'next/image'
 import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
 import Head from 'next/head';
@@ -15,7 +16,13 @@ export default function Home() {
         <div className={`container-fluid ${styles.container}`}>
             <div className={`row ${styles.navbar}`}>
                 <div className={`col-lg-2 col-sm-6 ${styles.logoContainer}`}>
-                    <img className={styles.logoContainerImg} src="/assets/logo.png" />
+                    <Image
+                        src="/assets/logo.png"
+                        alt="logo"
+                        width={100}
+                        height={100}
+                    />
+                    {/* <img className={styles.logoContainerImg} src="/assets/logo.png" /> */}
                 </div>
                 <div className={`col-lg-10  col-sm-6 ${styles.menuContainer}`}>
                     <button>Get Started</button>
@@ -49,13 +56,13 @@ export default function Home() {
                     <p>Through different steps, we get to understand your style and how you
                         want your space to look like. </p>
                 </div>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`}>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage1}`}>
                 </div>
             </div>
         </div>
         <div className="container-fluid">
             <div className={` row ${styles.showStyleContainer } ${styles.mar5}`}>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`} >
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage2}`} >
                    
                 </div>
                 <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
@@ -78,7 +85,7 @@ export default function Home() {
                         to make shopping and the whole experience easy for you.
                     </p>
                 </div>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage}`}>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage3}`}>
                 </div>
             </div>
         </div>
