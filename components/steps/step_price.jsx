@@ -10,6 +10,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { getItem, setItem } from "../../utils/persist";
+import { addSpace } from "../../state/slices/steps.slice";
 import { useEffect } from "react";
 const StepPrice = () => {
     const dispatch = useDispatch();
@@ -21,13 +22,14 @@ const StepPrice = () => {
         if (items) {
             setSpace(items.space);
             setPrice(items.price);
-            console.log(items.price);
+            dispatch(addSpace({ space: items.space, price: items.price}));
         }
     }, []);
     const handleSetPrice=(e)=>{
       setPrice(e.target.value);
       const data = { space: space, price: e.target.value };
       setItem("space", data);
+      dispatch(addSpace(data));
     }
     return (
         <div className="container step-container">
