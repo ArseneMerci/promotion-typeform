@@ -1,13 +1,26 @@
 .container{
    min-height:760px;
+   background:black;
    background: url("../public/assets/header-intro.jpg");
+   background-blend-mode: multiply;
    background-position:center center;
-   background-size: contain;
-   
+   background-size: cover;
+   background-repeat: no-repeat;
+   z-index:100;
 }
+/* .container::before{
+    background:black;
+    max-width:100%;
+    height:100%;
+    padding:0;
+    position:absolute;
+    content: '';
+    left:0;
+    z-index:-1;
+} */
 .navbar{
     background:transparent;
-    height:60px;
+    height:70px;
     z-index:100;
     color:white;
     cursor: pointer;
@@ -75,21 +88,25 @@
     margin-top:1rem;
 }
 .spaceTitle{
-    height:40px;
+    margin-top:1rem;
     display:flex;
     justify-content:center;
     align-items: center;
 }
 .spaceContent{
-    min-height:350px;
+  min-height:300px;
    display:flex;
    justify-content: center;
+   align-items:center;
    padding-left:3rem;
    padding-right:3rem;
+   margin-top:-1.7rem;
 }
 .spaceContent p{
-    font-size:3rem;
+    font-size:2rem;
+    width:70%;
     font-weight:lighter;
+    font-size:1.7rem;
     font-family: 'Times New Roman', Times, serif;
 }
 .showStyleContainer{
@@ -120,9 +137,13 @@
     justify-content:center;
     align-items:center;
 }
+.styleContent h4{
+    width:60%;
+}
 .styleContent p{
     width:60%;
     margin-top:1rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 @media (max-width:800px)
 {
@@ -136,3 +157,70 @@
         font-size:1rem;
     }
 }
+@media (max-width:500px)
+{    .container{
+      background:black;
+      opacity:0.5;
+      min-height:300px;
+    }
+    .headerText{
+        justify-content:center;
+    }
+    .headerText h1{
+        font-size:1.7rem;
+    }
+    .headerSubText{
+     margin-left:0rem;
+    }
+    .spaceContent p{
+        font-size:0.2rem;
+    }
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+    }
+    .logoContainer{
+        width:30%;
+    }
+    .menuContainer{
+        width:70%;
+        display:flex;
+        justify-content:flex-end;
+    }
+    .menuContainer span{
+        display:none;
+    }
+    .spaceContainer{
+        height:auto;
+    }
+    .spaceContent{
+        min-height:50px;
+    }
+    .spaceTitle{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        height:50px;
+    }
+    .spaceContent p{
+        font-size:1rem;
+    }
+    .styleContent{
+        display:flex;
+        min-height:100px;
+        justify-content:center;
+        align-items:center;
+    }
+    .styleImage1,.styleImage2,.styleImage3{
+        height:250px;
+    }
+    .mar5
+    {
+        margin-top:0.5rem;
+    }
+    .styleContent h4{
+        width:100%;
+        text-align: center;
+    }
+}
+

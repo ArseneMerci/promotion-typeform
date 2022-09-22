@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
         <div className={`container-fluid ${styles.container}`}>
             <div className={`row ${styles.navbar}`}>
-                <div className={`col-lg-2 col-sm-6 ${styles.logoContainer}`}>
+                <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
                     <Image
                         src="/assets/logo.png"
                         alt="logo"
@@ -24,7 +24,7 @@ export default function Home() {
                     />
                     {/* <img className={styles.logoContainerImg} src="/assets/logo.png" /> */}
                 </div>
-                <div className={`col-lg-10  col-sm-6 ${styles.menuContainer}`}>
+                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
                     <button>Get Started</button>
                     <span></span>
                 </div>
@@ -41,6 +41,9 @@ export default function Home() {
         </div>
         <div className="container-fluid">
             <div className={` row ${styles.spaceContainer}`}>
+                <div className={` col-lg-12 col-sm-12 ${styles.spaceTitle}`}>
+                    <span>Title ....</span>
+                </div>
                 <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
                     <p>
                     Whether you are designing your house for the first time or renovating it, we can help you find your style
