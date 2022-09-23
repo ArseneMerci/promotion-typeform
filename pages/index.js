@@ -1,48 +1,102 @@
 import styles from '../styles/HomePage.module.css'
+import Image from 'next/image'
 import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
     const router = useRouter()
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>MOZAIK CONCEPTS</title>
         <meta name="description" content="" />
         <link rel="icon" href="/assets/logo.png" />
       </Head>
-        <div className={styles.imageBackground}>
-            <div className={styles.navbar}>
-                <div className={styles.logoContainer}>
-                    <img src="/assets/logoLight.png" className={styles.logo} alt="logo" />
-                    {/* <div className={styles.overlay}></div> */}
+        <div className={`container-fluid ${styles.container}`}>
+        <div className={styles.overlay}>
+            <div className={`row ${styles.navbar}`}>
+                <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
+                <Link href="https://mozaikconcepts.com">
+                    <a>
+                    <Image
+                        src="/assets/logo.png"
+                        alt="logo"
+                        width={100}
+                        height={100}
+                    />
+                    </a>
+                    </Link>
+                    {/* <img className={styles.logoContainerImg} src="/assets/logo.png" /> */}
                 </div>
-                <div className={styles.contact}>
-                    <button onClick={()=>{router.push('https://www.mozaikconcepts.com/Contact')}} className={styles.contactButton}>Contact</button>
+                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
+                <Link href="/order"><button >Get Started</button></Link>
+                    <span></span>
                 </div>
             </div>
-            <div className={styles.backgroundContent}>
-                <h1 className={styles.headerTitle}><span>The Interior of Your</span> <span>Home Re-Imagined in 3-D</span></h1>
-                <p className={styles.pdata}>
+            <div className={`row ${styles.headerContainer}`}>
+                <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
+                    <h1>The Interior of Your<br/>&nbsp;Home Re-Imagined in 3-D</h1>
+                </div>
+                <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
+                    <h4>
+                </h4>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.spaceContainer}`}>
+                <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
+                    <p>
                     Whether you are designing your house for the first time or renovating it, we can help you find your style
                     as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
-                </p>
+                    </p>
+                </div>
             </div>
         </div>
-        <div className={styles.main}>
-            <center>
-            <h1>HOW IT WORKS</h1>
-            </center>
-            <div className={styles.steps}>
-            <Stepper defaultColor="#fcc603" activeColor="#fcc603" defaultTitleColor="#000" steps={ [{title: 'Choose room'}, {title: 'Choose Budget'}, {title: 'Choose Style'}, {title: 'Customise request'}, {title: 'Define your Floor plan'}, {title: 'Provide Contacts then Submit'}] } />
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer}`}>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
+                    <h4>Tell Us What You Want.</h4>
+                    <p>Through different steps, we get to understand your style and how you
+                        want your space to look like. </p>
+                </div>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage1}`}>
+                </div>
             </div>
-            <center>
-                <button onClick={()=>{router.push('/order')}} className={styles.startButton}>Start Now</button>
-            </center>
-            {/* <StepsTry /> */}
         </div>
-    </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer } ${styles.mar5}`}>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage2}`} >
+                   
+                </div>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
+                   <h4>Your Space Re-Imagined in 3D.</h4>
+                    <p>
+                        Using renowned sofwatres, our designers will come up with 3D concepts 
+                        and moodboards that will help you visualize your desired space. They will also
+                        work hand in hand with you to make sure that they deliver a final product you are satisfied with.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div className="container-fluid">
+            <div className={` row ${styles.showStyleContainer} ${styles.mar5}`}>
+                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
+                    <h4>Happiness Guarantee.</h4>
+                    <p>
+                        On top of the 3D concepts and moodboards, our team will also provide you with a shopping list 
+                        of every item included in the design to make shopping list of every item included in the design
+                        to make shopping and the whole experience easy for you.
+                    </p>
+                </div>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage3}`}>
+                </div>
+            </div>
+        </div>
+    </>
   );
 }
 
