@@ -33,6 +33,11 @@ export const products = [
         id: "7",
         name: "master bedroom",
         image: "/assets/master.png",
+    },
+    {
+        id: "8",
+        name: "Secondary bedroom",
+        image: "/assets/master.png",
     }
 
 
@@ -348,5 +353,53 @@ export const designs = [
                 image: "/assets/styles/masterbedroom/vintage.jpg"
             }
         ]
-    },
+    },{
+        name: "Secondary bedroom",
+        data: [
+            {
+                name: "Boho",
+                image: "/assets/styles/SecondaryBedroom/Boho.jpg"
+            },
+            {
+                name: "Coastal",
+                image: "/assets/styles/SecondaryBedroom/Coastal.jpg"
+            },
+            {
+                name: "Contemporary",
+                image: "/assets/styles/SecondaryBedroom/Contemporary.jpg"
+            },
+            {
+                name: "Eclectic",
+                image: "/assets/styles/SecondaryBedroom/Eclectic.jpeg"
+            },
+            {
+                name: "Farmhouse",
+                image: "/assets/styles/SecondaryBedroom/Farmhouse.jpg"
+            },
+            {
+                name: "Mid-century modern",
+                image: "/assets/styles/SecondaryBedroom/Mid-century modern.jpg"
+            },
+            {
+                name: "Mid-Century",
+                image: "/assets/styles/SecondaryBedroom/Mid-Century.jpg"
+            },
+            {
+                name: "Minimalistic",
+                image: "/assets/styles/SecondaryBedroom/Minimalistic.jpg"
+            },
+            {
+                name: "Modern",
+                image: "/assets/styles/SecondaryBedroom/Modern.jpg"
+            },
+            {
+                name: "Rustic",
+                image: "/assets/styles/SecondaryBedroom/Rustic.jpg"
+            },
+            {
+                name: "Scandinavian",
+                image: "/assets/styles/SecondaryBedroom/Scandinavian.jpg"
+            }
+        ]
+    }
 ]
