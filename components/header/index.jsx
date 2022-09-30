@@ -5,6 +5,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { useSelector } from "react-redux";
 import printStepName from "../../utils/printStepName";
+import Link from "next/link";
 
 export const CustomConnector = () => {
     return (
@@ -26,7 +27,7 @@ const Header = () => {
                         styles.logoContainer
                     )}
                 >
-                    <h2><a href="https://mozaikconcepts.com">MOZAIK</a></h2>
+                    <h2><Link href="/">MOZAIK</Link></h2>
                 </div>
                 <div
                     className={classNames(
