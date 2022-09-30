@@ -16,32 +16,29 @@ export default function Home() {
       </Head>
         <div className={`container-fluid ${styles.container}`}>
         <div className={styles.overlay}>
-            <div className={`row ${styles.navbar}`}>
-                <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
+
+            <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
                 <Link href="https://mozaikconcepts.com">
                     <a>
                     <Image
-                        src="/assets/logo.png"
+                        src="/assets/logoLight.png"
                         alt="logo"
-                        width={100}
-                        height={100}
+                        width={120}
+                        height={120}
                     />
                     </a>
                     </Link>
                     {/* <img className={styles.logoContainerImg} src="/assets/logo.png" /> */}
                 </div>
-                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
-                <Link href="/order"><button >Get Started</button></Link>
-                    <span></span>
-                </div>
-            </div>
             <div className={`row ${styles.headerContainer}`}>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
-                    <h1>The Interior of Your<br/>&nbsp;Home Re-Imagined in 3-D</h1>
+                    <h1><center>The Interior of Your</center>Home Re-Imagined in 3-D</h1>
                 </div>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
-                    <h4>
-                </h4>
+                {/* <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}> */}
+                <Link href="/order"><button >Get Started</button></Link>
+                    <span></span>
+                {/* </div> */}
                 </div>
             </div>
         </div>
@@ -67,12 +64,9 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className="container-fluid">
-            <div className={` row ${styles.showStyleContainer } ${styles.mar5}`}>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage2}`} >
-                   
-                </div>
-                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
+        <div className="container-fluid ">
+            <div className={` row ${styles.showStyleContainer } ${styles.mar5} `}>
+            <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
                    <h4>Your Space Re-Imagined in 3D.</h4>
                     <p>
                         Using renowned sofwatres, our designers will come up with 3D concepts 
@@ -80,11 +74,15 @@ export default function Home() {
                         work hand in hand with you to make sure that they deliver a final product you are satisfied with.
                     </p>
                 </div>
+                <div className={` col-lg-8  col-md-12 ${styles.styleImage2} order-lg-first`} >
+                   
+                </div>
+
             </div>
         </div>
         <div className="container-fluid">
             <div className={` row ${styles.showStyleContainer} ${styles.mar5}`}>
-                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
+                <div className={` col-lg-4 pt-3 col-md-12 ${styles.styleContent}`}>
                     <h4>Happiness Guarantee.</h4>
                     <p>
                         On top of the 3D concepts and moodboards, our team will also provide you with a shopping list 
