@@ -47,24 +47,24 @@ const StepPrice = () => {
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
-                                    value="300K-500K"
+                                    value="300000-500000"
                                     control={<Radio />}
-                                    label="300K-500K"
+                                    label="300,000-500,000"
                                 />
                                 <FormControlLabel
-                                    value="500K-1000K"
+                                    value="500000-1000000"
                                     control={<Radio />}
-                                    label="500K to 1000K"
+                                    label="500,000 to 1000,000"
                                 />
                                 <FormControlLabel
-                                    value="1000K-3000K"
+                                    value="1000000-3000000"
                                     control={<Radio />}
-                                    label="1000K to 3000K"
+                                    label="1000,000 to 3000,000"
                                 />
                                 <FormControlLabel
-                                    value="3000K"
+                                    value="3000000"
                                     control={<Radio />}
-                                    label="3000K"
+                                    label="3000,000"
                                 />
                             </RadioGroup>}
                        
