@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
         <div className={`container-fluid ${styles.container}`}>
         <div className={styles.overlay}>
-
+        <div className={`row ${styles.navbar}`}>
             <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
                 <Link href="https://mozaikconcepts.com">
                     <a>
@@ -28,17 +28,19 @@ export default function Home() {
                     />
                     </a>
                     </Link>
-                    {/* <img className={styles.logoContainerImg} src="/assets/logo.png" /> */}
+            </div>
+                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
+                <Link href="https://www.mozaikconcepts.com/Contact"><button >Contact Us</button></Link>
+                    <span></span>
                 </div>
+        </div>
             <div className={`row ${styles.headerContainer}`}>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
-                    <h1><center>The Interior of Your</center>Home Re-Imagined in 3-D</h1>
+                    <h1><center>The Interior of Your</center>Home Re-Imagined in 3D</h1>
                 </div>
                 <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
-                {/* <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}> */}
                 <Link href="/order"><button >Get Started</button></Link>
                     <span></span>
-                {/* </div> */}
                 </div>
             </div>
         </div>
@@ -69,7 +71,7 @@ export default function Home() {
             <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
                    <h4>Your Space Re-Imagined in 3D.</h4>
                     <p>
-                        Using renowned sofwatres, our designers will come up with 3D concepts 
+                        Using renowned softwares, our designers will come up with 3D concepts 
                         and moodboards that will help you visualize your desired space. They will also
                         work hand in hand with you to make sure that they deliver a final product you are satisfied with.
                     </p>

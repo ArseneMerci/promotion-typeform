@@ -30,7 +30,6 @@
      height:70px;
      z-index:100;
      color:white;
-     cursor: pointer;
  }
  .logoContainer{
      /* height:80px; */
@@ -58,11 +57,7 @@
      background-color:white;
      text-transform: uppercase;
  }
- .navbar:hover{
-     background-color:white;
-     color:black;
- }
- .navbar:hover >.menuContainer button{
+ .menuContainer button:hover{
    background-color:#e59400;
  }
  .headerContainer{
@@ -85,7 +80,7 @@
      display:flex;
      align-items: center;
      justify-content:center;
-     margin-left:-2.6rem;
+     /* margin-left:-2.6rem; */
      color:white;
      margin-top:10px;
  }
@@ -94,7 +89,7 @@
     width:200px;
     border-radius:22px;
     border:1px solid transparent;
-    margin-right:2rem;
+    /* margin-right:2rem; */
     font-weight: bold;
     background-color:white;
     text-transform: uppercase;
@@ -224,9 +219,14 @@
          margin-left: 10px;
      }
      .menuContainer{
-         width:70%;
+        position: relative;
+         width:60%;
          display:flex;
          justify-content:flex-end;
+     }
+     .menuContainer button{
+        position: absolute;
+        right: 0;
      }
      .menuContainer span{
          display:none;
