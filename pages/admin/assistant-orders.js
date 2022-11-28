@@ -18,7 +18,7 @@ const router = useRouter()
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         };
-        await axios.get('https://promotion-typeform-api.herokuapp.com/api/order/with-requests?request=true',config)
+        await axios.get('https://promotion-typeform-api.onrender.com/api/order/with-requests?request=true',config)
             .then((res)=>{
               setData(res.data.data)
             })
