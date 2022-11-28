@@ -19,7 +19,7 @@ export default function Dashboard() {
         };
         await axios
           .get(
-            "https://promotion-typeform-api.herokuapp.com/api/order/sum",
+            "https://promotion-typeform-api.onrender.com/api/order/sum",
             config
           )
           .then((res) => {
