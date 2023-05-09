@@ -1,20 +1,22 @@
 .container{
-    min-height:760px;
+    min-height:100vh;
     background:black;
-    background: url("../public/assets/header-intro.jpg");
-    /* background-blend-mode: multiply; */
+    background:rgba(0,0,0,0.5) url("../public/assets/header-intro.jpg");
+    background-blend-mode: darken;
     background-position:center;
     background-size: cover;
     background-repeat: no-repeat;
     z-index:100;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+
+    /* padding-left: 0 !important;
+    padding-right: 0 !important; */
  }
- .overlay{
+ /* .overlay{
     background: rgba(0,0,0,0.5);
-    min-height:760px;
+    min-height:100vh;
     z-index:100;
- }
+    width: 100%;
+ } */
  /* .container::before{
      background:black;
      max-width:100%;
@@ -61,8 +63,9 @@
    background-color:#e59400;
  }
  .headerContainer{
-     min-height:300px;
-     margin-top:1rem;
+     /* min-height:300px; */
+     /* margin-top:1rem; */
+     margin: auto;
  }
  .headerText{
    height:300px;

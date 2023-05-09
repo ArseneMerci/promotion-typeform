@@ -15,35 +15,35 @@ export default function Home() {
         <link rel="icon" href="/assets/logo.png" />
       </Head>
         <div className={`container-fluid ${styles.container}`}>
-        <div className={styles.overlay}>
-        <div className={`row ${styles.navbar}`}>
-            <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
-                <Link href="https://mozaikconcepts.com">
-                    <a>
-                    <Image
-                        src="/assets/logoLight.png"
-                        alt="logo"
-                        width={120}
-                        height={120}
-                    />
-                    </a>
-                    </Link>
+            <div className={styles.overlay}>
+                <div className={`row ${styles.navbar}`}>
+                    <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
+                        <Link href="https://mozaikconcepts.com">
+                            <a>
+                            <Image
+                                src="/assets/logoLight.png"
+                                alt="logo"
+                                width={120}
+                                height={120}
+                            />
+                            </a>
+                        </Link>
+                    </div>
+                    <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
+                        <Link href="https://www.mozaikconcepts.com/Contact"><button >Contact Us</button></Link>
+                        <span></span>
+                    </div>
+                </div>
+                <div className={`row ${styles.headerContainer}`}>
+                    <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
+                        <h1><center>The Interior of Your</center>Home Re-Imagined in 3D</h1>
+                    </div>
+                    <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
+                        <Link href="/order"><button >Get Started</button></Link>
+                        <span></span>
+                    </div>
+                </div>
             </div>
-                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
-                <Link href="https://www.mozaikconcepts.com/Contact"><button >Contact Us</button></Link>
-                    <span></span>
-                </div>
-        </div>
-            <div className={`row ${styles.headerContainer}`}>
-                <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
-                    <h1><center>The Interior of Your</center>Home Re-Imagined in 3D</h1>
-                </div>
-                <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
-                <Link href="/order"><button >Get Started</button></Link>
-                    <span></span>
-                </div>
-            </div>
-        </div>
         </div>
         <div className="container-fluid">
             <div className={` row ${styles.spaceContainer}`}>
