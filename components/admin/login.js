@@ -41,7 +41,7 @@ export default function Login() {
     };
 
     try {
-      const res = await (await fetch(`https://promotion-typeform-api.onrender.com/api/admin/login`, config)).json();
+      const res = await (await fetch(`https://portal-api.cyclic.app/api/admin/login`, config)).json();
       if (res.status === 200) {
         localStorage.setItem('token', (res.data.token));
         router.push('/admin/dashboard');

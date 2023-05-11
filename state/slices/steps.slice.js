@@ -7,7 +7,7 @@ export const saveOrderAsync = createAsyncThunk(
     "create-order",
     async ({ data, success }, { rejectWithValue }) => {
         return axios
-            .post("https://promotion-typeform-api.onrender.com/api/order/new", data)
+            .post("https://portal-api.cyclic.app/api/order/new", data)
             .then((resp) => {
                 clearAll();
                 success();

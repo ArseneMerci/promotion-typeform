@@ -25,7 +25,7 @@ const Post = () => {
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         };
-        await axios.get(`https://promotion-typeform-api.onrender.com/api/order/${param}`,config)
+        await axios.get(`https://portal-api.cyclic.app/api/order/${param}`,config)
             .then((res)=>{
               setData(res.data.data)
             })

@@ -18,7 +18,7 @@ const router = useRouter()
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         };
-        await axios.get('https://promotion-typeform-api.onrender.com/api/order/all?status=true',config)
+        await axios.get('https://portal-api.cyclic.app/api/order/all?status=true',config)
             .then((res)=>{
               setData(res.data.data)
             })

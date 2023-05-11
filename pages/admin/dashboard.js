@@ -19,7 +19,7 @@ export default function Dashboard() {
         };
         await axios
           .get(
-            "https://promotion-typeform-api.onrender.com/api/order/sum",
+            "https://portal-api.cyclic.app/api/order/sum",
             config
           )
           .then((res) => {
