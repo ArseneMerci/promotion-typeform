@@ -119,10 +119,10 @@ const StepFive = () => {
         //     </div>
         // </div>
         // </ContentWrapper>
-        <div className="" style={{display:"flex",justifyContent:"space-between", padding: "50px 100px" }}>
+        <div className="" style={{display:"flex",justifyContent:"space-between", padding: "60px 100px" }}>
             <div className={styles.container}>
-                <h1 className={styles.title}>Double checking, before making payment</h1>
-                <p className={styles.p}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa placeat, illo ratione voluptatum numquam optio amet quos perspiciatis.</p>
+                <h1 className={styles.title}>Double-check, before making payment</h1>
+                <p className={styles.p}>Double-check your choices before finalizing payment to ensure accuracy and satisfaction with your order.</p>
                 <div className={styles.card}>
                     <div className={styles.photoCard}>
                         <div className={styles.photo}>
@@ -155,7 +155,7 @@ const StepFive = () => {
                     </div>
                 </div>
             </div>
-            <div style={{height:"400px" ,borderRight:"1px solid #000",color:"#000"}}></div>
+            <div style={{height:"420px" ,borderRight:"1px solid #000",color:"#000"}}></div>
             <div className={styles.container2}>
                 <div style={{width:"100%"}}>
                     <h1 style={{fontSize:"13px" ,color:"gray", fontWeight:"400",marginBottom:"10px"}}>{`You've to pay,`}</h1>

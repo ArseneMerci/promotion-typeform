@@ -11,10 +11,11 @@
 
 .container .title{
     margin-bottom: 20px;
+    font-size: 38px;
 }
 
 .container .p{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .container .card{
@@ -56,6 +57,7 @@
     height: 50px;
     font-weight: 700;
     margin: 50px 0px 10px 0px;
+    border-radius: 5px;
 }
 
 
