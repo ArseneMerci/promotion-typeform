@@ -159,7 +159,14 @@
         flex-direction: row;
         justify-content: space-around;
         border: none;
-        /* align-self: center; */
-
     }
+
+    .cardDetails{
+        margin-left: 15px;
+    }
+
+    .container .p{
+        font-size: 14px;
+    }
+
 }
