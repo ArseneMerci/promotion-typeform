@@ -119,7 +119,7 @@ const StepFive = () => {
         //     </div>
         // </div>
         // </ContentWrapper>
-        <div className="" style={{display:"flex",justifyContent:"space-between", padding: "60px 100px" }}>
+        <div className={styles.mainContainer}>
             <div className={styles.container}>
                 <h1 className={styles.title}>Double-check, before making payment</h1>
                 <p className={styles.p}>Double-check your choices before finalizing payment to ensure accuracy and satisfaction with your order.</p>
@@ -143,19 +143,19 @@ const StepFive = () => {
                         </div>
                     </div>
                     <div className={styles.cardDetails}>
-                        <h1 style={{fontSize:"23px" ,fontWeight:"600" , marginBottom:"20px"}}>Kids bedroom</h1>
+                        <h1 className={styles.headTitle}>Kids bedroom</h1>
                         <div style={{display:"flex ",marginBottom:"10px"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
-                            <h1 style={{fontSize:"14px",color:"gray" ,fontWeight:"400"}}>300,000-500,000 RWF</h1>
+                            <h1 className={styles.h1} >300,000-500,000 RWF</h1>
                         </div>
                         <div style={{display:"flex"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
-                            <h1 style={{fontSize:"14px",color:"gray" ,fontWeight:"400"}}>Red,Yellow</h1>
+                            <h1 className={styles.h1}>Red,Yellow</h1>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style={{height:"420px" ,borderRight:"1px solid #000",color:"#000"}}></div>
+            <div className={styles.hr} ></div>
             <div className={styles.container2}>
                 <div style={{width:"100%"}}>
                     <h1 style={{fontSize:"13px" ,color:"gray", fontWeight:"400",marginBottom:"10px"}}>{`You've to pay,`}</h1>
