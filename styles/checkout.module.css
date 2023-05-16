@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+.fff{
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.container{
+    width: 50%;
+    height: 100%;
+}
+
+.container .title{
+    margin-bottom: 20px;
+}
+
+.container .p{
+    margin-bottom: 20px;
+}
+
+.container .card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: flex;
+}
+
+.photoCard {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    justify-content: space-between;
+    margin-right: 20px;
+    border: 1px solid green;
+    padding: 5px;
+}
+
+.photo {
+    position: relative;
+    width: 120px;
+    height: 80px;
+}
+
+.container2{
+    width: 30%;
+    height: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn{
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+    font-weight: 700;
+    margin: 50px 0px 10px 0px;
+}
+
+
+
