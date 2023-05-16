@@ -168,6 +168,64 @@
      margin-top:1rem;
      font-family: 'Times New Roman', Times, serif;
  }
+
+
+ .containerTwo {
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+}
+
+.containerTwo .headTwo{
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    margin: 0px 0px 0px 10%;
+}
+
+.containerTwo .titleTwo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+}
+
+.containerTwo .hr{
+    margin: 40px 30px 0px 0px;
+    width: 150px;
+    border-top: 3px solid #596775;
+}
+
+.containerTwo .services{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 110px auto;
+}
+
+.containerTwo .services .icon{
+    font-size: 70px ;
+    margin-right:40px ;
+    margin-top: -15px;
+}
+
+.containerTwo .services .sTitle{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px ;
+    font-weight: 700;
+    color: #000;
+    margin-bottom:20px ;
+}
+
+.containerTwo .services .card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-content: flex-start; */
+    margin: 20px 40px;
+}
+
+
  @media (max-width:1100px) and (min-width:800px)
  {
      .headerText h1{
@@ -176,6 +234,43 @@
      .headerSubText{
       margin-left:0rem;
      }
+
+     .containerTwo {
+        padding: 100px;
+        margin-top: 70%;
+    }
+
+    .containerTwo .headTwo{
+        width: auto;
+        margin: 0px 0px 0px 0%;
+
+    }
+
+    .containerTwo .headTwo .titleTwo{
+        font-size: 35px;
+    }
+
+    .containerTwo .services{
+        justify-content: space-between;
+        width: 150%;
+        margin: 100px 0px 100px -40px;
+    }
+
+    .containerTwo .services .card{
+        margin: 20px 50px 20px 30px;
+    }
+
+    .containerTwo .services .sTitle{
+        font-size: 25px ;
+        margin: -10px 0px 30px 0px;
+    }
+    
+
+    .containerTwo .services .icon{
+        font-size: 80px ;
+        margin-right:20px ;
+        margin-top: -30px;
+    }
 
  }
  @media (max-width:800px)
@@ -189,7 +284,59 @@
      .spaceContent p{
          font-size:1rem;
      }
+
+     .containerTwo {
+        padding: 100px;
+        margin-top: 550px;
+    }
+
+    .containerTwo .headTwo{
+        width: auto;
+        margin: 0px 0px 0px 0%;
+    }
+
+    .containerTwo .titleTwo{
+        /* font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #000; */
+    }
+    
+    .containerTwo .hr{
+        margin: 40px 30px 0px 0px;
+        width: 150px;
+        border-top: 3px solid #596775;
+    }
+
+    .containerTwo .services{
+        justify-content: space-between;
+        width: 95%;
+        margin: 50px 0px 100px -40px;
+    }
+
+    .containerTwo .services .card{
+        margin: 20px 30px 20px 30px;
+    }
+    
+
+    .containerTwo .services .icon{
+        font-size: 100px ;
+        margin-right:20px ;
+        margin-top: -40px;
+    }
  }
+
+
+ @media (max-width:700px){
+    .containerTwo .services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 120%;
+        margin-bottom: 150px;
+        
+    }
+}
+
  @media (max-width:500px)
  {    
     .container{
@@ -268,6 +415,48 @@
          width:100%;
          text-align: center;
      }
+
+     .containerTwo .services .sTitle{
+        font-size: 22px ;
+    }
+ }
+
+ @media  (max-width:481px) {
+    .containerTwo {
+        padding: 20%;
+    }
+
+    .containerTwo .headTwo{
+        width: 270%;
+        margin: 40px 0px 60px 0px;
+    }
+
+    .containerTwo .headTwo .titleTwo{
+        font-size: 40px;
+    }
+
+    .containerTwo .services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* flex-direction: row;
+        margin: 110px auto; */
+        width: 120%;
+        margin-bottom: 150px;
+        
+    }
+
+    .containerTwo .services .icon{
+        font-size: 130px ;
+        margin-top: -50px ;
+    }
+
+    .containerTwo .services .sTitle{
+        font-size: 28px ;
+    }
+
+    .containerTwo .services p{
+        font-size: 25px ;
+    }
  }
  
  

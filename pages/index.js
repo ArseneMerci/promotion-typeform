@@ -4,6 +4,12 @@ import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
 import Head from 'next/head';
 import Link from 'next/link';
+import { BiSearch } from "react-icons/bi"
+import { FaShippingFast,FaCertificate,FaFacebookF } from "react-icons/fa"
+import { MdOutlineVerified } from "react-icons/md"
+import { RiDoubleQuotesL,RiInstagramFill } from "react-icons/ri"
+import { IoIosArrowUp,IoIosArrowDown} from "react-icons/io"
+import { GiHamburgerMenu } from "react-icons/gi"
 
 export default function Home() {
     const router = useRouter()
@@ -45,7 +51,39 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className="container-fluid">
+        <div className={styles.containerTwo}>
+            <div className={styles.headTwo}>
+                <div className={styles.hr}></div>
+                <div>
+                    <h1 className={styles.titleTwo}>Benefits you get when</h1>
+                    <h1 className={styles.titleTwo}>using our services</h1>
+                </div>
+            </div>
+            <div className={styles.services}>
+                <div className={styles.card}>
+                    <FaCertificate className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Best Quality</h1>
+                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                    </div>
+                </div>
+                <div className={styles.card}>
+                    <FaShippingFast className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Free shipping</h1>
+                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                    </div>
+                </div>
+                <div className={styles.card}>
+                    <MdOutlineVerified className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Warranty</h1>
+                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/* <div className="container-fluid">
             <div className={` row ${styles.spaceContainer}`}>
                 <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
                     <p>
@@ -95,7 +133,7 @@ export default function Home() {
                 <div className={` col-lg-8  col-md-12 ${styles.styleImage3}`}>
                 </div>
             </div>
-        </div>
+        </div> */}
     </>
   );
 }
