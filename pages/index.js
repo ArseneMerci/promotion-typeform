@@ -25,8 +25,7 @@ export default function Home() {
                         <Image
                             src="/assets/logoLight.png"
                             alt="logo"
-                            width={120}
-                            height={100}
+                            layout='fill'
                         />
                         </a>
                     </Link>

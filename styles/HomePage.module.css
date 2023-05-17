@@ -30,9 +30,12 @@
  }
 
  .logoContainer{
-    align-self: flex-start;
+    width: 120px;
+    height: 100px;
+    position: relative;
  }
- 
+
+
  .menuContainer{
     /* padding-right:3rem; */
  }
@@ -404,34 +407,16 @@
 
  @media (max-width:500px)
  {    
-    .container{
-        background: url("../public/assets/header-intro.jpg");
-        background-blend-mode: multiply;
-        background-position:center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        min-height:300px;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-     }
-     .headerContainer{
-         justify-content:center;
-         margin-top: -30px;
-
-     }
      .headerText h1{
-         font-size:1.7rem;
+         font-size:2.4rem;
      }
-     .spaceContent p{
-         font-size:0.2rem;
-     }
+
      .navbar{
-         display:flex;
-         justify-content:space-between;
+        padding: 5px 10px;
      }
      .logoContainer{
-         width:30%;
-         margin-left: 10px;
+         width:100px;
+         height: 70px;
      }
      .menuContainer{
         position: relative;
@@ -440,9 +425,18 @@
          justify-content:flex-end;
      }
      .menuContainer button{
-        position: absolute;
-        right: 0;
+        width:140px;
+        height: 40px;
+        margin-top:15px;
+        font-size: 12px;
      }
+
+     .headerSubText button{
+        padding:10px;
+        width:150px;
+        border-radius:30px;
+        font-size: 15px;
+      }
      .menuContainer span{
          display:none;
      }
