@@ -8,62 +8,41 @@
    
 }
 .container{
-    min-height:100vh;
-    background:black;
+    height:100vh;
     background:rgba(0,0,0,0.5) url("../public/assets/header-intro.jpg");
     background-blend-mode: darken;
     background-position:center;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index:100;
-
-    /* padding-left: 0 !important;
-    padding-right: 0 !important; */
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    /* flex-direction: column;
+    justify-content: space-between; */
  }
- /* .overlay{
-    background: rgba(0,0,0,0.5);
-    min-height:100vh;
-    z-index:100;
-    width: 100%;
- } */
- /* .container::before{
-     background:black;
-     max-width:100%;
-     height:100%;
-     padding:0;
-     position:absolute;
-     content: '';
-     left:0;
-     z-index:-1;
- } */
  .navbar{
-     background:transparent;
-     height:70px;
-     z-index:100;
-     color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:white;
+    padding: 10px 50px;
+    height: 10%;
+    width: 100%;
  }
+
  .logoContainer{
-     /* height:80px; */
-     display:flex;
-     align-items:center;
-     justify-content:center;
+    align-self: flex-start;
  }
- .logoContainerImg{
-     width: 100px;
-     height: 100px;
- }
+ 
  .menuContainer{
-     display:flex;
-     align-items:center;
-     justify-content: flex-end;
-     padding-right:3rem;
+    /* padding-right:3rem; */
  }
  .menuContainer button{
-     padding:7px;
+     padding:8px 15px;
      width:150px;
      border-radius:22px;
      border:1px solid transparent;
-     margin-right:2rem;
+     margin-top:30px;
+     font-size: 15px;
      font-weight: bold;
      background-color:white;
      text-transform: uppercase;
@@ -72,21 +51,17 @@
    background-color:#e59400;
  }
  .headerContainer{
-     /* min-height:300px; */
-     /* margin-top:1rem; */
-     margin: auto;
+    height: 80%;
+    align-self: flex-start;
+    width: 90%;
+    margin: auto;
  }
- .headerText{
-   height:300px;
-   display:flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content:flex-end;
-   color:white;
- 
- }
+
  .headerText h1{
-     font-size:6rem;
+    font-size:6rem;
+    text-align: center;
+    color:white;
+    margin-bottom: 50px;
  }
  .headerSubText{
      display:flex;
@@ -99,7 +74,7 @@
  .headerSubText button{
     padding:15px;
     width:200px;
-    border-radius:22px;
+    border-radius:30px;
     border:1px solid transparent;
     /* margin-right:2rem; */
     font-weight: bold;
@@ -108,6 +83,7 @@
  }
  .headerSubText button:hover{
      background-color:#e59400;
+     color: #fff;
  }
  .spaceContainer{
      background:#fff;
