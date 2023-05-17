@@ -10,11 +10,12 @@ import { MdOutlineVerified } from "react-icons/md"
 import { RiDoubleQuotesL,RiInstagramFill } from "react-icons/ri"
 import { IoIosArrowUp,IoIosArrowDown} from "react-icons/io"
 import { GiHamburgerMenu } from "react-icons/gi"
+import profile from '../public/assets/aboute4.jpg'
 
 export default function Home() {
     const router = useRouter()
   return (
-    <>
+    <div className={styles.mainContainer}>
       <Head>
         <title>MOZAIK CONCEPTS</title>
         <meta name="description" content="" />
@@ -82,7 +83,52 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className={styles.process}>
+                <Image
+                    src={profile}
+                    className={styles.processPhoto}
+                    alt="Picture of process"
+                    width="430px"
+                    height="450px"
+                /> 
+                <div className={styles.processDetails}>
+                    <h1 className={styles.processTitle}>We provide you the best process experience</h1>
+                    <div className={styles.list}>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>01</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Briefing</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>02</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Processing</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>When the briefing process is complete and what the client wants has been achieved. then we carry out the execution of the desired concept</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>03</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Finishing</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                            <p className={styles.p1}>When the process is complete we will immediately carry out the finishing stage and we do it carefully and make sure there are no mistake.</p>
+                        </div>
+                        <div className={styles.line}></div>                       
+                    </div> 
+                </div>              
+            </div>
         </div>
+        
         {/* <div className="container-fluid">
             <div className={` row ${styles.spaceContainer}`}>
                 <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
@@ -134,7 +180,8 @@ export default function Home() {
                 </div>
             </div>
         </div> */}
-    </>
+    </div>
+    
   );
 }
 

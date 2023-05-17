@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.mainContainer{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+}
 .container{
     min-height:100vh;
     background:black;
@@ -223,6 +232,86 @@
     justify-content: space-between;
     /* align-content: flex-start; */
     margin: 20px 40px;
+}
+
+
+.containerTwo .process{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin:150px 70px;
+
+}
+
+.containerTwo .process .processPhoto{
+    border-radius: 5px;
+}
+
+
+.containerTwo .process .processTitle{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    padding-right: 60px;
+    margin-bottom: 50px;
+
+}
+
+.containerTwo .process .processDetails{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 140px;
+}
+
+.containerTwo .process .processDetails .one{
+    display: flex;
+    flex-direction: row;
+}
+
+.containerTwo .process .processDetails .one .circle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top: 17px;
+    margin-right: 20px;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #596775;
+    color: #fff;
+}
+
+.containerTwo .process .processDetails .one .details{
+    margin-top: 15px;
+}
+
+.containerTwo .process .processDetails .one .title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+
+.containerTwo .process .processDetails .p{
+    margin:5px 0px 20px 20px;
+}
+
+.containerTwo .process .processDetails .vl{
+    border-left: 2px solid rgb(196, 196, 196);
+    /* height: 100%; */
+    margin: 5px 30px 5px 30px;
+}
+
+.containerTwo .process .processDetails .list .line{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.containerTwo .process .processDetails  .p1{
+    margin-left:80px;
 }
 
 
