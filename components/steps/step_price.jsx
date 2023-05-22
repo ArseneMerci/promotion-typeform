@@ -24,7 +24,6 @@ const StepPrice = () => {
     const handlePriceChange = (values) => {
         setMinValue(values[0]);
         setMaxValue(values[1]);  
-        console.log(values);    
     };
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
@@ -43,7 +42,7 @@ const StepPrice = () => {
       const data = { space: space, price: e.target.value };
       setItem("space", data);
       dispatch(addSpace(data));
-    }
+    }  
     return (
         <div className="container step-container">
                 <div className="row onstep-one-one">

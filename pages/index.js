@@ -65,14 +65,14 @@ export default function Home() {
                     <FaShippingFast className={styles.icon}/>
                     <div>
                         <h1 className={styles.sTitle}>Free shipping</h1>
-                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                        <p>Enjoy free shipping on our website! No hidden fees or extra charges.</p>
                     </div>
                 </div>
                 <div className={styles.card}>
                     <MdOutlineVerified className={styles.icon}/>
                     <div>
                         <h1 className={styles.sTitle}>Warranty</h1>
-                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                        <p>{`Shop with confidence - Our products come with a warranty`}</p>
                     </div>
                 </div>
             </div>
