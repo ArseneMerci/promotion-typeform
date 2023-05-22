@@ -31,7 +31,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className={styles.menuContainer}>
-                    <Link href="https://www.mozaikconcepts.com/Contact"><button >Contact Us</button></Link>
+                    <Link href="https://www.mozaikconcepts.com/Contact"><button className='text-black'>Contact Us</button></Link>
                     <span></span>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export default function Home() {
                     <h1>The Interior of Your Home Re-Imagined in 3D</h1>
                 </div>
                 <div className={styles.headerSubText}>
-                    <Link href="/order"><button >Get Started</button></Link>
+                    <Link href="/order"><button className='text-black'>Get Started</button></Link>
                     <span></span>
                 </div>
             </div>

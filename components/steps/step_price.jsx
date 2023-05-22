@@ -12,7 +12,20 @@ import FormLabel from "@mui/material/FormLabel";
 import { getItem, setItem } from "../../utils/persist";
 import { addSpace } from "../../state/slices/steps.slice";
 import { useEffect } from "react";
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
+
 const StepPrice = () => {
+
+    const [minValue, setMinValue] = useState(null);
+    const [maxValue, setMaxValue] = useState(null);
+
+    const handlePriceChange = (values) => {
+        setMinValue(values[0]);
+        setMaxValue(values[1]);  
+        console.log(values);    
+    };
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
     const [price, setPrice] = useState();
@@ -34,7 +47,7 @@ const StepPrice = () => {
     return (
         <div className="container step-container">
                 <div className="row onstep-one-one">
-                    <div className={`col-lg-12 col-md-4 `}>
+                    {/* <div className={`col-lg-12 col-md-4 `}>
                         <FormControl>
                             <p className="text-title">
                                 o Have you planned a budget that you want to
@@ -98,6 +111,26 @@ const StepPrice = () => {
                         
                         }
                         </FormControl>
+                    </div> */}
+
+                    <div className='h-screen bg-white p-56 mx-auto py-20'>
+                        <Slider
+                            range
+                            min={0}
+                            max={1000}
+                            defaultValue={[0, 1000]}
+                            onChange={handlePriceChange}
+                        />
+                        <div className='flex justify-between'>
+                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
+                                <h1 className='text-gray-600 text-[13px]'>{`Min (RWF)`}</h1>
+                                <h1 className='text-black text-[20px]'>{!minValue ? '0':`${minValue}`}</h1>
+                            </div>
+                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
+                                <h1 className='text-gray-600 text-[13px]'>{`Max (RWF)`}</h1>
+                                <h1 className='text-black text-[20px]'>{!maxValue ? '1000':`${maxValue}`}</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </div>

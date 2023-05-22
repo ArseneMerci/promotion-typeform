@@ -10,7 +10,7 @@ const NextOrPrevButton = () => {
 		<>
 			{activeStep!=0 &&
 				<button
-					className={classNames(styles.button, styles.back)}
+					className={`${classNames(styles.button, styles.back)} text-black`}
 					onClick={() => dispatch(prev())}
 				>
 
@@ -22,7 +22,7 @@ const NextOrPrevButton = () => {
 				<span></span>
 			}
 			<button
-				className={classNames(styles.button)}
+				className={`${classNames(styles.button)} text-black`}
 				onClick={() => dispatch(next())}
 			>
 				<small>Next</small>
