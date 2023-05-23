@@ -46,7 +46,7 @@ const StepPrice = () => {
     return (
         <div className="container step-container">
                 <div className="row onstep-one-one">
-                    {/* <div className={`col-lg-12 col-md-4 `}>
+                    <div className={`col-lg-12 col-md-4 `}>
                         <FormControl>
                             <p className="text-title">
                                 o Have you planned a budget that you want to
@@ -110,9 +110,9 @@ const StepPrice = () => {
                         
                         }
                         </FormControl>
-                    </div> */}
+                    </div>
 
-                    <div className='h-screen bg-white p-56 mx-auto py-20'>
+                    {/* <div className='h-screen bg-white p-56 mx-auto py-20'>
                         <Slider
                             range
                             min={0}
@@ -130,7 +130,7 @@ const StepPrice = () => {
                                 <h1 className='text-black text-[20px]'>{!maxValue ? '1000':`${maxValue}`}</h1>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
         </div>
     );

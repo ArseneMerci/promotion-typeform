@@ -156,23 +156,32 @@ const StepFive = () => {
                 </div>
             </div>
             <div className={styles.hr} ></div>
-            <div className={styles.container2}>
-                <div style={{width:"100%"}}>
-                    <h1 style={{fontSize:"13px" ,color:"gray", fontWeight:"400",marginBottom:"10px"}}>{`You've to pay,`}</h1>
+            <div className="w-[30%] h-[100%]">
+                <div className={styles.container2}>
+                    <div style={{width:"100%"}}>
+                        <h1 style={{fontSize:"13px" ,color:"gray", fontWeight:"400",marginBottom:"10px"}}>{`You've to pay,`}</h1>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:"40px"}}>
+                        <div style={{display:"flex"}}><h1 className={styles.fff} style={{fontSize:"30px",marginRight:"8px"}}>RWF</h1><h1 className={styles.fff} style={{fontSize:"30px"}}>300K</h1></div>
+                        <h1 className={styles.fff} style={{fontSize:"20px",alignSelf:"center"}}>Total</h1>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:"10px"}}>
+                        <h1 style={{fontSize:"15px",fontWeight:"400"}}>Item</h1>
+                        <h1 style={{fontSize:"15px",fontWeight:"400"}}>280K</h1>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <h1 style={{fontSize:"15px",fontWeight:"400"}}>Technician fee</h1>
+                        <h1 style={{fontSize:"15px",fontWeight:"400"}}>20K</h1>
+                    </div>
+                    <button className={styles.btn}>Checkout</button>
                 </div>
-                <div style={{display:"flex",justifyContent:"space-between",marginBottom:"40px"}}>
-                    <div style={{display:"flex"}}><h1 className={styles.fff} style={{fontSize:"30px",marginRight:"8px"}}>RWF</h1><h1 className={styles.fff} style={{fontSize:"30px"}}>300K</h1></div>
-                    <h1 className={styles.fff} style={{fontSize:"20px",alignSelf:"center"}}>Total</h1>
+                <div className="mt-10">
+                    <form action="">
+                        <label htmlFor="" className="">Promo code :</label>
+                        <input type="text" className="border-[1px] border-black ml-2"/>
+                        <button type="submit" className="bg-green-700 py-2 px-4 rounded text-white ml-5 text-xs font-medium">Verify</button>
+                    </form>
                 </div>
-                <div style={{display:"flex",justifyContent:"space-between",marginBottom:"10px"}}>
-                    <h1 style={{fontSize:"15px",fontWeight:"400"}}>Item</h1>
-                    <h1 style={{fontSize:"15px",fontWeight:"400"}}>280K</h1>
-                </div>
-                <div style={{display:"flex",justifyContent:"space-between"}}>
-                    <h1 style={{fontSize:"15px",fontWeight:"400"}}>Technician fee</h1>
-                    <h1 style={{fontSize:"15px",fontWeight:"400"}}>20K</h1>
-                </div>
-                <button className={styles.btn}>Checkout</button>
             </div>
         </div>
         
