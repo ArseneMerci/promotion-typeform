@@ -10,7 +10,7 @@ const handleComplete = async(e,id)=>{
     const config = {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     };
-    const url = `https://portal-api.cyclic.app/api/order/${id}?status=true`
+    const url = `${process.env.API_URL}/api/order/${id}?status=true`
     await axios.put(url,null,config)
         .then(()=>{
             router.push('/admin/AllOrders')

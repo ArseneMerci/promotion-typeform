@@ -25,7 +25,7 @@ const Post = () => {
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         };
-        await axios.get(`https://portal-api.cyclic.app/api/order/${param}`,config)
+        await axios.get(`${process.env.API_URL}/api/order/${param}`,config)
             .then((res)=>{
               setData(res.data.data)
             })

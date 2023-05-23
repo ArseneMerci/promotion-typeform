@@ -18,7 +18,7 @@ const router = useRouter()
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         };
-        await axios.get('https://portal-api.cyclic.app/api/order/with-requests?request=true',config)
+        await axios.get(`${process.env.API_URL}/api/order/with-requests?request=true`,config)
             .then((res)=>{
               setData(res.data.data)
             })

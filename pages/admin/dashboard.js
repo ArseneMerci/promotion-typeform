@@ -19,7 +19,7 @@ export default function Dashboard() {
         };
         await axios
           .get(
-            "https://portal-api.cyclic.app/api/order/sum",
+            `${process.env.API_URL}/api/order/sum`,
             config
           )
           .then((res) => {
