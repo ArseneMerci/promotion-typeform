@@ -11,9 +11,9 @@ import ContentWrapper from "../contentWrapper";
 const StepFive = () => {
     const dispatch = useDispatch();
     const selector = useSelector((state) => state.steps);
-    const[loading,setLoading]=useState(false);
+    // const[loading,setLoading]=useState(false);
     const router = useRouter();
-    const [file,setFile]=useState([]);
+    // const [file,setFile]=useState([]);
     const [info, setInfo] = useState({
         fname: "",
         email: "",
@@ -26,12 +26,13 @@ const StepFive = () => {
         setInfo(value);
     };
     const successFull = () => {
-         setLoading(true);
+        //  setLoading(false);
         router.push("/result");
     };
     const handleSubmit = () => {
         if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
         const { products, styles } = selector;
+        // setLoading(true);
         // const image=dataURItoBlob(selector.pictures[0].files);
         // console.log(image);
         const formdata = new FormData();
@@ -96,19 +97,19 @@ const StepFive = () => {
                             />
                         </div>
                         <div className="flex-center">
-                            {selector.loading || loading &&(
+                            {selector.loading &&(
                                 <CircularProgress size={20} color="inherit" />
                             )}
                         </div>
                         <div className="flex-center">
                             <button
                                 type="button"
-                                className="form-button"
-                                // eslint-disable-next-line react/no-unknown-property
-                                disable={selector.loading || loading}
+                                className={`form-button`}
+                                style = {selector.loading ? { opacity: "0.2", cursor: "not-allowed" } : {}}
+                                disabled={selector.loading}
                                 onClick={handleSubmit}
                             >
-                                <p>Submit</p>
+                                <p>{selector.loading? 'Loading...': 'Submit'}</p>
                             </button>
                         </div>
                     </div>
