@@ -28,6 +28,7 @@ const initialState = {
     pictures: [],
     plan: "",
     request: false,
+    info: {},
     cart: [],
     loading: false,
     error: "",
@@ -37,7 +38,7 @@ const stepSlice = createSlice({
     initialState,
     reducers: {
         next(state) {
-            if (state.activeStep < 6) {
+            if (state.activeStep < 7) {
                 const currentStep = state.activeStep;
                 const {result, error} = validaData(currentStep);
                 if(result) state.activeStep += 1
@@ -66,6 +67,9 @@ const stepSlice = createSlice({
                 (state.request = payload.request)
                 
         },
+        addStageFive(state, { payload }) {
+            state.info = payload;
+        },
         deleteProduct(state, { payload }) {
             const data = state.products.filter((item) => item.id != payload.id);
             state.products = data;
@@ -78,13 +82,10 @@ const stepSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(saveOrderAsync.pending, (state) => {
             state.loading = true;
-            console.log(state);
         }).addCase(saveOrderAsync.fulfilled, (state) => {
             state.loading = false;
-            console.log(state);
         }).addCase(saveOrderAsync.rejected, (state) => {
             state.loading = false;
-            console.log(state);
         })
     }
 });
@@ -95,6 +96,7 @@ export const {
     addStyle,
     addStageThree,
     addStageFour,
+    addStageFive,
     deleteProduct,
     clearError,
 } = stepSlice.actions;

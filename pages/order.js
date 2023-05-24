@@ -40,13 +40,13 @@ function Order() {
       <ToastContainer />
       <main className="main">
         {selector.activeStep === 0 && <StepOne />}
-        {selector.activeStep === 1 && <StepPrice />}
-        {selector.activeStep === 2 && <StepTwo />}
-        {selector.activeStep === 3 && <StepTwoColors />}
-        {selector.activeStep === 4 && <StepThree />}
-        {selector.activeStep === 5 && <StepFour />}
-        {selector.activeStep === 6 && <StepCheckout />}
-        {selector.activeStep === 7 && <StepFive />}
+        {selector.activeStep === 1 && <StepTwo />}
+        {selector.activeStep === 2 && <StepTwoColors />}
+        {selector.activeStep === 3 && <StepThree />}
+        {selector.activeStep === 4 && <StepFour />}
+        {selector.activeStep === 5 && <StepPrice />}
+        {selector.activeStep === 6 && <StepFive />}
+        {selector.activeStep === 7 && <StepCheckout />}
       </main>
       <Footer />
     </div>

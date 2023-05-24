@@ -49,7 +49,6 @@ const StepFour = () => {
             plan: planImage,
             request: requestData,
         };
-        console.log(request,'request')
         setItem("stageFour", data);
         dispatch(addStageFour(data));
     };

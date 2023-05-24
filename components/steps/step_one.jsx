@@ -13,7 +13,6 @@ const StepOne = () => {
     const [price, setPrice] = useState("");
     useEffect(() => {
         const items = getItem("space");
-        console.log(price + space);
         if (items) {
             setSpace(items.space);
             setPrice(items.price);
