@@ -95,7 +95,7 @@ export default function Home() {
                         </div>
                         <div className={styles.line}>
                                 <div className={styles.vl}></div>
-                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                            <p className={styles.p}>{`Begin your design journey by choosing the specific room. We'll transform your living room, bedroom, kitchen, office,or any space into something extraordinary.`}</p>
                         </div>
                         <div className={styles.one}>
                             <h1 className={styles.circle}>02</h1>
@@ -105,7 +105,7 @@ export default function Home() {
                         </div>
                         <div className={styles.line}>
                                 <div className={styles.vl}></div>
-                            <p className={styles.p}>Choose inspiration images ,they are used for understanding taste of client and are not a representative to the design to be proposed.</p>
+                            <p className={styles.p}>{`Unveil your unique style through inspiration images. These visuals help us grasp your taste, guiding us to create a truly aesthetic and personalized design for you`}</p>
                         </div>
                         <div className={styles.one}>
                             <h1 className={styles.circle}>03</h1>
@@ -115,7 +115,7 @@ export default function Home() {
                         </div>
                         <div className={styles.line}>
                                 <div className={styles.vl}></div>
-                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                            <p className={styles.p}>{`Curate your color palette. We'll guide you in selecting hues that reflect your style and set the desired ambiance for your space.`}</p>
                         </div>
                         <div className={styles.one}>
                             <h1 className={styles.circle}>04</h1>
@@ -125,7 +125,7 @@ export default function Home() {
                         </div>
                         <div className={styles.line}>
                                 <div className={styles.vl}></div>
-                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                            <p className={styles.p}>{`Upload your space photos for redesign or request a visit from our technician for an expert evaluation. Choose what works best for you.`}</p>
                         </div>
                         <div className={styles.one}>
                             <h1 className={styles.circle}>05</h1>
@@ -134,7 +134,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className={styles.line}>
-                            <p className={styles.p1}>When the process is complete we will immediately carry out the finishing stage and we do it carefully and make sure there are no mistake.</p>
+                            <p className={styles.p1}>{`Complete the process by providing necessary details and proceed to the secure payment checkout for a seamless experience.`}</p>
                         </div>
                         <div className={styles.line}></div>                       
                     </div> 
