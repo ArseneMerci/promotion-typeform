@@ -6,7 +6,6 @@ import validaData from "../../utils/validateData";
 export const saveOrderAsync = createAsyncThunk(
     "create-order",
     async ({ data, success }, { rejectWithValue }) => {
-        console.log(process.env.API_URL);
         return axios
             .post(`${process.env.API_URL}/api/order/new`, data)
             .then((resp) => {
