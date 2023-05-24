@@ -105,7 +105,7 @@ const StepFive = () => {
                             <button
                                 type="button"
                                 className="form-button"
-                                disable={selector.loading || loading}
+                                disabled={selector.loading || loading}
                                 onClick={handleSubmit}
                             >
                                 <p>Submit</p>
