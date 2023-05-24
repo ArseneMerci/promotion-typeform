@@ -6,7 +6,12 @@ import { saveOrderAsync } from "../../state/slices/steps.slice";
 import { useRouter } from "next/router";
 import { clearAll } from "../../utils/persist";
 import { toast } from "react-toastify";
+// import { next } from "../../../state/slices/steps.slice";
+import { addStageFive, next } from "../../state/slices/steps.slice";
+import { useEffect } from "react";
+import { getItem, setItem } from "../../utils/persist";
 import ContentWrapper from "../contentWrapper";
+
 
 const StepFive = () => {
     const dispatch = useDispatch();
@@ -20,21 +25,29 @@ const StepFive = () => {
         phone: "",
         city: "",
     });
+    useEffect(() => {
+        const data = getItem("stageFive");
+        if (data) {
+            setInfo(data);
+        }
+    }, []);
     const handleInfo = (e) => {
         const name = e.target.name;
         const value = { ...info, [name]: e.target.value };
         setInfo(value);
+        setItem("stageFive", value);
+        dispatch(addStageFive(value));
     };
     const successFull = () => {
-        //  setLoading(false);
+        // dispatch(next());
+        //  setLoading(true);
         router.push("/result");
     };
     const handleSubmit = () => {
+        // return successFull();
         if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
         const { products, styles } = selector;
-        // setLoading(true);
         // const image=dataURItoBlob(selector.pictures[0].files);
-        // console.log(image);
         const formdata = new FormData();
         formdata.append("space", products.space);
         formdata.append("spacePrice", products.price);
@@ -68,6 +81,7 @@ const StepFive = () => {
                             <TextField
                                 id="standard-basic"
                                 name="fname"
+                                value={info.fname}
                                 label="Enter Full Names"
                                 onChange={handleInfo}
                                 variant="standard"
@@ -76,6 +90,7 @@ const StepFive = () => {
                             <TextField
                                 id="standard-b asic"
                                 name="email"
+                                value={info.email}
                                 label="Enter E-mail"
                                 onChange={handleInfo}
                                 variant="standard"
@@ -84,12 +99,14 @@ const StepFive = () => {
                             <TextField
                                 id="standard-basic"
                                 name="phone"
+                                value={info.phone}
                                 label="Enter Phone"
                                 onChange={handleInfo}
                                 variant="standard"
                             />
                             <TextField
                                 id="standard-basic"
+                                value={info.city}
                                 label="Enter City"
                                 name="city"
                                 onChange={handleInfo}

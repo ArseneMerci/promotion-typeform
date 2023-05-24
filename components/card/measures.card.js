@@ -2,7 +2,6 @@ import styles from "./card.module.css";
 import classNames from "classnames";
 import TextField from "@mui/material/TextField";
 const MeasureCard = ({ item }) => {
-    console.log(item)
     return (
         <div className={classNames(styles.measureCard)}>
             <div className={classNames(styles.measureHeader)}>

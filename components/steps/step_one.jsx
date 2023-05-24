@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import ContentWrapper from "../contentWrapper";
 
 const StepOne = () => {
+    console.log(process.env.API_URL, 'url');
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
     const [price, setPrice] = useState("");

@@ -8,9 +8,9 @@ const NextOrPrevButton = () => {
 	const {activeStep} = useSelector((state) => state.steps);
 	return (
 		<>
-			{activeStep!=0 &&
+			{activeStep!=0 && activeStep!=7 &&
 				<button
-					className={classNames(styles.button, styles.back)}
+					className={`${classNames(styles.button, styles.back)} text-black`}
 					onClick={() => dispatch(prev())}
 				>
 
@@ -21,13 +21,15 @@ const NextOrPrevButton = () => {
 			{activeStep==0 &&
 				<span></span>
 			}
+			{activeStep!==6 && activeStep!==7 &&
 			<button
-				className={classNames(styles.button)}
+				className={`${classNames(styles.button)} text-black`}
 				onClick={() => dispatch(next())}
 			>
 				<small>Next</small>
 				<BsArrowRight size={15} />
 			</button>
+			}
 		</>
 	);
 };

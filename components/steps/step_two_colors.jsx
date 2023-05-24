@@ -40,13 +40,11 @@ const StepTwoColors = () => {
     // }, []);
     useEffect(() => {
         const s_styles = getItem("styles");
-        console.log(s_styles);
         if (s_styles) {
             setSelectedStyle(s_styles.styles);
             setImages(s_styles.images);
             setCacheColors(s_styles.colors);
             setColors(s_styles.colors);
-            console.log(s_styles);
         }
     }, []);
     const handleNotLikeColor = (e) => {

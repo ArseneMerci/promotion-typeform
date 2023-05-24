@@ -15,12 +15,10 @@ const Post = () => {
     if(!localStorage.getItem('token')) router.push('/admin/login')
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
-  console.log(data)
 
   useEffect(() => {
     if(!router.isReady) return
     const { param } = router.query
-    console.log(param,'param')
     async function fetchData(){
         const config = {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }

@@ -2,7 +2,6 @@ import styles from '../../styles/dashCards.module.css';
 import Card from './card';
 
 export default function DahboardCards({ Cards }) {
-  console.log(Cards)
   return (
     <div className={styles.projectCards} >
       <Card data={Cards[0].completed || '-'} title="Completed Orders"/>
