@@ -11,24 +11,28 @@ const StepCheckout = () => {
                 <h1 className={styles.title}>Double-check, before making payment</h1>
                 <p className={styles.p}>Double-check your choices before finalizing payment to ensure accuracy and satisfaction with your order.</p>
                 <div className={styles.card}>
-                    <div className={styles.photoCard}>
-                        <div className={styles.photo}>
-                            <Image
-                                src={pic}
-                                className={styles.blogPhoto1}   
-                                alt="Picture of process"
-                                layout="fill"
-                            />
+                    <div>
+                        <div className={styles.photoCard}>
+                            <div className={styles.photo} style={{marginRight:'5px'}}>
+                                <Image
+                                    src={pic}
+                                    className={styles.blogPhoto1}   
+                                    alt="Picture of process"
+                                    layout="fill"
+                                />
+                            </div>
+                            <div className={styles.photo}>
+                                <Image
+                                    src={pic}
+                                    className={styles.blogPhoto1}   
+                                    alt="Picture of process"
+                                    layout="fill"
+                                />
+                            </div>
                         </div>
-                        <div className={styles.photo}>
-                            <Image
-                                src={pic}
-                                className={styles.blogPhoto1}   
-                                alt="Picture of process"
-                                layout="fill"
-                            />
-                        </div>
+                        <h1 className={styles.styl}>Inspiration styles</h1>
                     </div>
+                    
                     <div className={styles.cardDetails}>
                         <h1 className={styles.headTitle}>Kids bedroom</h1>
                         <div style={{display:"flex ",marginBottom:"10px"}}>
