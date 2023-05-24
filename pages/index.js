@@ -4,99 +4,147 @@ import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
 import Head from 'next/head';
 import Link from 'next/link';
+import { FaImage,FaCertificate } from "react-icons/fa"
+import { BsBriefcaseFill } from "react-icons/bs"
+
+import { MdOutlineVerified } from "react-icons/md"
+import profile from '../public/assets/edesign og.png'
 
 export default function Home() {
     const router = useRouter()
   return (
-    <>
+    <div className={styles.mainContainer}>
       <Head>
         <title>MOZAIK CONCEPTS</title>
         <meta name="description" content="" />
         <link rel="icon" href="/assets/logo.png" />
       </Head>
-        <div className={`container-fluid ${styles.container}`}>
-        <div className={styles.overlay}>
-        <div className={`row ${styles.navbar}`}>
-            <div className={`col-lg-2 col-md-6 col-sm-2 ${styles.logoContainer}`}>
-                <Link href="https://mozaikconcepts.com">
-                    <a>
-                    <Image
-                        src="/assets/logoLight.png"
-                        alt="logo"
-                        width={120}
-                        height={120}
-                    />
-                    </a>
+        <div className={styles.container}>
+            <div className={styles.navbar}>
+                <div className={styles.logoContainer}>
+                    <Link href="https://mozaikconcepts.com">
+                        <a>
+                        <Image
+                            src="/assets/logoLight.png"
+                            alt="logo"
+                            layout='fill'
+                        />
+                        </a>
                     </Link>
-            </div>
-                <div className={`col-lg-10 col-md-6 col-sm-6 ${styles.menuContainer}`}>
-                <Link href="https://www.mozaikconcepts.com/Contact"><button >Contact Us</button></Link>
-                    <span></span>
                 </div>
-        </div>
-            <div className={`row ${styles.headerContainer}`}>
-                <div className={`col-lg-12 col-sm-12 ${styles.headerText}`}>
-                    <h1><center>The Interior of Your</center>Home Re-Imagined in 3D</h1>
-                </div>
-                <div className={`col-lg-12 col-sm-12 ${styles.headerSubText}`}>
-                <Link href="/order"><button >Get Started</button></Link>
+                <div className={styles.menuContainer}>
+                    <Link href="https://www.mozaikconcepts.com/Contact"><button className='text-black'>Contact Us</button></Link>
                     <span></span>
                 </div>
             </div>
-        </div>
-        </div>
-        <div className="container-fluid">
-            <div className={` row ${styles.spaceContainer}`}>
-                <div className={` col-lg-12 col-sm-12 ${styles.spaceContent}`}>
-                    <p>
-                    Whether you are designing your house for the first time or renovating it, we can help you find your style
-                    as well as guiding you using our 3D rendering App and follow up on the whole project until it is completed
-                    </p>
+            <div className={styles.headerContainer}>
+                <div className={styles.headerText}>
+                    <h1>The Interior of Your Home Re-Imagined in 3D</h1>
+                </div>
+                <div className={styles.headerSubText}>
+                    <Link href="/order"><button className='text-black'>Get Started</button></Link>
+                    <span></span>
                 </div>
             </div>
         </div>
-        <div className="container-fluid">
-            <div className={` row ${styles.showStyleContainer}`}>
-                <div className={` col-lg-4  col-md-12 ${styles.styleContent}`}>
-                    <h4>Tell Us What You Want.</h4>
-                    <p>Through different steps, we get to understand your style and how you
-                        want your space to look like. </p>
-                </div>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage1}`}>
+        <div className={styles.containerTwo}>
+            <div className={styles.headTwo}>
+                <div className={styles.hr}></div>
+                <div>
+                    <h1 className={styles.titleTwo}>Benefits you get when</h1>
+                    <h1 className={styles.titleTwo}>using our services</h1>
                 </div>
             </div>
-        </div>
-        <div className="container-fluid ">
-            <div className={` row ${styles.showStyleContainer } ${styles.mar5} `}>
-            <div className={` col-lg-4  col-md-12 ${styles.styleContent}`} >
-                   <h4>Your Space Re-Imagined in 3D.</h4>
-                    <p>
-                        Using renowned softwares, our designers will come up with 3D concepts 
-                        and moodboards that will help you visualize your desired space. They will also
-                        work hand in hand with you to make sure that they deliver a final product you are satisfied with.
-                    </p>
+            <div className={styles.services}>
+                <div className={styles.card}>
+                    <FaCertificate className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Best Quality</h1>
+                        <p>All of our furniture uses the best materials and choices for our customers</p>
+                    </div>
                 </div>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage2} order-lg-first`} >
-                   
+                <div className={styles.card}>
+                    <BsBriefcaseFill className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Professional Expertise</h1>
+                        <p> Our skilled team brings in-depth knowledge and exceptional aesthetics to elevate your space.</p>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-        <div className="container-fluid">
-            <div className={` row ${styles.showStyleContainer} ${styles.mar5}`}>
-                <div className={` col-lg-4 pt-3 col-md-12 ${styles.styleContent}`}>
-                    <h4>Happiness Guarantee.</h4>
-                    <p>
-                        On top of the 3D concepts and moodboards, our team will also provide you with a shopping list 
-                        of every item included in the design to make shopping list of every item included in the design
-                        to make shopping and the whole experience easy for you.
-                    </p>
-                </div>
-                <div className={` col-lg-8  col-md-12 ${styles.styleImage3}`}>
+                <div className={styles.card}>
+                    <FaImage className={styles.icon}/>
+                    <div>
+                        <h1 className={styles.sTitle}>Visualizations and Renderings</h1>
+                        <p>{`Our advanced tools and renderings bring designs to life, helping you make informed decisions.`}</p>
+                    </div>
                 </div>
             </div>
+            <div className={styles.process}>
+                <div className={styles.processPhoto}>
+                    <Image
+                        src={profile}
+                        alt="Picture of process"
+                        layout='fill'
+                    />
+                </div>
+ 
+                <div className={styles.processDetails}>
+                    <h1 className={styles.processTitle}>We provide you the best process experience</h1>
+                    <div className={styles.list}>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>01</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Choose space</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>{`Begin your design journey by choosing the specific room. We'll transform your living room, bedroom, kitchen, office,or any space into something extraordinary.`}</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>02</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Choose style</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>{`Unveil your unique style through inspiration images. These visuals help us grasp your taste, guiding us to create a truly aesthetic and personalized design for you`}</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>03</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Choose colors</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>{`Curate your color palette. We'll guide you in selecting hues that reflect your style and set the desired ambiance for your space.`}</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>04</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Upload plan or choose technician</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>{`Upload your space photos for redesign or request a visit from our technician for an expert evaluation. Choose what works best for you.`}</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>05</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Send information and checkout</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                            <p className={styles.p1}>{`Complete the process by providing necessary details and proceed to the secure payment checkout for a seamless experience.`}</p>
+                        </div>
+                        <div className={styles.line}></div>                       
+                    </div> 
+                </div>              
+            </div>
         </div>
-    </>
+    </div>
   );
 }
 

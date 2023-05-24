@@ -64,7 +64,6 @@ const StepThree = () => {
         setItem("stageThree", data);
         dispatch(addStageThree(data));
     };
-    console.log(option);
     const handleSetFlooring = (e) => {
         setFlooring(e.target.value);
         const data = {

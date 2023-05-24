@@ -49,7 +49,6 @@ const StepFour = () => {
             plan: planImage,
             request: requestData,
         };
-        console.log(request,'request')
         setItem("stageFour", data);
         dispatch(addStageFour(data));
     };
@@ -59,7 +58,7 @@ const StepFour = () => {
             <div className="row">
                 <div
                     className="col-lg-6 col-md-12 flex-columns"
-                    style={{ alignItems: "flex-start" }}
+                    style={{ alignItems: "flex-start",alignSelf:"flex-start" }}
                 >
                     <p className="text-title">Upload Images</p>
                     <p><small>Here you upload pictures of your current room</small></p>
@@ -74,7 +73,7 @@ const StepFour = () => {
                 </div>
                 <div
                     className="col-lg-6 col-md-12 flex-columns"
-                    style={{ alignItems: "flex-start" }}
+                    style={{ alignItems: "flex-start",alignSelf:"flex-start"}}
                 >
                     <p className="text-title">Upload Plan</p>
                     <p><small>Here you upload a picture of your floor plan</small></p>

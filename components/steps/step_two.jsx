@@ -35,7 +35,6 @@ const StepTwo = () => {
     }, []);
     useEffect(() => {
         const s_styles = getItem("styles");
-        console.log(s_styles);
         if (s_styles) {
             setSelectedStyle(s_styles.styles);
             setImages(s_styles.images);
@@ -43,7 +42,6 @@ const StepTwo = () => {
 
         }
     }, []);
-    console.log("calling", selectedStyle);
     const onChange = (imageList) => {
         setImages(imageList);
         const style = { styles: selectedStyle, images: imageList, colors: colors };
@@ -53,7 +51,6 @@ const StepTwo = () => {
     const addSelectedStyle = (item) => {
         let check = selectedStyle.includes(item.name);
         if (!check) {
-            console.log(selectedStyle.length);
             if (selectedStyle.length >= 2) {
                 return;
             }
@@ -82,6 +79,7 @@ const StepTwo = () => {
                         <p className="text-title">
                             o Choose the style that suits you the most
                         </p>
+                        <p className="text-sm italic -mt-10 mb-5">{`(These visuals help us grasp your taste ,they are not representative to the design to be proposed)`}</p>
                     </div>
                     {styles.map((item, index) => (
                         <div

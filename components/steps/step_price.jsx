@@ -12,7 +12,19 @@ import FormLabel from "@mui/material/FormLabel";
 import { getItem, setItem } from "../../utils/persist";
 import { addSpace } from "../../state/slices/steps.slice";
 import { useEffect } from "react";
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
+
 const StepPrice = () => {
+
+    const [minValue, setMinValue] = useState(null);
+    const [maxValue, setMaxValue] = useState(null);
+
+    const handlePriceChange = (values) => {
+        setMinValue(values[0]);
+        setMaxValue(values[1]);  
+    };
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
     const [price, setPrice] = useState();
@@ -30,7 +42,7 @@ const StepPrice = () => {
       const data = { space: space, price: e.target.value };
       setItem("space", data);
       dispatch(addSpace(data));
-    }
+    }  
     return (
         <div className="container step-container">
                 <div className="row onstep-one-one">
@@ -40,6 +52,7 @@ const StepPrice = () => {
                                 o Have you planned a budget that you want to
                                 devote to it?
                             </p>
+                            <h1 className="text-md font-medium mb-4">{`Currency (RWF)`}</h1>
                             {price && <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
                                 defaultValue={price}
@@ -47,24 +60,24 @@ const StepPrice = () => {
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
-                                    value="300000-500000"
+                                    value="-500000"
                                     control={<Radio />}
-                                    label="300,000-500,000"
+                                    label="Less than 500,000"
                                 />
                                 <FormControlLabel
                                     value="500000-1000000"
                                     control={<Radio />}
-                                    label="500,000 to 1000,000"
+                                    label="500,000 to 1,000,000"
                                 />
                                 <FormControlLabel
                                     value="1000000-3000000"
                                     control={<Radio />}
-                                    label="1000,000 to 3000,000"
+                                    label="1,000,000 to 3,000,000"
                                 />
                                 <FormControlLabel
-                                    value="3000000"
+                                    value="3000000-"
                                     control={<Radio />}
-                                    label="3000,000"
+                                    label="3,000,000 and above"
                                 />
                             </RadioGroup>}
                        
@@ -75,9 +88,9 @@ const StepPrice = () => {
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
-                                    value="300K-500K"
+                                    value="-500K"
                                     control={<Radio />}
-                                    label="300K-500K"
+                                    label="Less than 500K"
                                 />
                                 <FormControlLabel
                                     value="500K-1000K"
@@ -90,15 +103,35 @@ const StepPrice = () => {
                                     label="1000K to 3000K"
                                 />
                                 <FormControlLabel
-                                    value="3000K"
+                                    value="3000K-"
                                     control={<Radio />}
-                                    label="3000K"
+                                    label="3000K and above"
                                 />
                             </RadioGroup>
                         
                         }
                         </FormControl>
                     </div>
+
+                    {/* <div className='h-screen bg-white p-56 mx-auto py-20'>
+                        <Slider
+                            range
+                            min={0}
+                            max={1000}
+                            defaultValue={[0, 1000]}
+                            onChange={handlePriceChange}
+                        />
+                        <div className='flex justify-between'>
+                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
+                                <h1 className='text-gray-600 text-[13px]'>{`Min (RWF)`}</h1>
+                                <h1 className='text-black text-[20px]'>{!minValue ? '0':`${minValue}`}</h1>
+                            </div>
+                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
+                                <h1 className='text-gray-600 text-[13px]'>{`Max (RWF)`}</h1>
+                                <h1 className='text-black text-[20px]'>{!maxValue ? '1000':`${maxValue}`}</h1>
+                            </div>
+                        </div>
+                    </div> */}
                 </div>
         </div>
     );
