@@ -221,6 +221,7 @@
 
 .containerTwo .process .processPhoto{
     border-radius: 5px;
+    align-self: center;
 }
 
 

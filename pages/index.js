@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { FaShippingFast,FaCertificate } from "react-icons/fa"
 import { MdOutlineVerified } from "react-icons/md"
-import profile from '../public/assets/aboute4.jpg'
+import profile from '../public/assets/edesign og.png'
 
 export default function Home() {
     const router = useRouter()
@@ -90,7 +90,7 @@ export default function Home() {
                         <div className={styles.one}>
                             <h1 className={styles.circle}>01</h1>
                             <div className={styles.details}>
-                                <h1 className={styles.title}>Briefing</h1>
+                                <h1 className={styles.title}>Choose space</h1>
                             </div>
                         </div>
                         <div className={styles.line}>
@@ -100,17 +100,37 @@ export default function Home() {
                         <div className={styles.one}>
                             <h1 className={styles.circle}>02</h1>
                             <div className={styles.details}>
-                                <h1 className={styles.title}>Processing</h1>
+                                <h1 className={styles.title}>Choose style</h1>
                             </div>
                         </div>
                         <div className={styles.line}>
                                 <div className={styles.vl}></div>
-                            <p className={styles.p}>When the briefing process is complete and what the client wants has been achieved. then we carry out the execution of the desired concept</p>
+                            <p className={styles.p}>Choose inspiration images ,they are used for understanding taste of client and are not a representative to the design to be proposed.</p>
                         </div>
                         <div className={styles.one}>
                             <h1 className={styles.circle}>03</h1>
                             <div className={styles.details}>
-                                <h1 className={styles.title}>Finishing</h1>
+                                <h1 className={styles.title}>Choose colors</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>04</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Upload plan or choose technician</h1>
+                            </div>
+                        </div>
+                        <div className={styles.line}>
+                                <div className={styles.vl}></div>
+                            <p className={styles.p}>First thing to determine the concept and the model you want , then choose what color and materials you want to use in furniture.</p>
+                        </div>
+                        <div className={styles.one}>
+                            <h1 className={styles.circle}>05</h1>
+                            <div className={styles.details}>
+                                <h1 className={styles.title}>Send information and checkout</h1>
                             </div>
                         </div>
                         <div className={styles.line}>
