@@ -82,6 +82,7 @@ const StepTwo = () => {
                         <p className="text-title">
                             o Choose the style that suits you the most
                         </p>
+                        <p className="text-sm italic -mt-10 mb-5">{`(These visuals help us grasp your taste ,they are not representative to the design to be proposed)`}</p>
                     </div>
                     {styles.map((item, index) => (
                         <div

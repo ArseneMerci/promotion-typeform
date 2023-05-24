@@ -12,6 +12,7 @@ const StepCheckout = () => {
                 <p className={styles.p}>Double-check your choices before finalizing payment to ensure accuracy and satisfaction with your order.</p>
                 <div className={styles.card}>
                     <div>
+                        <h1 className={`${styles.styl} font-medium`}>Inspiration styles:</h1>
                         <div className={styles.photoCard}>
                             <div className={styles.photo} style={{marginRight:'5px'}}>
                                 <Image
@@ -30,18 +31,22 @@ const StepCheckout = () => {
                                 />
                             </div>
                         </div>
-                        <h1 className={styles.styl}>Inspiration styles</h1>
+                        {/* <h1 className={styles.styl}>Inspiration styles</h1> */}
                     </div>
                     
                     <div className={styles.cardDetails}>
                         <h1 className={styles.headTitle}>Kids bedroom</h1>
                         <div style={{display:"flex ",marginBottom:"10px"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
-                            <h1 className={styles.h1} > {`Budget: 300,000-500,000 RWF`}</h1>
+                            <h1 className={styles.h1} ><span className='text-black font-medium'>Budget:</span>{" "}300,000-500,000 RWF</h1>
+                        </div>
+                        <div style={{display:"flex",marginBottom:"10px"}}>
+                            <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
+                            <h1 className={styles.h1}><span className='text-black font-medium'>Color:</span>{" "}Red,Yellow</h1>
                         </div>
                         <div style={{display:"flex"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
-                            <h1 className={styles.h1}>{`Color: Red,Yellow`}</h1>
+                            <h1 className={styles.h1}><span className='text-black font-medium'>Technician request:</span>{" "} True</h1>
                         </div>
                     </div>
                 </div>
