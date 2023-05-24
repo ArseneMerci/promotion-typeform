@@ -4,7 +4,9 @@ import Stepper from 'react-stepper-horizontal'
 import { useRouter } from 'next/router'
 import Head from 'next/head';
 import Link from 'next/link';
-import { FaShippingFast,FaCertificate } from "react-icons/fa"
+import { FaImage,FaCertificate } from "react-icons/fa"
+import { BsBriefcaseFill } from "react-icons/bs"
+
 import { MdOutlineVerified } from "react-icons/md"
 import profile from '../public/assets/edesign og.png'
 
@@ -62,17 +64,17 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.card}>
-                    <FaShippingFast className={styles.icon}/>
+                    <BsBriefcaseFill className={styles.icon}/>
                     <div>
-                        <h1 className={styles.sTitle}>Free shipping</h1>
-                        <p>Enjoy free shipping on our website! No hidden fees or extra charges.</p>
+                        <h1 className={styles.sTitle}>Professional Expertise</h1>
+                        <p> Our skilled team brings in-depth knowledge and exceptional aesthetics to elevate your space.</p>
                     </div>
                 </div>
                 <div className={styles.card}>
-                    <MdOutlineVerified className={styles.icon}/>
+                    <FaImage className={styles.icon}/>
                     <div>
-                        <h1 className={styles.sTitle}>Warranty</h1>
-                        <p>{`Shop with confidence - Our products come with a warranty`}</p>
+                        <h1 className={styles.sTitle}>Visualizations and Renderings</h1>
+                        <p>{`Our advanced tools and renderings bring designs to life, helping you make informed decisions.`}</p>
                     </div>
                 </div>
             </div>
