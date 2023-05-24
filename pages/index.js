@@ -77,13 +77,14 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.process}>
-                <Image
-                    src={profile}
-                    className={styles.processPhoto}
-                    alt="Picture of process"
-                    width="430px"
-                    height="450px"
-                /> 
+                <div className={styles.processPhoto}>
+                    <Image
+                        src={profile}
+                        alt="Picture of process"
+                        layout='fill'
+                    />
+                </div>
+ 
                 <div className={styles.processDetails}>
                     <h1 className={styles.processTitle}>We provide you the best process experience</h1>
                     <div className={styles.list}>
