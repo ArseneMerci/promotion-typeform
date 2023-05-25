@@ -173,7 +173,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Outfit', sans-serif;
-    /* height: 100vh; */
+    height: 100vh;
  }
 
  .resultIcon{
@@ -188,6 +188,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
     padding: 0px 50px;
+    margin-top:-250px ;
 }
 
 .resultTitle{
@@ -235,6 +236,15 @@
          font-size:1rem;
      }
  }
+
+ @media (max-width:580px){
+    .resultContainer{
+        width: 450px;
+        padding: 0px 50px;
+    }
+ }
+
+
  @media (max-width:500px)
  {    
     .container{
@@ -314,5 +324,33 @@
          text-align: center;
      }
  }
+
+
+ @media (max-width:480px){
+    .resultContainer{
+        width: 400px;
+        height: 300px;
+        padding: 0px 50px;
+    }
+ }
+
+ @media (max-width:400px){
+    .resultContainer{
+        width: 330px;
+        height: 300px;
+        padding: 0px 30px;
+    }
+ }
+
+ @media (max-width:300px){
+    .resultContainer{
+        width: 230px;
+        height: 320px;
+        padding: 0px 30px;
+    }
+ }
+
+
+ 
  
  
