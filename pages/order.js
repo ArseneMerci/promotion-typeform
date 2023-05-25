@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { clearError } from "../state/slices/steps.slice";
+import StepEight from "../components/steps/step_eight";
 
 function Order() {
   const dispatch = useDispatch();
@@ -43,8 +44,10 @@ function Order() {
         {selector.activeStep === 2 && <StepTwo />}
         {selector.activeStep === 3 && <StepTwoColors />}
         {selector.activeStep === 4 && <StepThree />}
-        {selector.activeStep === 5 && <StepFour />}
-        {selector.activeStep === 6 && <StepFive />}
+        {selector.activeStep === 5 && <StepEight />}
+        {selector.activeStep === 6 && <StepFour />}
+        {selector.activeStep === 7 && <StepFive />}
+        {/* {selector.activeStep === 7 && <StepEight />} */}
       </main>
       <Footer />
     </div>
