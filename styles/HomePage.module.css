@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .container{
     min-height:760px;
     background:black;
@@ -165,6 +167,44 @@
      margin-top:1rem;
      font-family: 'Times New Roman', Times, serif;
  }
+
+ .resultMainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    /* height: 100vh; */
+ }
+
+ .resultIcon{
+    font-size: 40px;
+    margin: 20px auto;
+    color: green;
+ }
+
+.resultContainer{
+    width: 500px;
+    height: 300px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+}
+
+.resultTitle{
+    font-size: 20px;
+    color: green;
+
+}
+
+.resultTitle2{
+    color: gray;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.resultHr{
+    border-bottom: 1px solid #c4c4c4;
+}
+
  @media (max-width:1100px) and (min-width:800px)
  {
      .headerText h1{
