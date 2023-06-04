@@ -11,8 +11,11 @@ const Card = ({ item, handleClick,handleDelete,active}) => {
         <img src={item?.image} />
       </section>
       <section className={classNames(styles.caption)}>
-        <p>{item?.name} <span className="price-color">50$</span></p>
+        <p>{item?.name}</p>
       </section>
+      {/* <section className={classNames(styles.caption)}>
+        <p>{item?.name} <span className="price-color">50$</span></p>
+      </section> */}
       <section className={classNames(styles.actionHolder)}>
         {handleDelete && <AiFillDelete size={30} onClick={()=>handleDelete(item)}/>}
       </section>

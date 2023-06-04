@@ -2,12 +2,8 @@ import { useRouter } from "next/router";
 import Button from "@mui/material/Button";
 import { clearAll } from "../utils/persist";
 import { useEffect } from "react";
-const ResultPage = () => {
-    useEffect(() => {
-        clearAll();
-    }, []);
+const PaymentFailedPage = () => {
     const redirect = () => {
-        clearAll();
         window.location.href = "/order";
     };
     return (
@@ -19,7 +15,7 @@ const ResultPage = () => {
                     className="success-image"
                 />
                 <section>
-                    <p>Thank you for filling this form, your request has been received and we will get back to you shortly.</p>
+                    <span>Ouups! Payment Failed please Try again</span>
                     <Button variant="text" className="back-to-home" onClick={redirect}>
                         Back To Order
                     </Button>
@@ -33,4 +29,4 @@ export function getStaticProps() {
         props: {}
     }
 }
-export default ResultPage;
+export default PaymentFailedPage;

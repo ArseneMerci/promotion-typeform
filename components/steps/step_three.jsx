@@ -27,6 +27,7 @@ const StepThree = () => {
             );
             setFurniture(s_styles.furnatureToKeep);
             setFlooring(s_styles.modification);
+            dispatch(addStageThree({ improvements: s_styles.improvements, furnatureToKeep: s_styles.furnatureToKeep, modification: s_styles.modification}));
         }
     }, []);
     const handlesetOptions = (e) => {
