@@ -154,7 +154,7 @@ const StepCheckout = () => {
                     }
                     {
                         isCodeValid && (
-                            <div style={{display:"flex",justifyContent:"space-between"}}>
+                            <div style={{display:"flex",justifyContent:"space-between", marginBottom:"10px"}}>
                             <h1 style={{fontSize:"15px",fontWeight:"400"}}>{codeOwner}&rsquo;s Promotion Applied </h1>
                             <h1 style={{fontSize:"15px",fontWeight:"400"}}>-{new Intl.NumberFormat().format(discount)}RWF</h1>
                         </div>
@@ -182,15 +182,15 @@ const StepCheckout = () => {
                                 type="text" 
                                 className="border-[1px] border-black" 
                                 onChange={(e) => setCode(e.target.value)}
-                                // disabled={isCodeValid}
+                                disabled={isCodeValid}
                                 value={code} 
                             />
                             <button 
                                 type="submit" 
                                 className="bg-green-700 py-2 px-4 rounded text-white ml-5 text-xs font-medium" 
-                                // style = {isCodeValid ? { opacity: "0.2", cursor: "not-allowed" } : {}}
+                                style = {isCodeValid ? { opacity: "0.2", cursor: "not-allowed" } : {}}
                                 onClick={handleVerifyCode} 
-                                // disabled={isCodeValid}
+                                disabled={isCodeValid}
                             >
                                 Verify
                             </button>
