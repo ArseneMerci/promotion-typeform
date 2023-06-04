@@ -33,6 +33,7 @@ const StepOne = () => {
                         <p className="text-title">
                             o Which room do you want to decorate or arrange?
                         </p>
+                        <p className="text-sm italic -mt-10 mb-5">From 50,000 RWF</p>
                     </div>
                     {products.map((item, index) => (
                         <div

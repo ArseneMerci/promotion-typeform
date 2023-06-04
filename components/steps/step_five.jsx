@@ -15,9 +15,9 @@ import ContentWrapper from "../contentWrapper";
 
 const StepFive = () => {
     const dispatch = useDispatch();
-    const selector = useSelector((state) => state.steps);
+    // const selector = useSelector((state) => state.steps);
     // const[loading,setLoading]=useState(false);
-    const router = useRouter();
+    // const router = useRouter();
     // const [file,setFile]=useState([]);
     const [info, setInfo] = useState({
         fname: "",
@@ -29,6 +29,7 @@ const StepFive = () => {
         const data = getItem("stageFive");
         if (data) {
             setInfo(data);
+            dispatch(addStageFive(data));
         }
     }, []);
     const handleInfo = (e) => {
@@ -38,35 +39,37 @@ const StepFive = () => {
         setItem("stageFive", value);
         dispatch(addStageFive(value));
     };
-    const successFull = () => {
-        // dispatch(next());
-        //  setLoading(true);
-        router.push("/result");
-    };
+    // const successFull = () => {
+    //     dispatch(next());
+    //     //  setLoading(true);
+    //     // router.push("/result");
+    // };
     const handleSubmit = () => {
-        // return successFull();
         if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
-        const { products, styles } = selector;
-        // const image=dataURItoBlob(selector.pictures[0].files);
-        const formdata = new FormData();
-        formdata.append("space", products.space);
-        formdata.append("spacePrice", products.price);
-        formdata.append("style", styles.styles);
-        formdata.append("inspirationalPics",JSON.stringify(styles.images));
-        formdata.append("colorStyle", styles.colors.status);
-        formdata.append("colorLiked", styles.colors.like);
-        formdata.append("colorNotLiked", styles.colors.not);
-        formdata.append("improvements", selector.improvements);
-        formdata.append("modification", selector.modification);
-        formdata.append("furnitureToKeep", selector.furnatureToKeep);
-        formdata.append("pictures", JSON.stringify(selector.pictures));
-        formdata.append("plan", selector.plan[0]?.data_url);
-        formdata.append("request", selector.request);
-        formdata.append("fname", info.fname);
-        formdata.append("address", info.city);
-        formdata.append("email", info.email);
-        formdata.append("phoneNumber", info.phone);
-        dispatch(saveOrderAsync({ data: formdata, success: successFull }));
+        dispatch(next());
+        // return successFull();
+        // if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
+        // const { products, styles } = selector;
+        // // const image=dataURItoBlob(selector.pictures[0].files);
+        // const formdata = new FormData();
+        // formdata.append("space", products.space);
+        // formdata.append("spacePrice", products.price);
+        // formdata.append("style", styles.styles);
+        // formdata.append("inspirationalPics",JSON.stringify(styles.images));
+        // formdata.append("colorStyle", styles.colors.status);
+        // formdata.append("colorLiked", styles.colors.like);
+        // formdata.append("colorNotLiked", styles.colors.not);
+        // formdata.append("improvements", selector.improvements);
+        // formdata.append("modification", selector.modification);
+        // formdata.append("furnitureToKeep", selector.furnatureToKeep);
+        // formdata.append("pictures", JSON.stringify(selector.pictures));
+        // formdata.append("plan", selector.plan[0]?.data_url);
+        // formdata.append("request", selector.request);
+        // formdata.append("fname", info.fname);
+        // formdata.append("address", info.city);
+        // formdata.append("email", info.email);
+        // formdata.append("phoneNumber", info.phone);
+        // dispatch(saveOrderAsync({ data: formdata, success: successFull }));
     };
     return (
         <ContentWrapper>
@@ -113,20 +116,21 @@ const StepFive = () => {
                                 variant="standard"
                             />
                         </div>
-                        <div className="flex-center">
+                        {/* <div className="flex-center">
                             {selector.loading &&(
                                 <CircularProgress size={20} color="inherit" />
                             )}
-                        </div>
+                        </div> */}
                         <div className="flex-center">
                             <button
                                 type="button"
                                 className={`form-button`}
-                                style = {selector.loading ? { opacity: "0.2", cursor: "not-allowed" } : {}}
-                                disabled={selector.loading}
+                                // style = {selector.loading ? { opacity: "0.2", cursor: "not-allowed" } : {}}
+                                // disabled={selector.loading}
                                 onClick={handleSubmit}
                             >
-                                <p>{selector.loading? 'Loading...': 'Submit'}</p>
+                                <p>Go to Checkout</p>
+                                {/* <p>{selector.loading? 'Loading...': 'Submit'}</p> */}
                             </button>
                         </div>
                     </div>

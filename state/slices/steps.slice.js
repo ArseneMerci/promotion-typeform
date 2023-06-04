@@ -9,8 +9,8 @@ export const saveOrderAsync = createAsyncThunk(
         return axios
             .post(`${process.env.API_URL}/api/order/new`, data)
             .then((resp) => {
-                clearAll();
-                success();
+                // clearAll();
+                success(resp.data.data.paymentResponse);
             })
             .catch((error) => {
                 console.log(error);

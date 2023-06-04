@@ -60,7 +60,7 @@ const StepPrice = () => {
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
-                                    value="-500000"
+                                    value="0-500000"
                                     control={<Radio />}
                                     label="Less than 500,000"
                                 />

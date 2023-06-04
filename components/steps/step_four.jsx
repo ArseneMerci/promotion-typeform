@@ -20,6 +20,7 @@ const StepFour = () => {
             setPictures(data.pictures);
             setPlan(data.plan);
             setRequest(data.request);
+            dispatch(addStageFour({ request: data.request, plan: data.plan, pictures: data.pictures}));
         }
     }, []);
     const onChange = (pictures) => {
