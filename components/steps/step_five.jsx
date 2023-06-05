@@ -11,6 +11,7 @@ import { addStageFive, next } from "../../state/slices/steps.slice";
 import { useEffect } from "react";
 import { getItem, setItem } from "../../utils/persist";
 import ContentWrapper from "../contentWrapper";
+import styles from '../../styles/information.module.css'
 
 
 const StepFive = () => {
@@ -72,73 +73,69 @@ const StepFive = () => {
         // dispatch(saveOrderAsync({ data: formdata, success: successFull }));
     };
     return (
-        <ContentWrapper>
-        <div className="container step-container">
-            <div className="row">
-                <div className="col-lg-12 flex-columns" style={{alignItems:"flex-start"}}>
-                    <div className="form-container">
-                        <div className="form-header">
-                            <h2>Information</h2>
-                        </div>
-                        <div className="form-contents">
-                            <TextField
-                                id="standard-basic"
-                                name="fname"
-                                value={info.fname}
-                                label="Enter Full Names"
-                                onChange={handleInfo}
-                                variant="standard"
-                                required
-                            />
-                            <TextField
-                                id="standard-b asic"
-                                name="email"
-                                value={info.email}
-                                label="Enter E-mail"
-                                onChange={handleInfo}
-                                variant="standard"
-                                required
-                            />
-                            <TextField
-                                id="standard-basic"
-                                name="phone"
-                                value={info.phone}
-                                label="Enter Phone"
-                                onChange={handleInfo}
-                                variant="standard"
-                            />
-                            <TextField
-                                id="standard-basic"
-                                value={info.city}
-                                label="Enter City"
-                                name="city"
-                                onChange={handleInfo}
-                                variant="standard"
-                            />
-                        </div>
-                        {/* <div className="flex-center">
-                            {selector.loading &&(
-                                <CircularProgress size={20} color="inherit" />
-                            )}
-                        </div> */}
-                        <div className="flex-center">
-                            <button
-                                type="button"
-                                className={`form-button`}
-                                // style = {selector.loading ? { opacity: "0.2", cursor: "not-allowed" } : {}}
-                                // disabled={selector.loading}
-                                onClick={handleSubmit}
-                            >
-                                <p>Go to Checkout</p>
-                                {/* <p>{selector.loading? 'Loading...': 'Submit'}</p> */}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <div className={styles.mainContainer}>
+            <div className={styles.container}>
+                <h1 className={styles.title}>Personal Information</h1>
+                <form action="" className={styles.form}>
+                    <label htmlFor="" className={styles.label}>
+                        Full names:
+                    </label>
+                    <input 
+                        name="fname"
+                        value={info.fname}
+                        onChange={handleInfo}
+                        required
+                        type="text" 
+                        className={styles.text} 
+                        placeholder="Enter full names" 
+                    />
+                    <label htmlFor="" className={styles.label}>
+                        Email:
+                    </label>
+                    <input 
+                        type="email" 
+                        className={styles.text} 
+                        placeholder="Enter email" 
+                        required
+                        name="email"
+                        value={info.email}
+                        onChange={handleInfo}
+                    />
+                    <label htmlFor="" className={styles.label}>
+                        Phone number
+                    </label>
+                    <input 
+                        type="text" 
+                        className={styles.text} 
+                        placeholder="Enter phone number" 
+                        required
+                        name="phone"
+                        value={info.phone}
+                        onChange={handleInfo}
+
+                    />
+                    <label htmlFor="" className={styles.label}>
+                        City:
+                    </label>
+                    <input 
+                        type="text" 
+                        className={styles.text} 
+                        placeholder="Enter city" 
+                        required
+                        value={info.city}
+                        name="city"
+                        onChange={handleInfo}
+                    />
+                    <button 
+                        type="submit" 
+                        className={styles.btn}
+                        onClick={handleSubmit}
+                    >
+                        Go to Checkout
+                    </button>
+                </form>
             </div>
         </div>
-        </ContentWrapper>
-
-    );
+      )
 };
 export default StepFive;
