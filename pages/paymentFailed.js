@@ -28,9 +28,11 @@ const PaymentFailedPage = () => {
                         <h1 className={styles.resultTitle3}>Failed!</h1>
                         <h1 className={styles.resultTitle2}>Ouups! Payment Failed please Try again</h1>
                     </div>
-                        <Button variant="text" className="back-to-home" onClick={redirect}>
-                        Back To Order
-                        </Button>
+                        <div  style={{width:'100%', display:'flex'}}>
+                            <Button className={styles.btn} style={{border:'1px #1DA1F2 solid', fontWeight:'100',padding:'5px 10px',borderRadius:'5px', margin:'10px auto',}} onClick={redirect}>
+                            Back To Order
+                            </Button>
+                        </div>
                 </div>
             </div>
         </div>
