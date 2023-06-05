@@ -43,9 +43,12 @@ const ResultPage = () => {
                                 <h1 className={styles.resultTitle2}>{query.payment_type}</h1>
                             </div>
                         </div>
-                        <Button class="btn btn-primary" onClick={redirect}>
-                        Back To Order
-                    </Button>
+                        <div  style={{width:'100%', display:'flex'}}>
+                            <Button className={styles.btn} style={{border:'1px #1DA1F2 solid', fontWeight:'100',padding:'5px 10px',borderRadius:'5px', margin:'10px auto',}} onClick={redirect}>
+                            Back To Order
+                            </Button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
