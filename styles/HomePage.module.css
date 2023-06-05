@@ -323,6 +323,13 @@
 
 }
 
+.resultTitle3{
+    font-size: 20px;
+    color:#FC100D;
+    margin: 10px 0px;
+
+}
+
 .resultTitle2{
     color: gray;
     font-size: 13px;
@@ -330,13 +337,27 @@
 }
 
 .resultHr{
-    border-bottom: 1px solid #c4c4c4;
+    border-bottom: 1px solid #d5d5d5;
     margin-bottom: 50px;
 }
 
 .resultPhoto{
     width: 60px;
     height: 90px;
+    position: relative;
+}
+
+.photo{
+    background-color: #eeecec;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 25px 15px;
+}
+
+.resultPhoto1{
+    width: 70px;
+    height: 50px;
     position: relative;
 }
 
