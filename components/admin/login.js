@@ -1,22 +1,19 @@
 import Input from './input';
-import style from '../../styles/login.module.css'
+// import style from '../../styles/login.module.css'
 import { FaKey } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-
+import { FaLock } from 'react-icons/fa';
+import styles from '../../styles/login.module.css'
 
 export default function Login() {
 
   const router = useRouter();
-  const initialState = {
-    username: "",
-    password: ""
-  };
-
   const [errorMessages, setError] = useState('');
 
-  const [state, setState] = useState(initialState);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('initialState');
   const [loading, setLoading] = useState(false);
 
 
@@ -37,7 +34,7 @@ export default function Login() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(state)
+      body: JSON.stringify({ username, password })
     };
 
     try {
@@ -57,30 +54,28 @@ export default function Login() {
 
   }
 
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
-  };
-
+  // const handleChange = (e) => {
+  //   setState({ ...state, [e.target.name]: e.target.value });
+  // };
   return (
-    <div className={style.loginFormContainer} >
-      <div className={style.loginTitle} >
-        <h1>Login</h1>
-
-      </div>
-      <div className={style.loginContainer} >
-        <form onSubmit={handleSubmit} >
-          <div className={style.flexIcons} >
-            <AiFillMail className={style.loginIcon} color='#002966' />
-            <Input placeholder={'Username'} name={'username'} type="text" handleOnchange={handleChange} />
-          </div>
-          <div className='flex-icons'>
-            <FaKey className={style.loginIcon} color='#002966' />
-            <Input placeholder={'Password'} name={'password'} type="password" handleOnchange={handleChange} />
-          </div>
-          {errorMessages?<p className={style.errorMessage}>Username or Password Incorrect</p>:null}
-          <button className={style.loginButton}>{loading ? "Loading...." : "Login"}</button>
-        </form>
-      </div>
+    <div className={styles.mainContainer}>
+        <div className={styles.container}>
+            <h1 className={styles.mainTitle}>Admin Login</h1>
+            <form  onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.box1}>
+                    <input type="text" placeholder="Username" className={styles.input} onChange={(e)=>setUsername(e.target.value)} />
+                    <h1 className={styles.text}>@</h1>
+                </div>
+                <div className={styles.box1}>
+                    <input type="password" placeholder="Password" className={styles.input} onChange={(e)=>setPassword(e.target.value)} />
+                    <FaLock className={styles.text1}/>
+                </div>
+                {errorMessages?<p className={styles.errorMessage}>Username or Password Incorrect</p>:null}
+                {/* <a href='' className='text-xs text-red-500 self-end -mt-[25px]'>Forgotten password ?</a> */}
+                <button type="submit" className={styles.button}><a href='welcome'>{loading ? "Loading...." : "Login"}</a></button>
+            </form>
+        </div>
     </div>
-  );
+    
+  )
 }
