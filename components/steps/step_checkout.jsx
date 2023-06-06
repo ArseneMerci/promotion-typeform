@@ -83,7 +83,7 @@ const StepCheckout = () => {
         formdata.append("address", info.city);
         formdata.append("email", info.email);
         formdata.append("phoneNumber", info.phone);
-        formdata.append("totalPrice", totalPrice);
+        formdata.append("totalPrice", '101');
         formdata.append("referralCodeOwner", codeOwner);
         formdata.append("referralCode", code);
         dispatch(saveOrderAsync({ data: formdata, success: successFull }));
