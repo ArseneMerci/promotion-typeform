@@ -28,12 +28,12 @@ const StepTwoColors = () => {
         like: "",
         not: "",
     });
-    const { products } = selector;
+    const { space } = selector;
     const maxNumber = 2;
 
     // useEffect(() => {
     //     designs.filter((item) => {
-    //         if (item.name == products.space) {
+    //         if (item.name == space.space) {
     //             return item.data.length > 0 ? setStyles(item.data) : "";
     //         }
     //     });

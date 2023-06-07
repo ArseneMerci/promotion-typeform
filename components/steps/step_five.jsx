@@ -50,11 +50,11 @@ const StepFive = () => {
         dispatch(next());
         // return successFull();
         // if(!info.fname || !info.email || !info.phone || !info.city) return toast.error("Please fill all fields");
-        // const { products, styles } = selector;
+        // const { space, styles } = selector;
         // // const image=dataURItoBlob(selector.pictures[0].files);
         // const formdata = new FormData();
-        // formdata.append("space", products.space);
-        // formdata.append("spacePrice", products.price);
+        // formdata.append("space", space.space);
+        // formdata.append("spacePrice", space.price);
         // formdata.append("style", styles.styles);
         // formdata.append("inspirationalPics",JSON.stringify(styles.images));
         // formdata.append("colorStyle", styles.colors.status);

@@ -20,7 +20,7 @@ export const saveOrderAsync = createAsyncThunk(
 );
 const initialState = {
     activeStep: 0,
-    products: {},
+    space: {},
     styles: {},
     improvements: "",
     modification: "",
@@ -54,7 +54,7 @@ const stepSlice = createSlice({
             state.error = ''
         },
         addSpace(state, { payload }) {
-            state.products = payload;
+            state.space = payload;
         },
         addStageThree(state, { payload }) {
             state.improvements = payload.improvements;
@@ -71,8 +71,8 @@ const stepSlice = createSlice({
             state.info = payload;
         },
         deleteProduct(state, { payload }) {
-            const data = state.products.filter((item) => item.id != payload.id);
-            state.products = data;
+            const data = state.space.filter((item) => item.id != payload.id);
+            state.space = data;
         },
         addStyle(state, { payload }) {
             state.styles = payload;

@@ -16,30 +16,32 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 
-const StepPrice = () => {
+const StepBudget = () => {
 
     const [minValue, setMinValue] = useState(null);
     const [maxValue, setMaxValue] = useState(null);
 
-    const handlePriceChange = (values) => {
+    const handleBudgetChange = (values) => {
         setMinValue(values[0]);
         setMaxValue(values[1]);  
     };
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
-    const [price, setPrice] = useState();
+    const [budget, setBudget] = useState();
+    const [cost, setCost] = useState("");
     useEffect(() => {
         const items = getItem("space");
         
         if (items) {
             setSpace(items.space);
-            setPrice(items.price);
-            dispatch(addSpace({ space: items.space, price: items.price}));
+            setCost(items.cost);
+            setBudget(items.budget);
+            dispatch(addSpace({ space: items.space, cost: items.cost, budget:items.budget}));
         }
     }, []);
-    const handleSetPrice=(e)=>{
-      setPrice(e.target.value);
-      const data = { space: space, price: e.target.value };
+    const handleSetBudget=(e)=>{
+      setBudget(e.target.value);
+      const data = { space: space, budget: e.target.value, cost: cost };
       setItem("space", data);
       dispatch(addSpace(data));
     }  
@@ -53,10 +55,10 @@ const StepPrice = () => {
                                 devote to it?
                             </p>
                             <h1 className="text-md font-medium mb-4">{`Currency (RWF)`}</h1>
-                            {price && <RadioGroup
+                            {budget && <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue={price}
-                                onChange={handleSetPrice}
+                                defaultValue={budget}
+                                onChange={handleSetBudget}
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
@@ -81,10 +83,10 @@ const StepPrice = () => {
                                 />
                             </RadioGroup>}
                        
-                        {price=="" && <RadioGroup
+                        {budget=="" && <RadioGroup
                                 aria-labelledby="demo-radio-buttons-group-label"
-                                defaultValue={price}
-                                onChange={handleSetPrice}
+                                defaultValue={budget}
+                                onChange={handleSetBudget}
                                 name="radio-buttons-group"
                             >
                                 <FormControlLabel
@@ -112,28 +114,14 @@ const StepPrice = () => {
                         }
                         </FormControl>
                     </div>
-
-                    {/* <div className='h-screen bg-white p-56 mx-auto py-20'>
-                        <Slider
-                            range
-                            min={0}
-                            max={1000}
-                            defaultValue={[0, 1000]}
-                            onChange={handlePriceChange}
-                        />
-                        <div className='flex justify-between'>
-                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
-                                <h1 className='text-gray-600 text-[13px]'>{`Min (RWF)`}</h1>
-                                <h1 className='text-black text-[20px]'>{!minValue ? '0':`${minValue}`}</h1>
-                            </div>
-                            <div className='h-[50px] w-[100px] border-[1px] border-black rounded'>
-                                <h1 className='text-gray-600 text-[13px]'>{`Max (RWF)`}</h1>
-                                <h1 className='text-black text-[20px]'>{!maxValue ? '1000':`${maxValue}`}</h1>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
+                {
+                        budget == "0-500000" && 
+                        <div className=''>
+                            <h1 className='text-danger'>Your budget is low, you should expect minor decorations and space planning only</h1>
+                        </div>
+                    }
         </div>
     );
 };
-export default StepPrice;
+export default StepBudget;
