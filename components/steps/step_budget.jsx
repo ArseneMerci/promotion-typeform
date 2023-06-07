@@ -12,8 +12,9 @@ import FormLabel from "@mui/material/FormLabel";
 import { getItem, setItem } from "../../utils/persist";
 import { addSpace } from "../../state/slices/steps.slice";
 import { useEffect } from "react";
-import Slider from 'rc-slider';
+import { HiInformationCircle } from 'react-icons/hi2'
 import 'rc-slider/assets/index.css';
+
 
 
 const StepBudget = () => {
@@ -117,8 +118,9 @@ const StepBudget = () => {
                 </div>
                 {
                         budget == "0-500000" && 
-                        <div className=''>
-                            <h1 className='text-danger'>Your budget is low, you should expect minor decorations and space planning only</h1>
+                        <div className="informationWarning">
+                            <HiInformationCircle className='informationCircle' style={{color:'#059',marginRight:'5px'}}/>
+                            <h1 style={{}}>Your budget is low, you should expect minor decorations and space planning only</h1>
                         </div>
                     }
         </div>
