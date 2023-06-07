@@ -10,18 +10,21 @@ import ContentWrapper from "../contentWrapper";
 const StepOne = () => {
     const dispatch = useDispatch();
     const [space, setSpace] = useState("");
-    const [price, setPrice] = useState("");
+    const [cost, setCost] = useState("");
+    const [budget, setBudget] = useState("");
     useEffect(() => {
         const items = getItem("space");
         if (items) {
             setSpace(items.space);
-            setPrice(items.price);
-            dispatch(addSpace({ space: items.space, price: items.price}));
+            setCost(items.cost);
+            setBudget(items.budget);
+            dispatch(addSpace({ space: items.space, cost: items.cost, budget: items.budget}));
         }
     }, []);
     const handleAddSpace = (item) => {
-        const data = { space: item.name, price: price };
+        const data = { space: item.name, cost: item.cost, budget };
         setSpace(item.name);
+        setCost(item.cost);
         setItem("space", data);
         dispatch(addSpace(data));
     };

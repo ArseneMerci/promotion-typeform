@@ -7,7 +7,7 @@ const validaData = (currentStep) => {
     if(currentStep === 0) {
         if(localStorage.getItem('space')){
             const space  = getItem('space');
-            if(space.space) {
+            if(space.space && space.cost) {
                 result = true
                 localStorage.removeItem('styles');
             }
@@ -51,7 +51,7 @@ const validaData = (currentStep) => {
     if(currentStep === 5) {
         if(localStorage.getItem('space')){
             const space  = getItem('space');
-            if(space.price) result = true;
+            if(space.budget) result = true;
             else error = "Please select your budget";  
         }
         else error = "Please select your budget";       

@@ -18,56 +18,76 @@ const StepCheckout = () => {
     const dispatch = useDispatch();
 
     const [code,setCode]=useState("");
+    const [validCode,setValidCode]=useState("");
     const [isCodeValid,setIsCodeValid]=useState(false);
     const [codeOwner,setCodeOwner]=useState('');
     const [inspirationalStyles,setInspirationalStyles]=useState([]);
     const [budget, setBudget] = useState('0');
     const [requestTechnician, setRequestTechnician] = useState(false);
     const [space, setSpace] = useState('');
-    const [spacePrice, setSpacePrice] = useState(50000);
-    const [totalPrice, setTotalPrice] = useState(50000);
+    const [spacePrice, setSpacePrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
     const [discount, setDiscount] = useState(0);
+    const [discountPercentage, setDiscountPercentage] = useState(0);
 
     useEffect(() => {
-        const { products, styles } = selector;
-        setBudget(products.price);
-        setSpace(products.space.toUpperCase());
+        const { space, styles } = selector;
+        setBudget(space.budget);
+        const cost = Number(space.cost);
+        setSpacePrice(cost);
+        setSpace(space.space.toUpperCase());
         setRequestTechnician(selector.request);
         if(selector.request){
-            setTotalPrice(totalPrice+10000);
+            setTotalPrice(cost+10000);
         }
-        const space = designs.find((design) => design.name === products.space);
-        const images = space.data.filter((design) =>
+        const designSpace = designs.find((design) => design.name === space.space);
+        const images = designSpace.data.filter((design) =>
             styles.styles.includes(design.name))
             .map((design) => design.image);
         setInspirationalStyles(images);
     }, []);
-
     const handleVerifyCode = (e) => {
         e.preventDefault();
-        const {valid, name} = validatePromoCode(code);
+        const {valid, promo, name} = validatePromoCode(code);
         if(valid){
             setIsCodeValid(true);
             setCodeOwner(name);
-            setDiscount(5000);
-            setTotalPrice(totalPrice-5000);
+            setValidCode(promo.code);
+            setDiscountPercentage(promo.discount);
+            const totalPriceBeforeDiscount = spacePrice + (requestTechnician ? 10000 : 0);
+            const discount = (totalPriceBeforeDiscount * promo.discount) / 100;
+            if(name === 'Testing'){
+                setDiscount(totalPriceBeforeDiscount-101);
+                setTotalPrice(101);
+            } else{
+                setDiscount(discount);
+                setTotalPrice(totalPriceBeforeDiscount-discount);
+            }
             toast.success(`${name}'s promo code applied`);
-        }else{
+        } else{
             setIsCodeValid(false);
+            setCodeOwner('');
+            setValidCode('');
+            setDiscount(0);
+            setDiscountPercentage(0);
+            if(requestTechnician){
+                setTotalPrice(spacePrice+10000);
+            } else{
+                setTotalPrice(spacePrice);
+            }
             toast.error("Invalid promo code");
         }
     }
     const successFull = (response) => {
-        // return console.log('response', response)
-    //  setLoading(true);
     return router.push(response.data.link);
     };
     const handleSubmit = () => {
-        const { products, styles, info } = selector;
+        const { space, styles, info } = selector;
         // const image=dataURItoBlob(selector.pictures[0].files);
         const formdata = new FormData();
-        formdata.append("space", products.space);
-        formdata.append("spacePrice", products.price);
+        formdata.append("space", space.space);
+        formdata.append("spaceBudget", space.budget);
+        formdata.append("spaceCost", space.cost);
         formdata.append("style", styles.styles);
         formdata.append("inspirationalPics",JSON.stringify(styles.images));
         formdata.append("colorStyle", styles.colors.status);
@@ -83,9 +103,11 @@ const StepCheckout = () => {
         formdata.append("address", info.city);
         formdata.append("email", info.email);
         formdata.append("phoneNumber", info.phone);
-        formdata.append("totalPrice", '101');
+        formdata.append("totalPrice", totalPrice);
         formdata.append("referralCodeOwner", codeOwner);
-        formdata.append("referralCode", code);
+        formdata.append("referralCode", validCode);
+        formdata.append("discountedAmount",discount);
+        formdata.append("discountedPercentage",discountPercentage);
         dispatch(saveOrderAsync({ data: formdata, success: successFull }));
     };
   return (
@@ -155,7 +177,7 @@ const StepCheckout = () => {
                     {
                         isCodeValid && (
                             <div style={{display:"flex",justifyContent:"space-between", marginBottom:"10px"}}>
-                            <h1 style={{fontSize:"15px",fontWeight:"400"}}>{codeOwner}&rsquo;s Promotion Applied </h1>
+                            <h1 style={{fontSize:"15px",fontWeight:"400"}}>{codeOwner}&rsquo;s Discount Applied: {discountPercentage}%</h1>
                             <h1 style={{fontSize:"15px",fontWeight:"400"}}>-{new Intl.NumberFormat().format(discount)}RWF</h1>
                         </div>
                         )
@@ -182,15 +204,15 @@ const StepCheckout = () => {
                                 type="text" 
                                 className="border-[1px] border-black" 
                                 onChange={(e) => setCode(e.target.value)}
-                                disabled={isCodeValid}
+                                // disabled={isCodeValid}
                                 value={code} 
                             />
                             <button 
                                 type="submit" 
                                 className="bg-green-700 py-2 px-4 rounded text-white ml-5 text-xs font-medium" 
-                                style = {isCodeValid ? { opacity: "0.2", cursor: "not-allowed" } : {}}
+                                // style = {isCodeValid ? { opacity: "0.2", cursor: "not-allowed" } : {}}
                                 onClick={handleVerifyCode} 
-                                disabled={isCodeValid}
+                                // disabled={isCodeValid}
                             >
                                 Verify
                             </button>

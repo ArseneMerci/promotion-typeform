@@ -8,7 +8,7 @@ import { deleteProduct } from "../../state/slices/steps.slice";
 const Footer = () => {
     const dispatch = useDispatch();
     const [toggle, setToggle] = useState(false);
-    const { products } = useSelector((state) => state.steps);
+    const { space } = useSelector((state) => state.steps);
     const handleDelete = (item) => {
         dispatch(deleteProduct(item));
     };

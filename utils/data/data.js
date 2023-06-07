@@ -3,41 +3,49 @@ export const products = [
         id: "1",
         name: "bathroom",
         image: "/assets/bathroom.png",
+        cost: "50000"
     },
     {
         id: "2",
         name: "dining",
         image: "/assets/dining.png",
+        cost: "50000"
     },
     {
         id: "3",
         name: "home office",
         image: "/assets/office.png",
+        cost: "50000"
     },
     {
         id: "4",
         name: "kids bedroom",
         image: "/assets/kids.png",
+        cost: "50000"
     },
     {
         id: "5",
         name: "kitchen",
         image: "/assets/kitchen.png",
+        cost: "50000"
     },
     {
         id: "6",
         name: "living room",
         image: "/assets/saloon.png",
+        cost: "50000"
     },
     {
         id: "7",
         name: "master bedroom",
         image: "/assets/master.png",
+        cost: "50000"
     },
     {
         id: "8",
         name: "Secondary bedroom",
         image: "/assets/master.png",
+        cost: "50000"
     }
 
 

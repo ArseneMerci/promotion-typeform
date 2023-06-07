@@ -1,16 +1,23 @@
 const promoCodes = {
-    "user1": 87129,
-    "user2": 54371,
-    "user3": 92685,
-    "user4": 31742,
-    "user5": 68957,
+    "Yannick": {
+      "code": 87129,
+      "discount": 10,
+    },
+    "User2": {
+      "code": 54371,
+      "discount": 10,
+    },
+    "Testing": {
+      "code": 12345,
+      "discount": 100,
+    },
   };
   
   const validatePromoCode = (code) => {
-    const valid = Object.values(promoCodes).includes(parseInt(code));
-    const name = valid? Object.keys(promoCodes).find((key) => promoCodes[key] === parseInt(code)) : null;
-  
-    return { valid, name };
-  };
+    const valid = Object.values(promoCodes).some((promo) => promo.code === parseInt(code));
+    const promo = valid ? Object.values(promoCodes).find((promo) => promo.code === parseInt(code)) : null;
+    const name = promo ? Object.keys(promoCodes).find((key) => promoCodes[key] === promo) : null;
+    return { valid, promo, name };
+  };  
 
 export default validatePromoCode;
