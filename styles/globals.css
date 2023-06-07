@@ -64,6 +64,10 @@ h1,h2,h4,h5,h5,p{
 .imagePreviewCard{
   margin:5px;
 }
+
+
+
+
 .flex-columns{
   display:flex;
   justify-content:center;
@@ -183,6 +187,38 @@ h1,h2,h4,h5,h5,p{
   margin-bottom: 40px;
   margin-top: 40px;
 }
+
+.informationWarning{
+  color:#059;
+  font-style:italic;
+  display:flex;
+}
+
+.informationCircle{
+  font-size: 50px;
+}
+
+.informationCircle{
+  font-size: 20px;
+}
+
+@media (max-width: 750px){ 
+  .informationWarning{
+    margin-top: -300px; 
+  }
+}
+
+@media (max-width: 480px){ 
+  .informationWarning{
+    margin-top: -250px; 
+  }
+
+  .informationCircle{
+    font-size: 50px;
+    margin-top: -10px;
+  }
+}
+
 @media (max-width: 750px) {
   .step-container{
     width:80%;
