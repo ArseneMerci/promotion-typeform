@@ -11,6 +11,10 @@ const promoCodes = {
       "code": 12345,
       "discount": 100,
     },
+    "merge": {
+      "code": 97532,
+      "discount": 30,
+    },
   };
   
   const validatePromoCode = (code) => {
