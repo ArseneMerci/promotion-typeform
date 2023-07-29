@@ -3,13 +3,13 @@ export const products = [
         id: "1",
         name: "bathroom",
         image: "/assets/bathroom.png",
-        cost: "50000"
+        cost: "45000"
     },
     {
         id: "2",
         name: "dining",
         image: "/assets/dining.png",
-        cost: "50000"
+        cost: "40000"
     },
     {
         id: "3",
@@ -27,7 +27,7 @@ export const products = [
         id: "5",
         name: "kitchen",
         image: "/assets/kitchen.png",
-        cost: "50000"
+        cost: "80000"
     },
     {
         id: "6",
@@ -45,7 +45,7 @@ export const products = [
         id: "8",
         name: "Secondary bedroom",
         image: "/assets/master.png",
-        cost: "50000"
+        cost: "40000"
     }
 
 

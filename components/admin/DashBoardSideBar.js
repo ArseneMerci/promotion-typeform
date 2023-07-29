@@ -46,6 +46,18 @@ export default function DashboardSideBar() {
               <a className={ router.pathname == "/admin/assistant-orders" ? "text-success" : "" }>Orders Requesting Assistance</a>
             </Link>
           </div>
+          <div className={styles.items} >
+          <FaRegListAlt className={styles.sideBarCardsImage} />
+            <Link href="/admin/newReferral">
+              <a className={ router.pathname == "/admin/newReferral" ? "text-success" : "" }>New Referral</a>
+            </Link>
+          </div>
+          <div className={styles.items} >
+          <FaRegListAlt className={styles.sideBarCardsImage} />
+            <Link href="/admin/allReferrals">
+              <a className={ router.pathname == "/admin/allReferrals" ? "text-success" : "" }>All Referral</a>
+            </Link>
+          </div>
         </div>
       </div>
     </>
