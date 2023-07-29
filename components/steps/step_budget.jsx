@@ -90,25 +90,25 @@ const StepBudget = () => {
                                 onChange={handleSetBudget}
                                 name="radio-buttons-group"
                             >
-                                <FormControlLabel
-                                    value="-500K"
+                               <FormControlLabel
+                                    value="0-500000"
                                     control={<Radio />}
-                                    label="Less than 500K"
+                                    label="Less than 500,000"
                                 />
                                 <FormControlLabel
-                                    value="500K-1000K"
+                                    value="500000-1000000"
                                     control={<Radio />}
-                                    label="500K to 1000K"
+                                    label="500,000 to 1,000,000"
                                 />
                                 <FormControlLabel
-                                    value="1000K-3000K"
+                                    value="1000000-3000000"
                                     control={<Radio />}
-                                    label="1000K to 3000K"
+                                    label="1,000,000 to 3,000,000"
                                 />
                                 <FormControlLabel
-                                    value="3000K-"
+                                    value="3000000-"
                                     control={<Radio />}
-                                    label="3000K and above"
+                                    label="3,000,000 and above"
                                 />
                             </RadioGroup>
                         
@@ -120,7 +120,7 @@ const StepBudget = () => {
                         budget == "0-500000" && 
                         <div className="informationWarning">
                             <HiInformationCircle className='informationCircle' style={{color:'#059',marginRight:'5px'}}/>
-                            <h1 style={{}}>Your budget is low, you should expect minor decorations and space planning only</h1>
+                            <h1 style={{}}>Budget-friendly tip: Decorations & accent furniture - yes! Major furniture changes - may need more. 😊</h1>
                         </div>
                     }
         </div>
