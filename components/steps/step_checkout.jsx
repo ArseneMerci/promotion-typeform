@@ -46,9 +46,9 @@ const StepCheckout = () => {
             .map((design) => design.image);
         setInspirationalStyles(images);
     }, []);
-    const handleVerifyCode = (e) => {
+    const handleVerifyCode = async(e) => {
         e.preventDefault();
-        const {valid, promo, name} = validatePromoCode(code);
+        const {valid, promo, name} = await validatePromoCode(code);
         if(valid){
             setIsCodeValid(true);
             setCodeOwner(name);
@@ -140,6 +140,10 @@ const StepCheckout = () => {
                         <div style={{display:"flex ",marginBottom:"10px"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
                             <h1 className={styles.h1} ><span className='text-black font-medium'>Budget:</span>{budget}</h1>
+                        </div>
+                        <div style={{display:"flex ",marginBottom:"10px"}}>
+                            <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
+                            <h1 className={styles.h1} ><span className='text-black font-medium'>Concept price:</span>{spacePrice}</h1>
                         </div>
                         {/* <div style={{display:"flex",marginBottom:"10px"}}>
                             <AiFillCheckCircle style={{color:"green",marginRight:"5px", fontSize:"20px",marginTop:"-1px"}}/>
