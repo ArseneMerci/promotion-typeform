@@ -39,6 +39,8 @@ const StepCheckout = () => {
         setRequestTechnician(selector.request);
         if(selector.request){
             setTotalPrice(cost+10000);
+        }else{
+            setTotalPrice(cost);
         }
         const designSpace = designs.find((design) => design.name === space.space);
         const images = designSpace.data.filter((design) =>

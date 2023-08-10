@@ -21,11 +21,8 @@ import axios from "axios";
 //   };
   
   const validatePromoCode = async(code) => {
-      const config = {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      };
       try{
-        const resp =  await axios.get(`${process.env.API_URL}/api/referrals/exists/${code}`,config)
+        const resp =  await axios.get(`${process.env.API_URL}/api/referrals/exists/${code}`)
         const referral = resp.data.data;
         console.log(referral)
       return {valid:true,promo:{ discount: referral.referralPercentage, code: referral.referralCode },name:referral.referralName}
