@@ -27,13 +27,6 @@ const feedback = () => {
         }));
       };
 
-      const handleAll = () => {
-        setFeedbackData({
-          'concept': concept,
-          'management': management,
-        });
-      };
-
       const handleSubmitFeedback = async () => {
         try {
             setFeedbackData({
@@ -43,8 +36,10 @@ const feedback = () => {
                 'management': management,
             });
             console.log(feedbackData);
-          const response = await axios.post('/api/here', { feedbackData });
+          const response = await axios.post(`https://urchin-app-l9pp3.ondigitalocean.app/api/feedback/new`, { feedbackData });
           console.log(feedbackData);
+          console.log(response);
+
         } catch (error) {
           console.error('Error submitting feedback:', error);
         }
@@ -53,7 +48,7 @@ const feedback = () => {
     <div className={styles.mainContainer}>
         <div style={{ cursor: "pointer" }}>
             <Link href='/'>
-                <Image src={log} width='150px' height='150px' alt='logg' />
+                <Image src={log} width='120px' height='100px' alt='logg' />
             </Link>
         </div>
         <div className={styles.container}>
