@@ -8,7 +8,6 @@ import Link from "next/link";
 import log from "../public/assets/logo.png";
 
 const feedback = () => {
-    const [feedbackData, setFeedbackData] = useState({});
     const [ fullName,setFullName ] = useState(null);
     const [ phone , setPhone ] = useState(null);
     const [ concept ,setConcept ] = useState({});
@@ -27,17 +26,19 @@ const feedback = () => {
         }));
       };
 
-      const handleSubmitFeedback = async () => {
+      const handleSubmitFeedback = async (e) => {
+        e.preventDefault();
         try {
-            setFeedbackData({
+
+            const feedbackData = {
                 fullName,
                 emailOrPhone:phone,
                 'concept': concept,
                 'management': management,
-            });
+            }
             console.log(feedbackData);
-          const response = await axios.post(`https://urchin-app-l9pp3.ondigitalocean.app/api/feedback/new`, { feedbackData });
-          console.log(feedbackData);
+
+          const response = await axios.post(`https://mozaik-portal-api-wgwap.ondigitalocean.app/api/feedback/new`, { feedbackData });
           console.log(response);
 
         } catch (error) {
@@ -100,10 +101,10 @@ const feedback = () => {
                     <EmojiSlider questionIndex={'Quality of materials and furnishings used'} onEmojiSelect={(emojiIndex) => handleEmojiManagementSelect('Quality of materials and furnishings used', emojiIndex)}/>
                 </div>
             </div>
-            <div className={styles.form}>
+            <form className={styles.form}>
                 <input type="text" value={fullName} className="" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
                 <input type="text" value={phone} className="" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
-            </div>
+            </form>
             <button onClick={handleSubmitFeedback}>Submit</button>
         </div>
     </div>

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import styles from '../styles/feedback.module.css'
 
-const emojis = ['😡','🙁','😐','😃','😍']; // Define your emojis here
+const emojis = ['😡','🙁','😐','😃','😍'];
+const labels = ['Very Dissatisfied','Somewhat Dissatisfied','Neutral','Satisfied','Very Satisfied']; 
 
 const EmojiSlider = ({ onEmojiSelect }) => {
   const [sliderValue, setSliderValue] = useState(1); // Default value in the middle
@@ -19,7 +21,8 @@ const EmojiSlider = ({ onEmojiSelect }) => {
           <div className='emoji-container'>
             {emojis.map((emoji, index) => (
             <div key={index} className={`emoji ${sliderValue === index ? 'selected' : ''}`} onClick={()=>{setSliderValue(index);onEmojiSelect(index)}}>
-                {emoji}
+                <h1>{emoji}</h1>
+                <h1 className={`${sliderValue === index ? styles.label : styles.label2}`}>{labels[index]}</h1>
             </div>
             ))}
           </div>

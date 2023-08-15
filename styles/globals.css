@@ -268,9 +268,9 @@ h1,h2,h4,h5,h5,p{
   }
   
   .emoji.selected {
-	transform: scale(1.4);
+	transform: scale(1.5);
   }
 .emoji-container{
 	display: flex;
-	margin-top:5px ;
+	margin-top:10px ;
 }
