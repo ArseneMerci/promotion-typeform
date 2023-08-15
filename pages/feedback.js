@@ -34,7 +34,7 @@ const feedback = () => {
                 fullName,
                 emailOrPhone:phone,
                 'concept': concept,
-                'management': management,
+                'projectManagement': management,
             }
             console.log(feedbackData);
 
@@ -55,7 +55,7 @@ const feedback = () => {
         <div className={styles.container}>
             <div>
                 <h1 className={styles.maintitle}>{`We'd love to hear from you`}</h1>
-                <h1 className={styles.maintitle}>{`Project management`}</h1>
+                <h1 className={styles.maintitle}>{`Concept`}</h1>
 
                 <div>
                     <h1 className={styles.title}>{`1.Timeliness of clarity of communication regarding project updates and changes`}</h1>
