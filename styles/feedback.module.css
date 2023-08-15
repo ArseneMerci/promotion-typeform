@@ -51,6 +51,9 @@
 .label2{
     display: none;
 }
+.label3{
+    margin-left: -5px;
+}
 
 @media (max-width: 480px){
     .mainContainer{
