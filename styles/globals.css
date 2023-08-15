@@ -286,3 +286,27 @@ h1,h2,h4,h5,h5,p{
 .imageLinks:hover{
   color: green
 }
+
+.emoji-slider {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	width: 250px;
+  }
+  
+  .emoji {
+	font-size: 1.2rem;
+	margin: 0 10px;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+  }
+  
+  .emoji.selected {
+	transform: scale(1.5);
+  }
+.emoji-container{
+	display: flex;
+	margin-top:10px ;
+}
