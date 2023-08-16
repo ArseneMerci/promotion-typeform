@@ -9,6 +9,9 @@ import log from "../public/assets/logo.png";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Stepper from 'react-stepper-horizontal';
+import { useSelector } from 'react-redux';
+
 
 const feedback = () => {
     const [ fullName,setFullName ] = useState(null);
@@ -16,7 +19,7 @@ const feedback = () => {
     const [ concept ,setConcept ] = useState({});
     const [ management ,setManagement ] = useState({});
     const [ loader ,setLoader ] = useState();
-
+    const count = useSelector((state)=>state.pages.value);
 
 
     const handleEmojiSelect = (questionIndex, emojiIndex) => {
@@ -71,16 +74,17 @@ const feedback = () => {
         }
       };
   return (
-    <div className={styles.mainContainer}>
+    <div className={`${styles.mainContainer} `}>
       <ToastContainer />
         <div style={{ cursor: "pointer" }}>
             <Link href='/'>
                 <Image src={log} width='120px' height='100px' alt='logg' />
             </Link>
         </div>
-        <div className={styles.container}>
-            <div>
-                <h1 className={styles.maintitle}>{`We'd love to hear from you`}</h1>
+        <div className={`${styles.container} border-[1px] border-amber-500 rounded`}>
+            <Stepper steps={ [{title: 'Concept'}, {title: `Management`}] } activeStep={ count } />
+            <h1 className={styles.maintitle}>{`We'd love to hear from you`}</h1>
+            {count === 0 && <div>
                 <h1 className={styles.maintitle}>{`Concept`}</h1>
 
                 <div>
@@ -103,8 +107,8 @@ const feedback = () => {
                     <h1 className={styles.title}>{`5.Overall satisfaction with the interior design service provided.`}</h1>
                     <EmojiSlider questionIndex={'Overall satisfaction with the interior design service provided'} onEmojiSelect={(emojiIndex) => handleEmojiSelect('Overall satisfaction with the interior design service provided', emojiIndex)}/>
                 </div>
-            </div>
-            <div style={{marginTop:'50px'}}>
+            </div>}
+            {count === 1 && <div style={{marginTop:'50px'}}>
                 <h1 className={styles.maintitle}>{`Project management`}</h1>
                 <div>
                     <h1 className={styles.title}>{`1. Adherence to project timelines and deadlines.`}</h1>
@@ -126,7 +130,7 @@ const feedback = () => {
                     <h1 className={styles.title}>{`5.Quality of materials and furnishings used.`}</h1>
                     <EmojiSlider questionIndex={'Quality of materials and furnishings used'} onEmojiSelect={(emojiIndex) => handleEmojiManagementSelect('Quality of materials and furnishings used', emojiIndex)}/>
                 </div>
-            </div>
+            </div>}
             <form className={styles.form}>
                 <input type="text" value={fullName} className="" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
                 <input type="text" value={phone} className="" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
