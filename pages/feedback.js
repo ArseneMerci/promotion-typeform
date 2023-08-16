@@ -20,6 +20,7 @@ const feedback = () => {
     const [ management ,setManagement ] = useState({});
     const [ loader ,setLoader ] = useState();
     const count = useSelector((state)=>state.pages.value);
+    const type = useSelector((state)=> state.pages.type );
 
 
     const handleEmojiSelect = (questionIndex, emojiIndex) => {
@@ -82,8 +83,7 @@ const feedback = () => {
             </Link>
         </div>
         <div className={`${styles.container} border-[1px] border-amber-500 rounded`}>
-            <Stepper steps={ [{title: 'Concept'}, {title: `Management`}] } activeStep={ count } />
-            <h1 className={styles.maintitle}>{`We'd love to hear from you`}</h1>
+            {type === 'management' && <Stepper steps={ [{title: 'Concept'}, {title: `Management`}] } activeStep={ count } />}
             {count === 0 && <div>
                 <h1 className={styles.maintitle}>{`Concept`}</h1>
 
