@@ -86,7 +86,7 @@ const feedback = () => {
             </Link>
         </div>
         <div className={`${styles.container} border-[1px] border-amber-500 rounded`}>
-            {type === 'management' && <Stepper steps={ [{title: 'Concept'}, {title: `Management`}] } activeStep={ count } className='w-full'/>}
+            {type === 'management' && <Stepper steps={ [{title: 'Concept'}, {title: `Project Management`}] } activeStep={ count } className='w-full'/>}
             {count === 0 && <div>
                 <h1 className={`${styles.maintitle} mt-[20px]`}>{`Concept`}</h1>
 
