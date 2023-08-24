@@ -20,8 +20,8 @@ const feedback2 = () => {
                 <h1 className="text-black font-medium text-center text-2xl xs:text-xl">{`We'd love to hear from you`}</h1>
                 <h1 className="text-black text-center xs:text-sm">Choose one based on service you experienced</h1>
                 <div className="flex justify-between mx-auto w-[80%] mt-5 xs:text-sm xs:w-[90%]">
-                    <button className="bg-amber-600 text-white cursor-pointer px-4 py-2 rounded font-medium sm:text-sm xs:text-xs" onClick={()=> dispatch(setConcept())}><Link href='/feedback'>Concept</Link></button>
-                    <button className="bg-amber-600 text-white cursor-pointer px-4 py-2 rounded font-medium sm:text-sm xs:text-xs" onClick={()=> dispatch(setManagement())}><Link href='/feedback'>Project management</Link></button>
+                    <button className="bg-amber-600 text-white cursor-pointer px-3 py-2 rounded font-medium sm:text-sm xs:text-xs" onClick={()=> dispatch(setConcept())}><Link href='/feedback'>Concept</Link></button>
+                    <button className="bg-amber-600 text-white cursor-pointer px-3 py-2 rounded font-medium sm:text-sm xs:text-xs" onClick={()=> dispatch(setManagement())}><Link href='/feedback'>Project management</Link></button>
                 </div>
             </div>
         </div>

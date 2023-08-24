@@ -56,12 +56,37 @@
     margin-left: -5px;
 }
 
-@media (max-width: 480px){
+@media (max-width: 768px){
+    .mainContainer{
+        padding: 10px 50px;
+    }
+
+    .form{
+        width: 50%;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 600px){
     .mainContainer{
         padding: 10px 30px;
     }
+
     .container{
         padding: 50px 30px;
+    }
+
+    .form{
+        width: 50%;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 480px){
+    .mainContainer{
+        padding: 10px 30px;
     }
     .form{
         width: 100%;
