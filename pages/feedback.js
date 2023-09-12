@@ -135,8 +135,8 @@ const feedback = () => {
                 </div>
             </div>}
             {type === 'concept' || count === 1 ? <form className={styles.form}>
-                <input type="text" value={fullName} className="" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
-                <input type="text" value={phone} className="" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
+                <input type="text" value={fullName} className="px-2" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
+                <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
             </form>:''}
             <div className='flex '>
                 {type === 'management' && count === 1 ? <button className='bg-black text-white my-7 rounded w-[150px] h-[40px] mr-5' onClick={()=>dispatch(prev())}>Previous</button> : ''}
