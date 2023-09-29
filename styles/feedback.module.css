@@ -2,13 +2,14 @@
 
 .mainContainer{
     padding: 20px 100px;
+    background: #131A25;
 }
 
 .container{
     padding: 50px 100px;
 }
 .maintitle{
-    color: #000;
+    color: #F5F8FA;
     font-size: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -17,7 +18,7 @@
 .title{
     font-size: 18px;
     font-weight: 400;
-    color: #000;
+    color: #cdcfd0;
     font-family: 'Poppins', sans-serif;
 }
 

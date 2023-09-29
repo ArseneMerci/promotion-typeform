@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import Image from "next/image";
 import Link from "next/link";
-import log from "../public/assets/logo.png";
+import log from "../public/assets/logoLight.png";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
