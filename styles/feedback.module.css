@@ -3,11 +3,18 @@
 .mainContainer{
     padding: 20px 100px;
     background: #131A25;
+    /* background: #fff; */
+
 }
 
 .container{
     padding: 50px 100px;
 }
+
+.popp{
+    font-family: 'Poppins', sans-serif;
+}
+
 .maintitle{
     color: #F5F8FA;
     font-size: 20px;
@@ -20,6 +27,7 @@
     font-weight: 400;
     color: #cdcfd0;
     font-family: 'Poppins', sans-serif;
+    /* text-align: center; */
 }
 
 .form{
@@ -30,9 +38,9 @@
 }
 
 .container input{
-    background-color: #f9fafb;
-    border: 1px solid #d1d5db;
-    color: #111827;
+    background-color: #040404;
+    /* border: 1px solid #d1d5db; */
+    color: #cdcfd0;
     font-size: 15px;
     height: 40px;
     border-radius: 5px;
@@ -89,9 +97,19 @@
     .mainContainer{
         padding: 10px 30px;
     }
+    .container{
+        padding: 30px 20px;
+    }
     .form{
         width: 100%;
         grid-template-columns: repeat(1,1fr);
         row-gap: 20px;
+    }
+    .maintitle{
+        font-size: 18px;
+    }
+    .title{
+        font-size: 16px;
+        /* text-align: center; */
     }
 }
