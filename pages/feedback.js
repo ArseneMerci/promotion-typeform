@@ -16,6 +16,7 @@ import { next, prev } from '../state/slices/pageSlice';
 const feedback = () => {
     const [ fullName,setFullName ] = useState(null);
     const [ phone , setPhone ] = useState(null);
+    const [ message , setMessage ] = useState(null);
     const [ concept ,setConcept ] = useState({});
     const [ management ,setManagement ] = useState({});
     const [ loader ,setLoader ] = useState();
@@ -48,6 +49,7 @@ const feedback = () => {
             const feedbackData = {
                 fullName,
                 emailOrPhone:phone,
+                message,
                 'concept': concept,
                 'projectManagement': management,
             }
@@ -58,6 +60,7 @@ const feedback = () => {
           setManagement({});
           setFullName(null);
           setPhone(null);
+          setMessage(null);
           setLoader(false);
           return toast.success(response.data.message, {
             autoClose: 2000,
@@ -77,7 +80,7 @@ const feedback = () => {
         }
       };
   return (
-    <div className={`${styles.mainContainer} `}>
+    <div className={`${styles.mainContainer}`}>
       <ToastContainer />
         <div style={{ cursor: "pointer" }}>
             <Link href='/'>
@@ -135,8 +138,11 @@ const feedback = () => {
                 </div>
             </div>}
             {type === 'concept' || count === 1 ? <form className={styles.form}>
-                <input type="text" value={fullName} className="px-2" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
-                <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
+                <div className='flex justify-between'>
+                    <input type="text" value={fullName} className="px-2 mr-5" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
+                    <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
+                </div>
+            <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...'></textarea>
             </form>:''}
             <div className='flex '>
                 {type === 'management' && count === 1 ? <button className={`${styles.popp} bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px] mr-5`} onClick={()=>dispatch(prev())}>Previous</button> : ''}
