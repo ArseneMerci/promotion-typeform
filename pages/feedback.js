@@ -40,6 +40,7 @@ const feedback = () => {
 
       const handleSubmitFeedback = async (e) => {
         e.preventDefault();
+        console.log(message);
         setLoader(true);
         try {
             if(!fullName || !phone){
@@ -142,7 +143,7 @@ const feedback = () => {
                     <input type="text" value={fullName} className="px-2 mr-5" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
                     <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
                 </div>
-            <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...'></textarea>
+            <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...' onChange={(e)=>setMessage(e.target.value)}></textarea>
             </form>:''}
             <div className='flex '>
                 {type === 'management' && count === 1 ? <button className={`${styles.popp} bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px] mr-5`} onClick={()=>dispatch(prev())}>Previous</button> : ''}
