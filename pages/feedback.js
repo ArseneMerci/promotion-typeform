@@ -139,8 +139,8 @@ const feedback = () => {
                 </div>
             </div>}
             {type === 'concept' || count === 1 ? <form className={styles.form}>
-                <div className='flex justify-between'>
-                    <input type="text" value={fullName} className="px-2 mr-5" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
+                <div className='flex justify-between xs:flex-col'>
+                    <input type="text" value={fullName} className="px-2 mr-5 xs:mb-5" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
                     <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
                 </div>
             <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...' onChange={(e)=>setMessage(e.target.value)}></textarea>
