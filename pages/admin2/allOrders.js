@@ -19,12 +19,9 @@ const allOrders = () => {
         <div className='font flex flex-row'>         
             <div className="w-full h-screen ml-[230px]">
                 <Header/>
-                <div className='flex flex-col h-7 py-1 px-7 mb-20'>
-                    <button className='flex flex-row h-12 w-130 bg-violet-700 text-white text-xs font-semibold py-2 px-3 rounded-md self-end mt-7' onClick={()=>{setFormOn(true)}}><FiPlus className='text-sm mr-2 mt-1px'/>Add Shop</button>
-                </div>
-                <div className='flex flex-row justify-end mt-[100px] px-7 sm:flex-col'>
+                <div className='flex flex-row justify-end my-10 px-7 sm:flex-col'>
                     <div className='flex flex-row  justify-between w-72 border-2 rounded h-8 py-1 px-2'>
-                        <input type="text" className='w-[90%] outline-none text-[13px] font-semibold' placeholder='Search by client name...'/>
+                        <input type="text" className='w-[90%] outline-none text-[13px] font-medium' placeholder='Search by client name...'/>
                         <BiSearchAlt2 className='text-gray-400 self-center cursor-pointer'/>
                     </div>
                     <button className='flex flex-row border-2 rounded h-8  px-2 py-1 text-[13px] font-semibold ml-5 sm:self-start'><MdFilterList className='text-lg my-auto mr-2'/> Filter</button>
