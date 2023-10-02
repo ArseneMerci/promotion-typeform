@@ -40,7 +40,6 @@ const feedback = () => {
 
       const handleSubmitFeedback = async (e) => {
         e.preventDefault();
-        console.log(message);
         setLoader(true);
         try {
             if(!fullName || !phone){
