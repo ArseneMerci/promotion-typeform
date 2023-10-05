@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import styles from '../styles/feedback.module.css'
 import EmojiSlider from '../components/EmojiSlider'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import axios from 'axios'
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +23,9 @@ const feedback = () => {
     const count = useSelector((state)=>state.pages.value);
     const type = useSelector((state)=> state.pages.type );
     const dispatch = useDispatch();
+    const formRef = useRef(null);
+    const msgRef = useRef(null);
+
 
 
     const handleEmojiSelect = (questionIndex, emojiIndex) => {
@@ -56,11 +59,12 @@ const feedback = () => {
 
           const response = await axios.post(`https://mozaik-portal-api-wgwap.ondigitalocean.app/api/feedback/new`,  feedbackData );
           console.log(response);
+          formRef.current.reset();
           setConcept({});
           setManagement({});
           setFullName(null);
           setPhone(null);
-          setMessage(null);
+          setMessage('');
           setLoader(false);
           return toast.success(response.data.message, {
             autoClose: 2000,
@@ -137,16 +141,16 @@ const feedback = () => {
                     <EmojiSlider questionIndex={'Quality of materials and furnishings used'} onEmojiSelect={(emojiIndex) => handleEmojiManagementSelect('Quality of materials and furnishings used', emojiIndex)}/>
                 </div>
             </div>}
-            {type === 'concept' || count === 1 ? <form className={styles.form}>
+            {type === 'concept' || count === 1 ? <form className={styles.form} ref={formRef} onSubmit={handleSubmitFeedback}>
                 <div className='flex justify-between xs:flex-col'>
                     <input type="text" value={fullName} className="px-2 mr-5 xs:mb-5" placeholder="Enter your names" onChange={(e)=>setFullName(e.target.value)} required/>
                     <input type="text" value={phone} className="px-2" placeholder="Enter email or phone number" onChange={(e)=>setPhone(e.target.value)} required/>
                 </div>
-            <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...' onChange={(e)=>setMessage(e.target.value)}></textarea>
-            </form>:''}
+                <textarea name="" id="" cols="30" rows="10" value={message} placeholder='Leave us a message...'  onChange={(e)=>setMessage(e.target.value)}></textarea>
+            
             <div className='flex '>
                 {type === 'management' && count === 1 ? <button className={`${styles.popp} bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px] mr-5`} onClick={()=>dispatch(prev())}>Previous</button> : ''}
-                {count === 1 || type === 'concept' ? <div onClick={handleSubmitFeedback} className={!loader ? 'flex justify-center cursor-pointer items-center bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px]' : 'flex justify-center items-center text-white my-7 rounded w-[150px] h-[40px] bg-gray-700 cursor-not-allowed'}> 
+                {count === 1 || type === 'concept' ? <button type='submit' className={!loader ? 'flex justify-center cursor-pointer items-center bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px]' : 'flex justify-center items-center text-white my-7 rounded w-[150px] h-[40px] bg-gray-700 cursor-not-allowed'}> 
                     {!loader ? <h1 className={`${styles.popp} text-[#cdcfd0]`}>Submit</h1>
                     :
                     <div role="status" className='flex'>
@@ -157,8 +161,9 @@ const feedback = () => {
                         </svg>
                         <span className="sr-only">Loading...</span>
                     </div>}
-                </div>:''}
+                </button>:''}
             </div>
+            </form>:''}
             {type === 'management' && count === 0 ? <button className='bg-[#233044] text-[#cdcfd0] my-7 rounded w-[150px] h-[40px]' onClick={()=>dispatch(next())}>Next</button> : ''}
         </div>
     </div>
