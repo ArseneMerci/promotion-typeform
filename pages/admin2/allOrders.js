@@ -1,4 +1,4 @@
-import React from 'react'
+import {useRef,useState,useEffect} from 'react'
 import SideBar from '../../components/admin2/Sidebar'
 import { FiPlus } from 'react-icons/fi';
 import { BiSearchAlt2 } from 'react-icons/bi';
@@ -9,11 +9,12 @@ import { MdFilterList } from 'react-icons/md';
 import { AiFillCheckCircle } from 'react-icons/ai'
 import { FaEdit } from 'react-icons/fa';
 import { IoTrashBinSharp } from 'react-icons/io5'
-import { useState,useEffect } from 'react';
 import Header from '../../components/admin2/Header';
 
 const allOrders = () => {
-    const dummyData = [
+    const searchInput = useRef();
+
+    const [dummyData,setDummyData] = useState ([
   {
     "ClientName": "John Doe",
     "Address": "123 Main Street",
@@ -42,7 +43,56 @@ const allOrders = () => {
     "Status": "Active",
     "RequestingAssistance": false
   }
-];
+]);
+
+const [dummyDataCopy,setDummyDataCopy] = useState(dummyData);
+const dummyData2 = [
+    {
+      "ClientName": "John Doe",
+      "Address": "123 Main Street",
+      "Space": "Office",
+      "Status": "Active",
+      "RequestingAssistance": true
+    },
+    {
+      "ClientName": "Alice Johnson",
+      "Address": "456 Elm Avenue",
+      "Space": "Home",
+      "Status": "Pending",
+      "RequestingAssistance": false
+    },
+    {
+      "ClientName": "Bob Smith",
+      "Address": "789 Oak Lane",
+      "Space": "Retail",
+      "Status": "Inactive",
+      "RequestingAssistance": true
+    },
+    {
+      "ClientName": "Eve Brown",
+      "Address": "101 Pine Road",
+      "Space": "Warehouse",
+      "Status": "Active",
+      "RequestingAssistance": false
+    }
+  ];
+
+const handleSearch = () => {
+    const searchValue = searchInput.current.value;
+    // setSearchResponse(false)
+    if( searchValue.trim() ){
+        const filteredTable = dummyDataCopy.filter(data => {
+            return data.ClientName.toLowerCase().includes(searchValue.toLowerCase());
+        });
+        setDummyData(filteredTable);
+        // if( filteredTable.length < 1 ){ 4
+        //     return setSearchResponse(true);
+        // }
+    } else{
+        setDummyData(dummyData2);
+    }
+    
+}
   return (
     <div>
         <SideBar/>
@@ -51,7 +101,7 @@ const allOrders = () => {
                 <Header/>
                 <div className='flex flex-row justify-end my-10 px-7 sm:flex-col'>
                     <div className='flex flex-row  justify-between w-72 border-2 rounded h-8 py-1 px-2'>
-                        <input type="text" className='w-[90%] outline-none text-[13px] font-medium' placeholder='Search by client name...'/>
+                        <input type="text" className='w-[90%] outline-none text-[13px] font-medium'  ref={searchInput} placeholder='Search by client name...' onChange={handleSearch}/>
                         <BiSearchAlt2 className='text-gray-400 self-center cursor-pointer'/>
                     </div>
                     <button className='flex flex-row border-2 rounded h-8  px-2 py-1 text-[13px] font-semibold ml-5 sm:self-start'><MdFilterList className='text-lg my-auto mr-2'/> Filter</button>
