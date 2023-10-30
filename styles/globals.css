@@ -11,6 +11,10 @@ body {
     overflow-y: auto;
 }
 
+.font{
+  font-family: 'Outfit', sans-serif;
+}
+
 .price-color{
   color: chocolate;
 }
