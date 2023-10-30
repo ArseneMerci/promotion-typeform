@@ -62,7 +62,7 @@ const feedback = () => {
 
         } catch (error) {
             setLoader(false);
-            return toast.error('Internet Connection Error', {
+            return toast.error(error.message, {
                 autoClose: 2000,
                 closeOnClick: true,
                 pauseOnHover: true,

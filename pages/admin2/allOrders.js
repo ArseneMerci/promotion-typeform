@@ -13,6 +13,36 @@ import { useState,useEffect } from 'react';
 import Header from '../../components/admin2/Header';
 
 const allOrders = () => {
+    const dummyData = [
+  {
+    "ClientName": "John Doe",
+    "Address": "123 Main Street",
+    "Space": "Office",
+    "Status": "Active",
+    "RequestingAssistance": true
+  },
+  {
+    "ClientName": "Alice Johnson",
+    "Address": "456 Elm Avenue",
+    "Space": "Home",
+    "Status": "Pending",
+    "RequestingAssistance": false
+  },
+  {
+    "ClientName": "Bob Smith",
+    "Address": "789 Oak Lane",
+    "Space": "Retail",
+    "Status": "Inactive",
+    "RequestingAssistance": true
+  },
+  {
+    "ClientName": "Eve Brown",
+    "Address": "101 Pine Road",
+    "Space": "Warehouse",
+    "Status": "Active",
+    "RequestingAssistance": false
+  }
+];
   return (
     <div>
         <SideBar/>
@@ -30,9 +60,6 @@ const allOrders = () => {
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" className="px-6 py-3">
-                                    Id #
-                                </th>
                                 <th scope="col" className="px-6 py-3">
                                     Client Name
                                 </th>
@@ -56,41 +83,35 @@ const allOrders = () => {
                                 </th>
                             </tr>
                         </thead>
-                        {/* <tbody>
-                            {shops.map((shop,index)=>{
+                        <tbody>
+                            {dummyData.map((data,index)=>{
                                 return(
                                     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={index}>
-                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            {(shop.id).substring(0,5)}
-                                        </th>
                                         <td className="px-6 py-4">
-                                            {shop.name}
+                                            {data.ClientName}
                                         </td>
                                         <td className="px-6 py-4">
-                                            {shop.phone}    
+                                            {data.Address}    
                                         </td>
                                         <td className="px-6 py-4">
-                                            {shop.email}
+                                            {data.Space}
                                         </td>
                                         <td className="px-6 py-4">
-                                            {shop.address}
+                                            {data.Status}
                                         </td>
                                         <td className="px-6 py-4">
-                                            {shop.accountNumber}
+                                            {data.RequestingAssistance ? 'True' : 'False'}
                                         </td>
-                                        {shop.isApproved ? <td className="px-6 py-4 text-green">
-                                            Approved
-                                        </td> : <td className="px-6 py-4">
-                                            Pending
-                                        </td>}
-                                        <td className="px-6 py-4 flex justify-center">
-                                            <FaEdit className='text-green-500 text-lg cursor-pointer' onClick={()=>{setFormMessage('edit');setFormOn(true);setId(shop.id)}}/>
-                                            <IoTrashBinSharp className='text-lg ml-4 text-red-500 cursor-pointer' onClick={()=>{setDeleteOn(true);setDeletedShop(shop.name);setId(shop.id)}}/>
+                                        <td className="px-6 py-4 text-green">
+                                            Details
+                                        </td>
+                                        <td className="px-6 py-4 text-green">
+                                            Completed
                                         </td>
                                     </tr> 
                                 )
                             })}
-                        </tbody> */}
+                        </tbody>
                     </table>
                 </div>
 
